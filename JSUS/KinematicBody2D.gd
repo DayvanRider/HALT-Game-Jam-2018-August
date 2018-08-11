@@ -11,7 +11,7 @@ const JUMPS = 10
 const LURPVAL = 0.9
 const GRACEFACTOR = 5
 #for protection against repeat walljump
-const JUMPTIME = 0.5
+const JUMPTIME = 0.2
 
 #motion vector
 var motion = Vector2(0,0)
