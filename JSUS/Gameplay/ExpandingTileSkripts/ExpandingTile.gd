@@ -12,15 +12,14 @@ export(String, "Up", "Down", "Left", "Right") var expansionAxis = "Up"
 var expandDir = null
 # Max size the tile reaches
 export(int, 0, 640, 16) var expandAmount = 32
-# Time after level start where the tile begins expanding
+# Time after level start where the tile begins expanding, in seconds
 export(float) var startTime = 1
-# Time after level start where the tile reaches max size
-export(float) var endTime = 5
+# Time the tile takes to reache its max size after starting, in seconds
+export(float) var duration = 4
 
 var startTimer = null
 var expansionTimer = null
 
-var relativeEndTime = null
 var expansionStarted = false
 
 var tileExtent = null
@@ -37,14 +36,12 @@ func initExpandDir():
 	get_node("StaticBody2D/CollisionShape2D").expandDir = expandDir
 
 func initTimers():
-	relativeEndTime = endTime - startTime
-	
 	startTimer = get_node("StartTimer")
 	expansionTimer = get_node("ExpansionTimer")
 	
 	startTimer.set_wait_time(startTime)
 	startTimer.set_one_shot(true)
-	expansionTimer.set_wait_time(relativeEndTime)
+	expansionTimer.set_wait_time(duration)
 	expansionTimer.set_one_shot(true)
 	
 	startTimer.connect("timeout", self, "onStartTimer")
@@ -68,4 +65,4 @@ func currentExpansion():
 	var timeLeft = expansionTimer.get_time_left()
 	if timeLeft == 0:
 		return 1
-	return (relativeEndTime - timeLeft) / relativeEndTime
+	return (duration - timeLeft) / duration

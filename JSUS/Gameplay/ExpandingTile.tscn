@@ -15,7 +15,7 @@ script = ExtResource( 1 )
 expansionAxis = "Up"
 expandAmount = 32
 startTime = 1
-endTime = 5
+duration = 4
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
