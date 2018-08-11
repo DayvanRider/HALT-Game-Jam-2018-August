@@ -2,9 +2,9 @@ extends KinematicBody2D
 #constants
 const SPEED = 300
 const UP = Vector2(0,-1)
-const JUMP = -500
+const JUMP = -400
 export(int) var GRAVITY = 20
-const WALLJUMPPAR = 1.25
+const WALLJUMPPAR = 1.1
 
 var motion = Vector2(0,0)
 var lastKey
