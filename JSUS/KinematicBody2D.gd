@@ -33,8 +33,6 @@ func _physics_process(delta):
 		motion.x = -SPEED
 		#keep track of last keystroke
 		lastKey = 2
-		
-	#no left or right keystroke
 	elif is_on_floor():
 		motion.x = 0
 		#reset noJumps 
@@ -45,7 +43,6 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("ui_up"):
 			motion.y = JUMP
 		
-	
 	#if character is on wall
 	if is_on_wall() && !is_on_floor() && noJumps < JUMPS:
 		#slow down gravity 
@@ -69,5 +66,3 @@ func _physics_process(delta):
 		motion = motiontmp
 	if !is_on_wall():
 		motion.x = lerp(0,motion.x,LURPVAL)
-		
-	
