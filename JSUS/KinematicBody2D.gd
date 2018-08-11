@@ -1,13 +1,17 @@
 extends KinematicBody2D
 #constants
-const SPEED = 300
+const SPEED = 150
 const UP = Vector2(0,-1)
-const JUMP = -500
-export(int) var GRAVITY = 20
-const WALLJUMPPAR = 1.25
+const JUMP = -250
+export(int) var GRAVITY = 10
+const WALLJUMPPAR = 1.1
+const JUMPS = 2
+const LURPVAL = 0.7
 
 var motion = Vector2(0,0)
 var lastKey
+#count walljumps
+var noJumps = 0
 
 
 
@@ -31,6 +35,8 @@ func _physics_process(delta):
 		lastKey = 2
 	elif is_on_floor():
 		motion.x = 0
+		#reset noJumps 
+		noJumps = 0
 		
 	#Jump
 	if is_on_floor():
@@ -38,7 +44,7 @@ func _physics_process(delta):
 			motion.y = JUMP
 		
 	#if character is on wall
-	if is_on_wall() && !is_on_floor():
+	if is_on_wall() && !is_on_floor() && noJumps < JUMPS:
 		#slow down gravity 
 		#TODO make modular
 		if motion.y >0:
@@ -52,8 +58,11 @@ func _physics_process(delta):
 			if lastKey == 2:
 				motion.y = WALLJUMPPAR*JUMP
 				motion.x = SPEED
+			noJumps += 1
 	
 	#only update motion if character is on the ground 
 	var motiontmp = move_and_slide(motion,UP)
 	if is_on_floor():
 		motion = motiontmp
+	if !is_on_wall():
+		motion.x = lerp(0,motion.x,LURPVAL)
