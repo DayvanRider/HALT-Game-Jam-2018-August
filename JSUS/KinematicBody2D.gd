@@ -34,6 +34,7 @@ func _physics_process(delta):
 		lastKey = 2
 	elif is_on_floor():
 		motion.x = 0
+		#reset noJumps 
 		noJumps = 0
 		
 	#Jump
@@ -42,7 +43,7 @@ func _physics_process(delta):
 			motion.y = JUMP
 		
 	#if character is on wall
-	if is_on_wall() && !is_on_floor() && noJumps <= JUMPS:
+	if is_on_wall() && !is_on_floor() && noJumps < JUMPS:
 		#slow down gravity 
 		#TODO make modular
 		if motion.y >0:
