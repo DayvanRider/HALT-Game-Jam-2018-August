@@ -15,8 +15,23 @@ var expansionTimer = null
 var relativeEndTime = null
 var expansionStarted = false
 
+var tileExtent = null
+var additionalTiles = []
+
+var originalShape = null
+
 
 func _ready():
+	checkExpandDir()
+	initTimers()
+	initAdditionalWalls()
+
+func checkExpandDir():
+	if expandDir.length() != 1 or abs(expandDir.x) + abs(expandDir.y) != 1:
+		print("Expansion direction is not axis aligned!")
+		get_tree().quit()
+
+func initTimers():
 	relativeEndTime = endTime - startTime
 	
 	startTimer = get_node("StartTimer")
@@ -31,16 +46,18 @@ func _ready():
 	
 	print("Starting timer")
 	startTimer.start()
-	
 
 func onStartTimer():
 	expansionStarted = true
 	expansionTimer.start()
-	
+
+func initAdditionalWalls():
+	tileExtent = get_node("StaticBody2D2/CollisionShape2D").get_shape().get_extents() * 2
+#	additionalWalls.append
 
 func _process(delta):
 	pass
-	
+
 func currentExpansion():
 	if !expansionStarted:
 		return 0
