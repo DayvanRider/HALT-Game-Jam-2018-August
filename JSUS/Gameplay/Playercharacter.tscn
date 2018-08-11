@@ -6,7 +6,7 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
+extents = Vector2( 28.1672, 31.8726 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" index="0"]
 
@@ -28,8 +28,8 @@ _sections_unfolded = [ "Offset" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
-position = Vector2( -5.72205e-06, -2.86102e-06 )
-scale = Vector2( 3.2, 3.2 )
+position = Vector2( 3.33139, -7.62939e-06 )
+scale = Vector2( 0.728571, 1 )
 shape = SubResource( 1 )
 
 
