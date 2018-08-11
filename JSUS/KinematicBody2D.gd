@@ -2,17 +2,23 @@ extends KinematicBody2D
 
 
 #constants
-const SPEED = 150
+#Movement Speed
+export (int) var SPEED = 150
 const UP = Vector2(0,-1)
+#JUMP strength
 export (int) var  JUMP = -250
+#Gravity
 export(int) var GRAVITY = 100
-const WALLJUMPPAR = 1.2
-const JUMPS = 10
-const LURPVAL = 0.7
-const GRACEFACTOR = 5
-const WALLGRACEFACTOR = 10
+#Walljumpstrength
+export (float) var WALLJUMPPAR = 1.2
+#Lurpvalue
+export (float) var LURPVAL = 0.7
+#gracevalue in frames
+export (int) var GRACEFACTOR = 5
+#gracevalue for walljumps 
+export (int) var WALLGRACEFACTOR = 10
 #for protection against repeat walljump
-const JUMPTIME = 0.4
+export (float) var JUMPTIME = 0.4
 
 #motion vector
 var motion = Vector2(0,0)
@@ -49,8 +55,6 @@ func _physics_process(delta):
 		lastKey = 2
 	elif is_on_floor():
 		motion.x = 0
-		#reset noJumps 
-		noJumps = 0
 		
 	#Jump
 	if is_on_floor() || grace < GRACEFACTOR:
@@ -79,7 +83,6 @@ func _physics_process(delta):
 				motion.y = WALLJUMPPAR*JUMP
 				motion.x = SPEED*1.5
 				JumptimerLeft()
-			noJumps += 1
 	
 	#only update motion if character is on the ground 
 	var motiontmp = move_and_slide(motion,UP)
