@@ -11,7 +11,6 @@ func _ready():
 		
 	
 
-#func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass
+func _process(delta):
+	if Input.is_action_just_pressed("ui_accept"):
+		get_tree().reload_current_scene()

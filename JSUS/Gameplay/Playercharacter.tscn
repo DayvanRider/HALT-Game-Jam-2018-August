@@ -17,7 +17,8 @@ collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
-GRAVITY = 10
+JUMP = -250
+GRAVITY = 100
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
@@ -31,5 +32,12 @@ _sections_unfolded = [ "Offset" ]
 position = Vector2( 3.33139, -7.62939e-006 )
 scale = Vector2( 0.728571, 1 )
 shape = SubResource( 1 )
+
+[node name="Timer" type="Timer" parent="." index="2"]
+
+process_mode = 1
+wait_time = 0.92
+one_shot = false
+autostart = false
 
 
