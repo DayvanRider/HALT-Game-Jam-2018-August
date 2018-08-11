@@ -13,7 +13,6 @@ const LEFT = Vector2(-1, 0)
 
 func _ready():	
 	expandingTile = get_node("../../")
-	expandDir = expandingTile.expandDir
 	expandAmount = expandingTile.expandAmount
 	
 	baseExt = shape.extents.x
