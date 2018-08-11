@@ -5,7 +5,7 @@
 [ext_resource path="res://assets/Tiles/Tiles_fixed.tres" type="TileSet" id=3]
 [ext_resource path="res://assets/Andere/Gem(einzeln).png" type="Texture" id=4]
 
-[node name="World" type="Node2D" index="0"]
+[node name="World" type="Node2D"]
 
 position = Vector2( 208, 224 )
 script = ExtResource( 1 )

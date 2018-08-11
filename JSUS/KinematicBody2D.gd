@@ -7,11 +7,14 @@ export(int) var GRAVITY = 10
 const WALLJUMPPAR = 1.1
 const JUMPS = 2
 const LURPVAL = 0.7
+const GRACEFACTOR = 5
 
 var motion = Vector2(0,0)
 var lastKey
 #count walljumps
 var noJumps = 0
+#variable for grace Period
+var grace = 0
 
 
 
@@ -39,7 +42,7 @@ func _physics_process(delta):
 		noJumps = 0
 		
 	#Jump
-	if is_on_floor():
+	if is_on_floor() || grace < GRACEFACTOR:
 		if Input.is_action_just_pressed("ui_up"):
 			motion.y = JUMP
 		
@@ -64,5 +67,11 @@ func _physics_process(delta):
 	var motiontmp = move_and_slide(motion,UP)
 	if is_on_floor():
 		motion = motiontmp
+		grace = 0
+	#graze period
+	else:
+		grace += 1
+		
+		pass
 	if !is_on_wall():
 		motion.x = lerp(0,motion.x,LURPVAL)
