@@ -11,7 +11,7 @@ const JUMPS = 10
 const LURPVAL = 0.9
 const GRACEFACTOR = 5
 #for protection against repeat walljump
-const JUMPTIME = 0.2
+const JUMPTIME = 0.4
 
 #motion vector
 var motion = Vector2(0,0)
@@ -66,11 +66,11 @@ func _physics_process(delta):
 			#determine wall by last keystroke
 			if lastKey == 1:
 				motion.y = WALLJUMPPAR*JUMP
-				motion.x = -SPEED
+				motion.x = -SPEED*1.5
 				JumptimerRight()
 			if lastKey == 2:
 				motion.y = WALLJUMPPAR*JUMP
-				motion.x = SPEED
+				motion.x = SPEED*1.5
 				JumptimerLeft()
 			noJumps += 1
 	
