@@ -10,6 +10,7 @@ const WALLJUMPPAR = 1.2
 const JUMPS = 10
 const LURPVAL = 0.7
 const GRACEFACTOR = 5
+const WALLGRACEFACTOR = 10
 #for protection against repeat walljump
 const JUMPTIME = 0.4
 
@@ -21,6 +22,7 @@ var lastKey
 var noJumps = 0
 #variable for grace Period
 var grace = 0
+var wallgrace = 0
 #variable for timer
 var timernode = null
 #variable for allowing movement
@@ -56,19 +58,24 @@ func _physics_process(delta):
 			motion.y = JUMP
 		
 	#if character is on wall
-	if is_on_wall() && !is_on_floor() && noJumps < JUMPS:
+	if (is_on_wall() && !is_on_floor()) || wallgrace <= WALLGRACEFACTOR:
+		if is_on_wall():
+			wallgrace = 0
+			if motion.y >0:
+				motion.y = motion.y * 0.5
+		else:
+			wallgrace += 1
 		#slow down gravity 
 		#TODO make modular
-		if motion.y >0:
-			motion.y -= (GRAVITY/4) * 3
+
 		#make walljump by pressing up
 		if Input.is_action_just_pressed("ui_up"):
 			#determine wall by last keystroke
-			if lastKey == 1:
+			if (lastKey == 1 && wallgrace == 0) || (lastKey == 2 && wallgrace != 0):
 				motion.y = WALLJUMPPAR*JUMP
 				motion.x = -SPEED*1.5
 				JumptimerRight()
-			if lastKey == 2:
+			if (lastKey == 2 && wallgrace == 0) || (lastKey == 1 && wallgrace != 0):
 				motion.y = WALLJUMPPAR*JUMP
 				motion.x = SPEED*1.5
 				JumptimerLeft()
