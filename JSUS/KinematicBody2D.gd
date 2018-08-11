@@ -14,6 +14,8 @@ var lastKey
 func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
+	set_name("Player")
+	var GemCount
 	pass
 	
 func _physics_process(delta):
