@@ -8,7 +8,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 28.1672, 31.8726 )
 
-[node name="KinematicBody2D" type="KinematicBody2D" index="0"]
+[node name="KinematicBody2D" type="KinematicBody2D"]
 
 position = Vector2( -24, 24 )
 scale = Vector2( 0.25, 0.25 )
@@ -17,19 +17,27 @@ collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
-GRAVITY = 20
+JUMP = -250
+GRAVITY = 100
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
-position = Vector2( 1.90735e-06, 1.90735e-06 )
+position = Vector2( 1.90735e-006, 1.90735e-006 )
 scale = Vector2( 4, 4 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Offset" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
-position = Vector2( 3.33139, -7.62939e-06 )
+position = Vector2( 3.33139, -7.62939e-006 )
 scale = Vector2( 0.728571, 1 )
 shape = SubResource( 1 )
+
+[node name="Timer" type="Timer" parent="." index="2"]
+
+process_mode = 1
+wait_time = 0.92
+one_shot = false
+autostart = false
 
 
