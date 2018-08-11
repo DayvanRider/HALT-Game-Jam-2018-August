@@ -18,8 +18,6 @@ var expansionStarted = false
 var tileExtent = null
 var additionalTiles = []
 
-var originalShape = null
-
 
 func _ready():
 	checkExpandDir()
@@ -44,7 +42,6 @@ func initTimers():
 	
 	startTimer.connect("timeout", self, "onStartTimer")
 	
-	print("Starting timer")
 	startTimer.start()
 
 func onStartTimer():
