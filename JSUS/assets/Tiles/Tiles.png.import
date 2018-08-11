@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Tilemap.png-19909328b54cd4cfedc10cbc50054a9a.stex"
+path="res://.import/Tiles.png-30ed5898f39abed59478464dbbe49178.stex"
 
 [deps]
 
-source_file="res://assets/Tilemap.png"
-dest_files=[ "res://.import/Tilemap.png-19909328b54cd4cfedc10cbc50054a9a.stex" ]
+source_file="res://assets/Tiles/Tiles.png"
+dest_files=[ "res://.import/Tiles.png-30ed5898f39abed59478464dbbe49178.stex" ]
 
 [params]
 

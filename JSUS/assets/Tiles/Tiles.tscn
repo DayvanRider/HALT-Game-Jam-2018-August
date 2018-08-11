@@ -1,13 +1,13 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://assets/Tilemap.png" type="Texture" id=1]
+[ext_resource path="res://assets/Tiles/Tiles.png" type="Texture" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 8, 8 )
+extents = Vector2( 11, 11 )
 
-[node name="Tiles" type="Node2D" index="0"]
+[node name="Tiles" type="Node2D"]
 
 [node name="0" type="Sprite" parent="." index="0"]
 
@@ -16,13 +16,15 @@ texture = ExtResource( 1 )
 centered = false
 region_enabled = true
 region_rect = Rect2( 0, 0, 16, 16 )
-_sections_unfolded = [ "Region" ]
+_sections_unfolded = [ "Region", "Transform" ]
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="StaticBody2D" type="StaticBody2D" parent="0" index="0"]
 
+position = Vector2( 8, 8 )
+scale = Vector2( 0.25, 0.25 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -33,7 +35,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="0/StaticBody2D" index="0"]
 
-position = Vector2( 8, 8 )
+scale = Vector2( 2.90909, 2.90909 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
@@ -45,13 +47,15 @@ texture = ExtResource( 1 )
 centered = false
 region_enabled = true
 region_rect = Rect2( 16, 0, 16, 16 )
-_sections_unfolded = [ "Region" ]
+_sections_unfolded = [ "Region", "Transform" ]
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="StaticBody2D" type="StaticBody2D" parent="1" index="0"]
 
+position = Vector2( 8, 8 )
+scale = Vector2( 0.25, 0.25 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -62,7 +66,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="1/StaticBody2D" index="0"]
 
-position = Vector2( 8, 8 )
+scale = Vector2( 2.90909, 2.90909 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
@@ -74,13 +78,15 @@ texture = ExtResource( 1 )
 centered = false
 region_enabled = true
 region_rect = Rect2( 32, 0, 16, 16 )
-_sections_unfolded = [ "Region" ]
+_sections_unfolded = [ "Region", "Transform" ]
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="StaticBody2D" type="StaticBody2D" parent="2" index="0"]
 
+position = Vector2( 8, 8 )
+scale = Vector2( 0.25, 0.25 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -91,7 +97,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="2/StaticBody2D" index="0"]
 
-position = Vector2( 8, 8 )
+scale = Vector2( 2.90909, 2.90909 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
@@ -103,13 +109,15 @@ texture = ExtResource( 1 )
 centered = false
 region_enabled = true
 region_rect = Rect2( 0, 16, 16, 16 )
-_sections_unfolded = [ "Region" ]
+_sections_unfolded = [ "Region", "Transform" ]
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="StaticBody2D" type="StaticBody2D" parent="3" index="0"]
 
+position = Vector2( 8, 8 )
+scale = Vector2( 0.25, 0.25 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -120,7 +128,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="3/StaticBody2D" index="0"]
 
-position = Vector2( 8, 8 )
+scale = Vector2( 2.90909, 2.90909 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
@@ -132,13 +140,15 @@ texture = ExtResource( 1 )
 centered = false
 region_enabled = true
 region_rect = Rect2( 16, 16, 16, 16 )
-_sections_unfolded = [ "Region" ]
+_sections_unfolded = [ "Region", "Transform" ]
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="StaticBody2D" type="StaticBody2D" parent="4" index="0"]
 
+position = Vector2( 8, 8 )
+scale = Vector2( 0.25, 0.25 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -149,7 +159,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="4/StaticBody2D" index="0"]
 
-position = Vector2( 8, 8 )
+scale = Vector2( 2.90909, 2.90909 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
@@ -161,13 +171,15 @@ texture = ExtResource( 1 )
 centered = false
 region_enabled = true
 region_rect = Rect2( 32, 16, 16, 16 )
-_sections_unfolded = [ "Region" ]
+_sections_unfolded = [ "Region", "Transform" ]
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="StaticBody2D" type="StaticBody2D" parent="5" index="0"]
 
+position = Vector2( 8, 8 )
+scale = Vector2( 0.25, 0.25 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -178,7 +190,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="5/StaticBody2D" index="0"]
 
-position = Vector2( 8, 8 )
+scale = Vector2( 2.90909, 2.90909 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
@@ -190,13 +202,15 @@ texture = ExtResource( 1 )
 centered = false
 region_enabled = true
 region_rect = Rect2( 0, 32, 16, 16 )
-_sections_unfolded = [ "Region" ]
+_sections_unfolded = [ "Region", "Transform" ]
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="StaticBody2D" type="StaticBody2D" parent="6" index="0"]
 
+position = Vector2( 8, 8 )
+scale = Vector2( 0.25, 0.25 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -207,7 +221,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="6/StaticBody2D" index="0"]
 
-position = Vector2( 8, 8 )
+scale = Vector2( 2.90909, 2.90909 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
@@ -219,13 +233,15 @@ texture = ExtResource( 1 )
 centered = false
 region_enabled = true
 region_rect = Rect2( 16, 32, 16, 16 )
-_sections_unfolded = [ "Region" ]
+_sections_unfolded = [ "Region", "Transform" ]
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="StaticBody2D" type="StaticBody2D" parent="7" index="0"]
 
+position = Vector2( 8, 8 )
+scale = Vector2( 0.25, 0.25 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -236,7 +252,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="7/StaticBody2D" index="0"]
 
-position = Vector2( 8, 8 )
+scale = Vector2( 2.90909, 2.90909 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
@@ -248,13 +264,15 @@ texture = ExtResource( 1 )
 centered = false
 region_enabled = true
 region_rect = Rect2( 32, 32, 16, 16 )
-_sections_unfolded = [ "Region" ]
+_sections_unfolded = [ "Region", "Transform" ]
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="StaticBody2D" type="StaticBody2D" parent="8" index="0"]
 
+position = Vector2( 8, 8 )
+scale = Vector2( 0.25, 0.25 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -265,7 +283,7 @@ bounce = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="8/StaticBody2D" index="0"]
 
-position = Vector2( 8, 8 )
+scale = Vector2( 2.90909, 2.90909 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
