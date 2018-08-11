@@ -1,11 +1,12 @@
 extends KinematicBody2D
 #constants
-const SPEED = 300
+const SPEED = 150
 const UP = Vector2(0,-1)
-const JUMP = -400
-export(int) var GRAVITY = 20
+const JUMP = -250
+export(int) var GRAVITY = 10
 const WALLJUMPPAR = 1.1
 const JUMPS = 2
+const LURPVAL = 0.7
 
 var motion = Vector2(0,0)
 var lastKey
@@ -63,3 +64,5 @@ func _physics_process(delta):
 	var motiontmp = move_and_slide(motion,UP)
 	if is_on_floor():
 		motion = motiontmp
+	if !is_on_wall():
+		motion.x = lerp(0,motion.x,LURPVAL)
