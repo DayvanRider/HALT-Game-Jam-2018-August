@@ -33,7 +33,7 @@ func is_collected():
 custom_solver_bias = 0.0
 extents = Vector2( 5, 10 )
 
-[node name="Gem" type="Node2D" index="0"]
+[node name="Gem" type="Node2D"]
 
 [node name="Area2D" type="Area2D" parent="." index="0"]
 
