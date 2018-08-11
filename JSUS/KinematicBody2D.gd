@@ -8,7 +8,7 @@ export (int) var  JUMP = -250
 export(int) var GRAVITY = 100
 const WALLJUMPPAR = 1.2
 const JUMPS = 10
-const LURPVAL = 0.9
+const LURPVAL = 0.7
 const GRACEFACTOR = 5
 #for protection against repeat walljump
 const JUMPTIME = 0.4
