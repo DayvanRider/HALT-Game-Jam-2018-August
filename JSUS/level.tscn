@@ -64,4 +64,193 @@ position = Vector2( 2.67029e-05, 5.72205e-06 )
 scale = Vector2( 3.2, 3.2 )
 shape = SubResource( 2 )
 
+[node name="StaticBody2D8" type="StaticBody2D" parent="." index="2"]
+
+position = Vector2( 32, 112 )
+scale = Vector2( 0.5, 0.5 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="StaticBody2D8" index="0"]
+
+modulate = Color( 0.00390625, 0.00384521, 0.00384521, 1 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D8" index="1"]
+
+position = Vector2( 2.67029e-05, 5.72205e-06 )
+scale = Vector2( 3.2, 3.2 )
+shape = SubResource( 2 )
+
+[node name="StaticBody2D9" type="StaticBody2D" parent="." index="3"]
+
+position = Vector2( 64, 112 )
+scale = Vector2( 0.5, 0.5 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="StaticBody2D9" index="0"]
+
+modulate = Color( 0.00390625, 0.00384521, 0.00384521, 1 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D9" index="1"]
+
+position = Vector2( 2.67029e-05, 5.72205e-06 )
+scale = Vector2( 3.2, 3.2 )
+shape = SubResource( 2 )
+
+[node name="StaticBody2D10" type="StaticBody2D" parent="." index="4"]
+
+position = Vector2( 96, 112 )
+scale = Vector2( 0.5, 0.5 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="StaticBody2D10" index="0"]
+
+modulate = Color( 0.00390625, 0.00384521, 0.00384521, 1 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D10" index="1"]
+
+position = Vector2( 2.67029e-05, 5.72205e-06 )
+scale = Vector2( 3.2, 3.2 )
+shape = SubResource( 2 )
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="." index="5"]
+
+position = Vector2( -32, 112 )
+scale = Vector2( 0.5, 0.5 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="StaticBody2D4" index="0"]
+
+modulate = Color( 0.00390625, 0.00384521, 0.00384521, 1 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4" index="1"]
+
+position = Vector2( 2.67029e-05, 5.72205e-06 )
+scale = Vector2( 3.2, 3.2 )
+shape = SubResource( 2 )
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="." index="6"]
+
+position = Vector2( -64, 112 )
+scale = Vector2( 0.5, 0.5 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="StaticBody2D5" index="0"]
+
+modulate = Color( 0.00390625, 0.00384521, 0.00384521, 1 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5" index="1"]
+
+position = Vector2( 2.67029e-05, 5.72205e-06 )
+scale = Vector2( 3.2, 3.2 )
+shape = SubResource( 2 )
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="." index="7"]
+
+position = Vector2( -96, 112 )
+scale = Vector2( 0.5, 0.5 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="StaticBody2D6" index="0"]
+
+modulate = Color( 0.00390625, 0.00384521, 0.00384521, 1 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D6" index="1"]
+
+position = Vector2( 2.67029e-05, 5.72205e-06 )
+scale = Vector2( 3.2, 3.2 )
+shape = SubResource( 2 )
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="." index="8"]
+
+position = Vector2( -128, 112 )
+scale = Vector2( 0.5, 0.5 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="StaticBody2D7" index="0"]
+
+modulate = Color( 0.00390625, 0.00384521, 0.00384521, 1 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D7" index="1"]
+
+position = Vector2( 2.67029e-05, 5.72205e-06 )
+scale = Vector2( 3.2, 3.2 )
+shape = SubResource( 2 )
+
 
