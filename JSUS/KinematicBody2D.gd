@@ -28,12 +28,13 @@ var lastKey
 var noJumps = 0
 #variable for grace Period
 var grace = 0
-var wallgrace = 0
+var wallgrace = WALLGRACEFACTOR+1
 #variable for timer
 var timernode = null
 #variable for allowing movement
 var left =  true
 var right = true
+var speedBoost
 
 
 
@@ -64,26 +65,24 @@ func _physics_process(delta):
 			motion.y = JUMP
 		
 	#if character is on wall
-	if (is_on_wall() && !is_on_floor()) || wallgrace <= WALLGRACEFACTOR:
+	if (is_on_wall() && !is_on_floor()) || wallgrace < WALLGRACEFACTOR:
 		if is_on_wall():
 			wallgrace = 0
 			if motion.y >0:
 				motion.y = motion.y * 0.5
 		else:
 			wallgrace += 1
-		#slow down gravity 
-		#TODO make modular
 
 		#make walljump by pressing up
 		if Input.is_action_just_pressed("ui_up"):
 			#determine wall by last keystroke
 			if (lastKey == 1 && wallgrace == 0) || (lastKey == 2 && wallgrace != 0):
 				motion.y = WALLJUMPPAR*JUMP
-				motion.x = -SPEED*1.5
+				motion.x = -SPEED*0.8
 				JumptimerRight()
 			if (lastKey == 2 && wallgrace == 0) || (lastKey == 1 && wallgrace != 0):
 				motion.y = WALLJUMPPAR*JUMP
-				motion.x = SPEED*1.5
+				motion.x = SPEED*0.8
 				JumptimerLeft()
 	
 	#only update motion if character is on the ground 
@@ -95,7 +94,7 @@ func _physics_process(delta):
 	else:
 		motion.y = motiontmp.y
 		grace += 1
-	if !is_on_wall():
+	if !is_on_wall() && left == true && right == true:
 		motion.x = lerp(0,motion.x,LURPVAL)
 		
 		
