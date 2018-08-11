@@ -87,6 +87,14 @@ func _physics_process(delta):
 		motion.x = lerp(0,motion.x,LURPVAL)
 		
 		
+func get_name():
+	return "Player"			#Check for the Gem if Object is Player
+	
+	
+	
+	
+		
+		
 func JumptimerLeft():
 	timernode = get_node("Timer")
 	timernode.set_wait_time(JUMPTIME)

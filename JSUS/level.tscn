@@ -3,7 +3,7 @@
 [ext_resource path="res://level.gd" type="Script" id=1]
 [ext_resource path="res://Gameplay/Playercharacter.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/Tiles/Tiles_fixed.tres" type="TileSet" id=3]
-[ext_resource path="res://assets/Andere/Gem(einzeln).png" type="Texture" id=4]
+[ext_resource path="res://Gameplay/Gem.tscn" type="PackedScene" id=4]
 
 [node name="World" type="Node2D"]
 
@@ -12,8 +12,8 @@ script = ExtResource( 1 )
 
 [node name="KinematicBody2D" parent="." index="0" instance=ExtResource( 2 )]
 
-position = Vector2( -160, 208 )
-GRAVITY = 10
+position = Vector2( -144, 192 )
+GRAVITY = 15
 
 [node name="TileMap" type="TileMap" parent="." index="1"]
 
@@ -40,11 +40,8 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Node" type="Node" parent="." index="2"]
+[node name="Gem" parent="." index="2" instance=ExtResource( 4 )]
 
-[node name="Sprite" type="Sprite" parent="Node" index="0"]
-
-position = Vector2( 544, 160 )
-texture = ExtResource( 4 )
+position = Vector2( 336, -64 )
 
 
