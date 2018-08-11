@@ -4,8 +4,11 @@ const SPEED = 300
 const UP = Vector2(0,-1)
 const JUMP = -500
 export(int) var GRAVITY = 20
+const WALLJUMPPAR = 1.25
 
 var motion = Vector2(0,0)
+var lastKey
+
 
 
 func _ready():
@@ -20,9 +23,13 @@ func _physics_process(delta):
 	#left and right movement
 	if Input.is_action_pressed("ui_right"):
 		motion.x = SPEED
+		#keep track of last keystroke
+		lastKey = 1
 	elif Input.is_action_pressed("ui_left"):
 		motion.x = -SPEED
-	else:
+		#keep track of last keystroke
+		lastKey = 2
+	elif is_on_floor():
 		motion.x = 0
 		
 	#Jump
@@ -30,23 +37,23 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("ui_up"):
 			motion.y = JUMP
 		
-	#Walljump
-	if is_on_wall():
-		
-		#reduce Gravity while on wall
-		if motion.y > 0:
-			motion.y -= GRAVITY/2
-		if Input.is_action_just_pressed("ui_right"):
-			motion.y = 3*JUMP
-			motion.x = SPEED
-		
-		
-	motion = move_and_slide(motion,UP)
+	#if character is on wall
+	if is_on_wall() && !is_on_floor():
+		#slow down gravity 
+		#TODO make modular
+		if motion.y >0:
+			motion.y -= (GRAVITY/4) * 3
+		#make walljump by pressing up
+		if Input.is_action_just_pressed("ui_up"):
+			#determine wall by last keystroke
+			if lastKey == 1:
+				motion.y = WALLJUMPPAR*JUMP
+				motion.x = -SPEED
+			if lastKey == 2:
+				motion.y = WALLJUMPPAR*JUMP
+				motion.x = SPEED
 	
-	
-	
-
-#func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass
+	#only update motion if character is on the ground 
+	var motiontmp = move_and_slide(motion,UP)
+	if is_on_floor():
+		motion = motiontmp
