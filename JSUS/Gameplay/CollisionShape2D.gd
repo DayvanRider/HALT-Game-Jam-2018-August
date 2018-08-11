@@ -3,19 +3,17 @@ extends CollisionShape2D
 var expandingTile = null
 var expandDir = null
 var expandAmount = null
-var originalShape = null
+var originalWidth = null
 
 func _ready():
 	expandingTile = get_node("../../")
 	expandDir = expandingTile.expandDir
+	originalWidth = shape.extents.x
 	expandAmount = expandingTile.expandAmount
-	originalShape = get_shape()
 
 func _process(delta):
 	updateCollisionShape()
 	
 func updateCollisionShape():
-	var size = originalShape.extents
-	print(get_position())
-	var newShape = originalShape
-	set_shape(newShape)
+	var size = originalWidth + expandingTile.currentExpansion() * expandAmount
+	shape.set_extents(Vector2(8, size))

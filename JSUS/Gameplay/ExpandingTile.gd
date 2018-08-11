@@ -3,7 +3,7 @@ extends Node2D
 # Axis normal describing the direction of expansion
 export(Vector2) var expandDir = Vector2(0,-1)
 # Max size the tile reaches
-export(int) var expandAmount = 64
+export(int) var expandAmount = 32
 # Time after level start where the tile begins expanding
 export(float) var startTime = 1
 # Time after level start where the tile reaches max size
