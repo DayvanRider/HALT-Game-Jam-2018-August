@@ -6,6 +6,8 @@ const JUMP = -500
 export(int) var GRAVITY = 20
 
 var motion = Vector2(0,0)
+var wallFlag = 0
+
 
 
 func _ready():
@@ -29,24 +31,36 @@ func _physics_process(delta):
 	if is_on_floor():
 		if Input.is_action_just_pressed("ui_up"):
 			motion.y = JUMP
+		#set flag for walljump to false
+		wallFlag = 0
 		
-	#Walljump
-	if is_on_wall():
+	#Set Flag if character is on wall
+	if is_on_wall() && !is_on_floor():
+		if motion.x < 0:
+			wallFlag = 1
+		if motion.x > 0:
+			wallFlag = 2
 		
+			
+	
+		
+
+	
+	if wallFlag > 0:
+		#TODO find out wich wall we are at
 		#reduce Gravity while on wall
 		if motion.y > 0:
 			motion.y -= GRAVITY/2
-		if Input.is_action_just_pressed("ui_right"):
-			motion.y = 3*JUMP
-			motion.x = SPEED
+		if wallFlag == 1:
+			if Input.is_action_just_pressed("ui_right"):
+				motion.y = 1.5*JUMP
+				motion.x = SPEED
+				wallFlag = 0
+		if wallFlag == 2:
+			if Input.is_action_just_pressed("ui_left"):
+				motion.y = 1.5*JUMP
+				motion.x = -SPEED
+				wallFlag = 0
 		
 		
 	motion = move_and_slide(motion,UP)
-	
-	
-	
-
-#func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass
