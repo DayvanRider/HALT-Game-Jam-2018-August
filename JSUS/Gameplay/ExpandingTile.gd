@@ -52,7 +52,7 @@ func onStartTimer():
 	expansionTimer.start()
 
 func initAdditionalWalls():
-	tileExtent = get_node("StaticBody2D2/CollisionShape2D").get_shape().get_extents() * 2
+	tileExtent = get_node("StaticBody2D/CollisionShape2D").get_shape().get_extents() * 2
 #	additionalWalls.append
 
 func _process(delta):
