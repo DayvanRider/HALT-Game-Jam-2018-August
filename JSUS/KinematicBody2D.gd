@@ -1,9 +1,9 @@
 extends KinematicBody2D
 #constants
-const SPEED = 100
-const GRAVITY = 5
+const SPEED = 300
 const UP = Vector2(0,-1)
-const JUMP = -100
+const JUMP = -500
+export(int) var GRAVITY = 20
 
 var motion = Vector2(0,0)
 
@@ -14,7 +14,10 @@ func _ready():
 	pass
 	
 func _physics_process(delta):
+	#Add gravity
 	motion.y += GRAVITY
+	
+	#left and right movement
 	if Input.is_action_pressed("ui_right"):
 		motion.x = SPEED
 	elif Input.is_action_pressed("ui_left"):
@@ -22,11 +25,24 @@ func _physics_process(delta):
 	else:
 		motion.x = 0
 		
+	#Jump
 	if is_on_floor():
 		if Input.is_action_just_pressed("ui_up"):
 			motion.y = JUMP
 		
+	#Walljump
+	if is_on_wall():
+		
+		#reduce Gravity while on wall
+		if motion.y > 0:
+			motion.y -= GRAVITY/2
+		if Input.is_action_just_pressed("ui_right"):
+			motion.y = 3*JUMP
+			motion.x = SPEED
+		
+		
 	motion = move_and_slide(motion,UP)
+	
 	
 	
 
