@@ -20,6 +20,10 @@ export (int) var WALLGRACEFACTOR = 10
 #for protection against repeat walljump
 export (float) var JUMPTIME = 0.4
 
+export (int) var MAXWALLJUMPBOOST = 280
+export (int) var WALLJUMPBOOSTITERATOR = 7
+
+
 
 
 
@@ -37,6 +41,7 @@ var timernode = null
 #variable for allowing movement
 var left =  true
 var right = true
+var walljumpboost = 0
 
 
 
@@ -49,6 +54,7 @@ func _physics_process(delta):
 	#Add gravity
 	motion.y += GRAVITY
 	
+	
 	#left and right movement
 	if Input.is_action_pressed("ui_right") && right == true:
 		motion.x = SPEED
@@ -60,6 +66,10 @@ func _physics_process(delta):
 		lastKey = 2
 	elif is_on_floor():
 		motion.x = 0
+		
+		
+
+			
 		
 	#Jump
 	if is_on_floor() || grace < GRACEFACTOR:
@@ -74,20 +84,33 @@ func _physics_process(delta):
 				motion.y = motion.y * 0.5
 		else:
 			wallgrace += 1
-		#slow down gravity 
-		#TODO make modular
 
 		#make walljump by pressing up
 		if Input.is_action_just_pressed("ui_up"):
 			#determine wall by last keystroke
 			if (lastKey == 1 && wallgrace == 0) || (lastKey == 2 && wallgrace != 0):
 				motion.y = WALLJUMPPAR*JUMP
-				motion.x = -SPEED*1.5
-				JumptimerRight()
+				walljumpboost = -MAXWALLJUMPBOOST
+				motion.x = 1
+				#JumptimerRight()
 			if (lastKey == 2 && wallgrace == 0) || (lastKey == 1 && wallgrace != 0):
 				motion.y = WALLJUMPPAR*JUMP
-				motion.x = SPEED*1.5
-				JumptimerLeft()
+				walljumpboost = MAXWALLJUMPBOOST
+				motion.x = -1
+				#JumptimerLeft()
+				
+	if abs(walljumpboost) > WALLJUMPBOOSTITERATOR:
+			
+		if walljumpboost > 0:
+			if motion.x <= 0:
+				motion.x += walljumpboost
+				
+			walljumpboost -= WALLJUMPBOOSTITERATOR
+		if walljumpboost < 0:
+			if motion.x >= 0:
+				motion.x += walljumpboost
+				
+			walljumpboost += WALLJUMPBOOSTITERATOR
 	
 	#only update motion if character is on the ground 
 	var motiontmp = move_and_slide(motion,UP)
