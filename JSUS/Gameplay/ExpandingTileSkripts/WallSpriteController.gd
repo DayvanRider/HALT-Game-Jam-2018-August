@@ -12,7 +12,7 @@ func _ready():
 	# default texture
 	var image = Image.new()
 	image.load("res://assets/Tiles/Tiles.png")
-	texture.create_from_image(image)
+	texture.create_from_image(image, 0)
 	# create necessary amount of sprites
 	var spriteNumber = ceil(expandingTile.expandAmount / width)
 	for i in range(spriteNumber):

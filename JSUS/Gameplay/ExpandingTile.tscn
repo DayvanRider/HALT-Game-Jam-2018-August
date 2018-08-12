@@ -10,7 +10,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 8, 8 )
 
-[node name="Expanding Tile" type="Node2D"]
+[node name="Expanding Tile" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 expansionAxis = "Up"
