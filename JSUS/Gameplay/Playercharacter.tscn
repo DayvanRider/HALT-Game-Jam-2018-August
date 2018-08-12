@@ -90,7 +90,7 @@ _sections_unfolded = [ "Playback Options" ]
 scale = Vector2( 4, 4 )
 frames = SubResource( 2 )
 animation = "Idle"
-frame = 2
+frame = 6
 playing = true
 _sections_unfolded = [ "Offset", "Transform" ]
 

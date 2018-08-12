@@ -42,6 +42,7 @@ var walljumpboost = 0
 
 
 func _ready():
+	$Sprite.play("Idle")
 	pass
 	
 	
@@ -95,6 +96,7 @@ func basicMovement():
 	elif is_on_floor():
 		motion.x = 0
 		walljumpboost = 0
+		$Sprite.play("Idle")
 		
 		
 func jumping():
