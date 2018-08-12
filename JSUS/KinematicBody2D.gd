@@ -42,6 +42,7 @@ var timernode = null
 var left =  true
 var right = true
 var walljumpboost = 0
+var falling = false
 
 
 
@@ -66,6 +67,7 @@ func _physics_process(delta):
 		lastKey = 2
 	elif is_on_floor():
 		motion.x = 0
+		walljumpboost = 0
 		
 		
 
