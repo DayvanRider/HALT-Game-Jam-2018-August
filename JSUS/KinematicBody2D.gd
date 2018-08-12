@@ -154,7 +154,8 @@ func moveAndUpdate():
 		#reset jumpgrace if on floor
 		grace = 0
 	else:
-		$Sprite.play("Jump")
+		if !is_on_wall():
+			$Sprite.play("Jump")
 		motion.y = motiontmp.y
 		#otherwise increment it
 		grace += 1
