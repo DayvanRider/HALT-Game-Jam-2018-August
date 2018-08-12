@@ -8,7 +8,7 @@ func _ready():
 	player = AudioStreamPlayer.new()
 	add_child(player)
 	player.set_stream(stream)
-#	player.set_volume_db(0)
+	player.set_volume_db(-12)
 	player.play()
 	pass
 
