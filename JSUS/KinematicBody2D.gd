@@ -117,6 +117,7 @@ func wallJumpTracking():
 				walljumpboost = MAXWALLJUMPBOOST
 				motion.x = -1
 				#JumptimerLeft()
+			wallgrace = WALLGRACEFACTOR+1
 				
 func climbProtection():
 	if abs(walljumpboost) > WALLJUMPBOOSTITERATOR:
