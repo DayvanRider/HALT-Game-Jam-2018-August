@@ -8,7 +8,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 28.1672, 31.8726 )
 
-[node name="KinematicBody2D" type="KinematicBody2D"]
+[node name="KinematicBody2D" type="KinematicBody2D" index="0"]
 
 position = Vector2( -24, 24 )
 scale = Vector2( 0.25, 0.25 )
@@ -26,24 +26,33 @@ GRACEFACTOR = 5
 WALLGRACEFACTOR = 10
 JUMPTIME = 0.4
 
-[node name="Sprite" type="Sprite" parent="." index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
-position = Vector2( 1.90735e-006, 1.90735e-006 )
-scale = Vector2( 4, 4 )
-texture = ExtResource( 2 )
-_sections_unfolded = [ "Offset" ]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
-
-position = Vector2( 3.33139, -7.62939e-006 )
+position = Vector2( 3.33139, -7.62939e-06 )
 scale = Vector2( 0.728571, 1 )
 shape = SubResource( 1 )
 
-[node name="Timer" type="Timer" parent="." index="2"]
+[node name="Timer" type="Timer" parent="." index="1"]
 
 process_mode = 1
 wait_time = 0.92
 one_shot = false
 autostart = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+blend_times = [  ]
+_sections_unfolded = [ "Playback Options" ]
+
+[node name="Sprite" type="Sprite" parent="." index="3"]
+
+scale = Vector2( 4, 4 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Offset" ]
 
 
