@@ -7,9 +7,9 @@ extends Node2D
 export(float) var RestingTime = 1				#Time the spike stays hidden 
 export(float) var ActiveTime	= 2				#Time the spike stays active
 export(bool) var Static = false				#If spikes are static or moving
-export(float) var Speed = 4						#speed of movement phase
-export(String) var Direction = "left"			#Movement direction of spikes
-								#possible: up, down, left, right
+export(float) var Speed = 1						#speed of movement phase
+export(String, "up", "down", "left", "right") var Direction = "up"			#Movement direction of spikes
+
 
 
 var MovementPhase				#to keep track of movement phase

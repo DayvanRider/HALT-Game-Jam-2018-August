@@ -52,6 +52,6 @@ RestingTime = 1
 ActiveTime = 2
 Static = false
 Speed = 4
-Direction = "left"
+Direction = "up"
 
 

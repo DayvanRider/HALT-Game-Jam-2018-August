@@ -16,8 +16,8 @@ _sections_unfolded = [ "Pause", "Z Index" ]
 RestingTime = 1
 ActiveTime = 2
 Static = false
-Speed = 4
-Direction = "left"
+Speed = 1
+Direction = "up"
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
