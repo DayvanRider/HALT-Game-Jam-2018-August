@@ -47,8 +47,8 @@ func initSprites():
 	
 	if wallTexture != null:
 		var wallSpriteController = get_node("WallSpriteController")
-		wallSpriteController.texture = tileTexture
-		wallSpriteController.textureRegion = tileRegion
+		wallSpriteController.setTexture(wallTexture)
+		wallSpriteController.setTextureRegion(wallRegion)
 	
 
 func initExpandDir():
