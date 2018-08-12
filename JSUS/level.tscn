@@ -13,13 +13,9 @@ script = ExtResource( 1 )
 [node name="KinematicBody2D" parent="." index="0" instance=ExtResource( 2 )]
 
 position = Vector2( -144, 192 )
-SPEED = 150
 GRAVITY = 15
-WALLJUMPPAR = 1.2
-LURPVAL = 0.7
-GRACEFACTOR = 5
-WALLGRACEFACTOR = 10
-JUMPTIME = 0.4
+MAXWALLJUMPBOOST = 280
+WALLJUMPBOOSTITERATOR = 7
 
 [node name="TileMap" type="TileMap" parent="." index="1"]
 
