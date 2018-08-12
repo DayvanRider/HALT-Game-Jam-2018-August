@@ -1,4 +1,4 @@
-extends Node2D
+extends Node
 
 const width = 16
 var texture = ImageTexture.new() setget setTexture
@@ -7,9 +7,11 @@ var capTextureRegion = Rect2(width, width, width, width) setget setCapTextureReg
 var sprites = []
 
 var expandingTile = null
+var basePosition = null
 
 func _ready():
 	expandingTile = get_parent()
+	basePosition = expandingTile.get_global_position()
 	# default texture
 	var image = Image.new()
 	image.load("res://assets/Tiles/Tiles.png")
@@ -40,6 +42,8 @@ func createSprite():
 	newSprite.set_region(true)
 	newSprite.set_texture(texture)
 	newSprite.set_region_rect(textureRegion)
+	# move away from screen
+	newSprite.set_position(Vector2(-100,-100)) 
 	add_child(newSprite)
 	return newSprite
 
@@ -52,5 +56,5 @@ func moveSprite(sprite, index):
 	if expandingTile.currentExpansionDistance() - index * width > 0:
 		var expDist = expandingTile.currentExpansionDistance()
 		var distAdjustedByIdx = expDist - index * width
-		var newPos = distAdjustedByIdx * expandingTile.expandDir
+		var newPos = basePosition + distAdjustedByIdx * expandingTile.expandDir
 		sprite.set_position(newPos)
