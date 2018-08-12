@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/4.wav-085d29542b164963a7483cdf3cd260bf.sample"
+
+[deps]
+
+source_file="res://assets/Audio/Gem/4.wav"
+dest_files=[ "res://.import/4.wav-085d29542b164963a7483cdf3cd260bf.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

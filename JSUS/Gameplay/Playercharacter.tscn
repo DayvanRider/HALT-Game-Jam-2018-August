@@ -1,17 +1,37 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://KinematicBody2D.gd" type="Script" id=1]
-[ext_resource path="res://assets/JesusJones/JJIdle/JJIdle2.png" type="Texture" id=2]
-[ext_resource path="res://assets/JesusJones/JJSlide.png" type="Texture" id=3]
-[ext_resource path="res://assets/JesusJones/JJIdle/JJIdle0.png" type="Texture" id=4]
-[ext_resource path="res://assets/JesusJones/JJIdle/JJIdle1.png" type="Texture" id=5]
-[ext_resource path="res://assets/JesusJones/JJIdle/JJIdle3.png" type="Texture" id=6]
-[ext_resource path="res://assets/JesusJones/JJRun/JJRun(1).png" type="Texture" id=7]
-[ext_resource path="res://assets/JesusJones/JJRun/JJRun(2).png" type="Texture" id=8]
-[ext_resource path="res://assets/JesusJones/JJRun/JJRun(3).png" type="Texture" id=9]
-[ext_resource path="res://assets/JesusJones/JJRun/JJRun(4).png" type="Texture" id=10]
-[ext_resource path="res://assets/JesusJones/JJRun/JJRun(5).png" type="Texture" id=11]
-[ext_resource path="res://assets/JesusJones/JJRun/JJRun(6).png" type="Texture" id=12]
+[ext_resource path="res://assets/JesusJones/JJIdle/JJIdle0.png" type="Texture" id=2]
+[ext_resource path="res://assets/JesusJones/JJIdle/JJIdle1.png" type="Texture" id=3]
+[ext_resource path="res://assets/JesusJones/JJIdle/JJIdle2.png" type="Texture" id=4]
+[ext_resource path="res://assets/JesusJones/JJIdle/JJIdle3.png" type="Texture" id=5]
+[ext_resource path="res://assets/JesusJones/JJRun/JJRun(1).png" type="Texture" id=6]
+[ext_resource path="res://assets/JesusJones/JJRun/JJRun(2).png" type="Texture" id=7]
+[ext_resource path="res://assets/JesusJones/JJRun/JJRun(3).png" type="Texture" id=8]
+[ext_resource path="res://assets/JesusJones/JJRun/JJRun(4).png" type="Texture" id=9]
+[ext_resource path="res://assets/JesusJones/JJRun/JJRun(5).png" type="Texture" id=10]
+[ext_resource path="res://assets/JesusJones/JJRun/JJRun(6).png" type="Texture" id=11]
+[ext_resource path="res://assets/JesusJones/JJSlide.png" type="Texture" id=12]
+[ext_resource path="res://assets/Audio/Death/1.wav" type="AudioStream" id=13]
+[ext_resource path="res://assets/Audio/Death/2.wav" type="AudioStream" id=14]
+[ext_resource path="res://assets/Audio/Death/3.wav" type="AudioStream" id=15]
+[ext_resource path="res://assets/Audio/Death/4.wav" type="AudioStream" id=16]
+[ext_resource path="res://assets/Audio/Death/5.wav" type="AudioStream" id=17]
+[ext_resource path="res://assets/Audio/Death/6.wav" type="AudioStream" id=18]
+[ext_resource path="res://assets/Audio/Death/7.wav" type="AudioStream" id=19]
+[ext_resource path="res://assets/Audio/Death/8.wav" type="AudioStream" id=20]
+[ext_resource path="res://assets/Audio/Death/9.wav" type="AudioStream" id=21]
+[ext_resource path="res://assets/Audio/Death/10.wav" type="AudioStream" id=22]
+[ext_resource path="res://assets/Audio/Jump/1.wav" type="AudioStream" id=23]
+[ext_resource path="res://assets/Audio/Jump/2.wav" type="AudioStream" id=24]
+[ext_resource path="res://assets/Audio/Jump/3.wav" type="AudioStream" id=25]
+[ext_resource path="res://assets/Audio/Jump/4.wav" type="AudioStream" id=26]
+[ext_resource path="res://assets/Audio/Jump/5.wav" type="AudioStream" id=27]
+[ext_resource path="res://assets/Audio/Jump/6.wav" type="AudioStream" id=28]
+[ext_resource path="res://assets/Audio/Jump/7.wav" type="AudioStream" id=29]
+[ext_resource path="res://assets/Audio/Jump/8.wav" type="AudioStream" id=30]
+[ext_resource path="res://assets/Audio/Jump/9.wav" type="AudioStream" id=31]
+[ext_resource path="res://assets/Audio/Jump/10.wav" type="AudioStream" id=32]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -21,25 +41,25 @@ extents = Vector2( 28.1672, 33.2777 )
 [sub_resource type="SpriteFrames" id=2]
 
 animations = [ {
-"frames": [ ExtResource( 2 ) ],
-"loop": true,
-"name": "Jump",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 3 ) ],
-"loop": true,
-"name": "WallSlide",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 5 ), ExtResource( 5 ), ExtResource( 2 ), ExtResource( 6 ), ExtResource( 6 ), ExtResource( 6 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 3 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 5 ), ExtResource( 5 ) ],
 "loop": true,
 "name": "Idle",
 "speed": 2.0
 }, {
-"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ) ],
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
 "loop": true,
 "name": "Run",
 "speed": 17.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "Jump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ) ],
+"loop": true,
+"name": "WallSlide",
+"speed": 5.0
 } ]
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
@@ -63,7 +83,7 @@ WALLJUMPBOOSTITERATOR = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
-position = Vector2( 0, -8e-06 )
+position = Vector2( 0, -8e-006 )
 scale = Vector2( 0.728571, 1 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
@@ -93,5 +113,192 @@ animation = "Idle"
 frame = 6
 playing = true
 _sections_unfolded = [ "Offset", "Transform" ]
+
+[node name="DeathSounds" type="Node" parent="." index="4"]
+
+editor/display_folded = true
+
+[node name="DeathSound1" type="AudioStreamPlayer" parent="DeathSounds" index="0"]
+
+stream = ExtResource( 13 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="DeathSound2" type="AudioStreamPlayer" parent="DeathSounds" index="1"]
+
+stream = ExtResource( 14 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="DeathSound3" type="AudioStreamPlayer" parent="DeathSounds" index="2"]
+
+stream = ExtResource( 15 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="DeathSound4" type="AudioStreamPlayer" parent="DeathSounds" index="3"]
+
+stream = ExtResource( 16 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="DeathSound5" type="AudioStreamPlayer" parent="DeathSounds" index="4"]
+
+stream = ExtResource( 17 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="DeathSound6" type="AudioStreamPlayer" parent="DeathSounds" index="5"]
+
+stream = ExtResource( 18 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="DeathSound7" type="AudioStreamPlayer" parent="DeathSounds" index="6"]
+
+stream = ExtResource( 19 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="DeathSound8" type="AudioStreamPlayer" parent="DeathSounds" index="7"]
+
+stream = ExtResource( 20 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="DeathSound9" type="AudioStreamPlayer" parent="DeathSounds" index="8"]
+
+stream = ExtResource( 21 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="DeathSound10" type="AudioStreamPlayer" parent="DeathSounds" index="9"]
+
+stream = ExtResource( 22 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+_sections_unfolded = [ "Pause" ]
+
+[node name="JumpSounds" type="Node" parent="." index="5"]
+
+[node name="JumpSound1" type="AudioStreamPlayer" parent="JumpSounds" index="0"]
+
+stream = ExtResource( 23 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="JumpSound2" type="AudioStreamPlayer" parent="JumpSounds" index="1"]
+
+stream = ExtResource( 24 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="JumpSound3" type="AudioStreamPlayer" parent="JumpSounds" index="2"]
+
+stream = ExtResource( 25 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="JumpSound4" type="AudioStreamPlayer" parent="JumpSounds" index="3"]
+
+stream = ExtResource( 26 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="JumpSound5" type="AudioStreamPlayer" parent="JumpSounds" index="4"]
+
+stream = ExtResource( 27 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="JumpSound6" type="AudioStreamPlayer" parent="JumpSounds" index="5"]
+
+stream = ExtResource( 28 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="JumpSound7" type="AudioStreamPlayer" parent="JumpSounds" index="6"]
+
+stream = ExtResource( 29 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="JumpSound8" type="AudioStreamPlayer" parent="JumpSounds" index="7"]
+
+stream = ExtResource( 30 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="JumpSound9" type="AudioStreamPlayer" parent="JumpSounds" index="8"]
+
+stream = ExtResource( 31 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
+
+[node name="JumpSound10" type="AudioStreamPlayer" parent="JumpSounds" index="9"]
+
+stream = ExtResource( 32 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
 
 
