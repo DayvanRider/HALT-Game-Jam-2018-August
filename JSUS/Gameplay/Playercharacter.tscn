@@ -42,7 +42,7 @@ animations = [ {
 "speed": 17.0
 } ]
 
-[node name="KinematicBody2D" type="KinematicBody2D" index="0"]
+[node name="KinematicBody2D" type="KinematicBody2D"]
 
 scale = Vector2( 0.25, 0.25 )
 input_pickable = false

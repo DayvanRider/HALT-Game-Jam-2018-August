@@ -19,7 +19,7 @@ func _physics_process(delta):
 		var touchingPlayer = false
 		for b in bodies:
 			if b.get_name() == \"Player\":
-				get_node(\"../Sprite\").set_visible(false) 
+				get_parent().set_visible(false) 
 				Collected = true
 
 
@@ -33,14 +33,14 @@ func is_collected():
 custom_solver_bias = 0.0
 extents = Vector2( 5, 10 )
 
-[node name="Gem" type="Node" index="0"]
-
-[node name="Sprite" type="Sprite" parent="." index="0"]
+[node name="Gem" type="Sprite"]
 
 texture = ExtResource( 1 )
-_sections_unfolded = [ "Visibility" ]
+__meta__ = {
+"_edit_group_": true
+}
 
-[node name="Area2D" type="Area2D" parent="." index="1"]
+[node name="Area2D" type="Area2D" parent="." index="0"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
