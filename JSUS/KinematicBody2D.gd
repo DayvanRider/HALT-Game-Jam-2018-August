@@ -48,9 +48,31 @@ func _ready():
 func _physics_process(delta):
 	#Add gravity
 	motion.y += GRAVITY
+	#left and right and down movement tracking
+	basicMovement()
+
+	#Jump tracking
+	jumping()
+
+		
+	#walljumptracking
+	wallJumpTracking()
+	#make walljumps non climbeable
+	climbProtection()
+	
+	#call move and slide and update motion and grace values
+	#also add lurp
+	moveAndUpdate()
+
 	
 	
-	#left and right movement
+
+		
+		
+func get_name():
+	return "Player"			#Check for the Gem if Object is Player
+	
+func basicMovement():
 	if Input.is_action_pressed("ui_right"):
 		motion.x = SPEED
 		$Sprite.flip_h = true
@@ -68,15 +90,12 @@ func _physics_process(delta):
 		walljumpboost = 0
 		
 		
-
-			
-		
-	#Jump
+func jumping():
 	if is_on_floor() || grace < GRACEFACTOR:
 		if Input.is_action_just_pressed("ui_up"):
 			motion.y = JUMP
-		
-	#if character is on wall
+	
+func wallJumpTracking():
 	if (is_on_wall() && !is_on_floor()) || wallgrace <= WALLGRACEFACTOR:
 		if is_on_wall():
 			wallgrace = 0
@@ -99,6 +118,7 @@ func _physics_process(delta):
 				motion.x = -1
 				#JumptimerLeft()
 				
+func climbProtection():
 	if abs(walljumpboost) > WALLJUMPBOOSTITERATOR:
 			
 		if walljumpboost > 0:
@@ -111,23 +131,16 @@ func _physics_process(delta):
 				motion.x += walljumpboost
 				
 			walljumpboost += WALLJUMPBOOSTITERATOR
-	
+			
+			
+func moveAndUpdate():
 	#only update motion if character is on the ground 
 	var motiontmp = move_and_slide(motion,UP)
 	if is_on_floor():
 		motion = motiontmp
 		grace = 0
-	#graze period
 	else:
 		motion.y = motiontmp.y
 		grace += 1
 	if !is_on_wall():
 		motion.x = lerp(0,motion.x,LURPVAL)
-		
-		
-func get_name():
-	return "Player"			#Check for the Gem if Object is Player
-		
-		
-	
-
