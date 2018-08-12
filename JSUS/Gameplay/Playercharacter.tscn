@@ -1,6 +1,6 @@
 [gd_scene load_steps=35 format=2]
 
-[ext_resource path="res://KinematicBody2D.gd" type="Script" id=1]
+[ext_resource path="res://Gameplay/PlayerScripts/KinematicBody2D.gd" type="Script" id=1]
 [ext_resource path="res://assets/JesusJones/JJIdle/JJIdle0.png" type="Texture" id=2]
 [ext_resource path="res://assets/JesusJones/JJIdle/JJIdle1.png" type="Texture" id=3]
 [ext_resource path="res://assets/JesusJones/JJIdle/JJIdle2.png" type="Texture" id=4]
@@ -62,7 +62,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="KinematicBody2D" type="KinematicBody2D" index="0"]
+[node name="KinematicBody2D" type="KinematicBody2D"]
 
 scale = Vector2( 0.25, 0.25 )
 input_pickable = false
@@ -84,7 +84,7 @@ SLIDEFACTOR = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
-position = Vector2( 0, -8e-006 )
+position = Vector2( 0, -8e-06 )
 scale = Vector2( 0.728571, 1 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
@@ -111,7 +111,7 @@ _sections_unfolded = [ "Playback Options" ]
 scale = Vector2( 4, 4 )
 frames = SubResource( 2 )
 animation = "Idle"
-frame = 4
+frame = 5
 playing = true
 _sections_unfolded = [ "Offset", "Transform" ]
 
@@ -211,6 +211,8 @@ bus = "Master"
 _sections_unfolded = [ "Pause" ]
 
 [node name="JumpSounds" type="Node" parent="." index="5"]
+
+editor/display_folded = true
 
 [node name="JumpSound1" type="AudioStreamPlayer" parent="JumpSounds" index="0"]
 
