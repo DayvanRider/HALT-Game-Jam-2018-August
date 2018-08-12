@@ -26,6 +26,7 @@ var RestPosition = Vector2(0,0)
 
 
 func _ready():
+	set_draw_behind_parent(true) 
 	OriginalPosition = get_global_position()
 	match Direction:			#set direction of tile movement
 		"up":			#Movement of moving out:
@@ -69,14 +70,14 @@ func _physics_process(delta):
 	
 	match MovementPhase:
 			0:			#rest Active
-				print("Resting active")
+				#print("Resting active")
 				set_global_position(OriginalPosition)
 				StateTime = StateTime + delta
 				if StateTime > ActiveTime:
 					MovementPhase += 1
 
 			1:			#movement in
-				print("Moving in")
+				#print("Moving in")
 				NextFramePosition = get_global_position() + Movement
 				set_global_position(NextFramePosition)
 				StateTime = 0
@@ -84,14 +85,14 @@ func _physics_process(delta):
 					MovementPhase += 1
 
 			2:			#rest hidden
-				print("Resting hidden")
+				#print("Resting hidden")
 				set_global_position(RestPosition)
 				StateTime = StateTime + delta
 				if StateTime > RestingTime:
 					MovementPhase += 1
 
 			3:			#movement out
-				print("Moving out")
+				#print("Moving out")
 				NextFramePosition = get_global_position() - Movement
 				set_global_position(NextFramePosition)
 				StateTime = 0

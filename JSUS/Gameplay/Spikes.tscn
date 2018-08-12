@@ -1,18 +1,20 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Gameplay/Spikes.gd" type="Script" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://assets/Tiles/Spikes.png" type="Texture" id=2]
 [ext_resource path="res://Gameplay/Area2D.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
+extents = Vector2( 10.1827, 10 )
 
 [node name="Spikes" type="Node2D" index="0"]
 
+position = Vector2( 8, 8 )
+scale = Vector2( 0.25, 0.25 )
 script = ExtResource( 1 )
-_sections_unfolded = [ "Pause", "Z Index" ]
+_sections_unfolded = [ "Pause", "Transform", "Z Index" ]
 RestingTime = 1
 ActiveTime = 2
 Static = false
@@ -21,12 +23,9 @@ Direction = "up"
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
-scale = Vector2( 0.5, 0.5 )
+scale = Vector2( 4, 4 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
-__meta__ = {
-"_edit_group_": true
-}
 
 [node name="Area2D" type="Area2D" parent="." index="1"]
 
@@ -42,11 +41,8 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" index="0"]
 
-position = Vector2( 9.53674e-007, 9.53674e-007 )
-scale = Vector2( 1.23077, 1.23077 )
+scale = Vector2( 3.04813, 3.15385 )
 shape = SubResource( 1 )
-__meta__ = {
-"_edit_group_": true
-}
+_sections_unfolded = [ "Transform" ]
 
 
