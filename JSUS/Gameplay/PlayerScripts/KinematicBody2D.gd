@@ -21,7 +21,7 @@ export (int) var WALLGRACEFACTOR = 10
 export (int) var MAXWALLJUMPBOOST = 280
 #will be subtracted from the walljumpboost each frame
 export (int) var WALLJUMPBOOSTITERATOR = 7
-
+export (int) var SLIDEFACTOR = 10
 
 
 
@@ -36,12 +36,14 @@ var noJumps = 0
 var grace = 0
 var wallgrace = 0
 var walljumpboost = 0
+var falling = false
 
 
 
 
 
 func _ready():
+	$Sprite.play("Idle")
 	pass
 	
 	
@@ -53,10 +55,11 @@ func _physics_process(delta):
 
 	#Jump tracking
 	jumping()
-
+		
 		
 	#walljumptracking
 	wallJumpTracking()
+		
 	#make walljumps non climbeable
 	climbProtection()
 	
@@ -76,40 +79,55 @@ func basicMovement():
 	if Input.is_action_pressed("ui_right"):
 		motion.x = SPEED
 		$Sprite.flip_h = true
+		$Sprite.play("Run")
 		#keep track of last keystroke
 		if !is_on_wall():
 			lastKey = 1
 	elif Input.is_action_pressed("ui_left"):
 		motion.x = -SPEED
 		$Sprite.flip_h = false
+		$Sprite.play("Run")
 		#keep track of last keystroke
 		if !is_on_wall():
 			lastKey = 2
-	elif Input.is_action_pressed("ui_down") && is_on_wall():
-		motion.x = 0
+
 	elif is_on_floor():
 		motion.x = 0
 		walljumpboost = 0
+		$Sprite.play("Idle")
+		
 		
 		
 func jumping():
 	if is_on_floor() || grace < GRACEFACTOR:
 		if Input.is_action_just_pressed("ui_up"):
+			jumpSound()
 			motion.y = JUMP
 	
 func wallJumpTracking():
+	if Input.is_action_pressed("ui_down"):
+		falling = true
 	if (is_on_wall() && !is_on_floor()) || wallgrace <= WALLGRACEFACTOR:
+	
 		if is_on_wall():
+			
 			if motion.y < 0:
-				motion.y = 0
+				
+				motion.y += SLIDEFACTOR
 			wallgrace = 0
-			if motion.y >0 && (Input.is_action_pressed("ui_right") || Input.is_action_pressed("ui_left")):
+			
+
+			if falling == true:
+				pass
+			elif motion.y >0 && (Input.is_action_pressed("ui_right") || Input.is_action_pressed("ui_left")):
+				$Sprite.play("WallSlide")
 				motion.y =  motion.y*0.5
 		else:
 			wallgrace += 1
 
 		#make walljump by pressing up
 		if Input.is_action_just_pressed("ui_up"):
+			jumpSound()
 			#determine wall by last keystroke
 			if (lastKey == 1 && wallgrace == 0) || (lastKey == 2 && wallgrace != 0):
 				motion.y = WALLJUMPPAR*JUMP
@@ -142,13 +160,37 @@ func moveAndUpdate():
 	#only update motion if character is on the ground 
 	var motiontmp = move_and_slide(motion,UP)
 	if is_on_floor():
+		falling = false
 		motion = motiontmp
+		#reset jumpgrace if on floor
+		wallgrace = WALLGRACEFACTOR+1
 		grace = 0
 	else:
+		if !is_on_wall():
+			$Sprite.play("Jump")
 		motion.y = motiontmp.y
+		#otherwise increment it
 		grace += 1
 	if !is_on_wall():
 		motion.x = lerp(0,motion.x,LURPVAL)
 
 func kill():
+	deathSound()
 	get_tree().reload_current_scene()
+	
+	
+func jumpSound():
+	var random = String(randi()%10+1)
+	var path = "JumpSounds/JumpSound" + random
+	get_node(path).set_volume_db(-12.0) 
+	#print("Play sound: ", random)
+	get_node(path).play(0.000001)
+	
+func deathSound():
+	var random = String(randi()%10+1)
+	var path = "DeathSounds/DeathSound" + random
+	get_node(path).set_volume_db(-12.0) 
+	#print("Play sound: ", random)
+	get_node(path).play(0.000001)
+	
+	

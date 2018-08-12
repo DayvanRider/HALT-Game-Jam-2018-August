@@ -1,0 +1,141 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://assets/Andere/Gem(einzeln).png" type="Texture" id=1]
+[ext_resource path="res://assets/Audio/Gem/1.wav" type="AudioStream" id=2]
+[ext_resource path="res://assets/Audio/Gem/2.wav" type="AudioStream" id=3]
+[ext_resource path="res://assets/Audio/Gem/3.wav" type="AudioStream" id=4]
+[ext_resource path="res://assets/Audio/Gem/4.wav" type="AudioStream" id=5]
+[ext_resource path="res://assets/Audio/Gem/5.wav" type="AudioStream" id=6]
+[ext_resource path="res://assets/Audio/Gem/6.wav" type="AudioStream" id=7]
+
+[sub_resource type="GDScript" id=1]
+
+script/source = "extends Area2D
+
+var Collected
+
+
+func _ready():
+	Collected = false;
+
+#check for collision with Node called \"Player\"
+func _physics_process(delta):
+	if Collected == false:
+		var bodies = get_overlapping_bodies()
+		var touchingPlayer = false
+		for b in bodies:
+			if b.get_name() == \"Player\":
+				get_parent().set_visible(false) 
+				Collected = true
+				collectSound()
+
+
+#Returns the current state of the Gem
+func is_collected():
+	return Collected
+	
+func collectSound():
+	var random = String(randi()%6+1)
+	var path = \"../GemSounds/GemSound\" + random
+	get_node(path).set_volume_db(-12.0) 
+	#print(\"Play sound: \", random)
+	get_node(path).play(0.000001)
+"
+
+[sub_resource type="RectangleShape2D" id=2]
+
+custom_solver_bias = 0.0
+extents = Vector2( 5, 10 )
+
+[node name="Gem" type="Sprite" index="0"]
+
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Area2D" type="Area2D" parent="." index="0"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = SubResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
+
+scale = Vector2( 1, 0.653846 )
+shape = SubResource( 2 )
+
+[node name="GemSounds" type="Node" parent="." index="1"]
+
+[node name="GemSound1" type="AudioStreamPlayer2D" parent="GemSounds" index="0"]
+
+stream = ExtResource( 2 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="GemSound2" type="AudioStreamPlayer2D" parent="GemSounds" index="1"]
+
+stream = ExtResource( 3 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="GemSound3" type="AudioStreamPlayer2D" parent="GemSounds" index="2"]
+
+stream = ExtResource( 4 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="GemSound4" type="AudioStreamPlayer2D" parent="GemSounds" index="3"]
+
+stream = ExtResource( 5 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="GemSound5" type="AudioStreamPlayer2D" parent="GemSounds" index="4"]
+
+stream = ExtResource( 6 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+[node name="GemSound6" type="AudioStreamPlayer2D" parent="GemSounds" index="5"]
+
+stream = ExtResource( 7 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+max_distance = 2000.0
+attenuation = 1.0
+bus = "Master"
+area_mask = 1
+
+
