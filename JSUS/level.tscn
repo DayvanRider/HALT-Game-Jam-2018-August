@@ -3,9 +3,10 @@
 [ext_resource path="res://level.gd" type="Script" id=1]
 [ext_resource path="res://assets/Tiles/Tiles.tres" type="TileSet" id=2]
 [ext_resource path="res://Gameplay/Playercharacter.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Gameplay/Gem.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Gameplay/SpikeScripts/Gem.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Gameplay/ExpandingTile.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/Tiles/Tiles.png" type="Texture" id=6]
+
 
 [node name="World" type="Node2D" index="0"]
 
