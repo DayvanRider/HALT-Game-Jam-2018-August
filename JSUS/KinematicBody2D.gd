@@ -152,6 +152,7 @@ func moveAndUpdate():
 	if is_on_floor():
 		motion = motiontmp
 		#reset jumpgrace if on floor
+		wallgrace = WALLGRACEFACTOR+1
 		grace = 0
 	else:
 		if !is_on_wall():
