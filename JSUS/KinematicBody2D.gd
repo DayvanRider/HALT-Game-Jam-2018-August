@@ -19,8 +19,9 @@ export (int) var GRACEFACTOR = 5
 export (int) var WALLGRACEFACTOR = 10
 #for protection against repeat walljump
 export (float) var JUMPTIME = 0.4
-
+#make Boostvalue that will be added to counteract climbing
 export (int) var MAXWALLJUMPBOOST = 280
+#will be subtracted from the walljumpboost each frame
 export (int) var WALLJUMPBOOSTITERATOR = 7
 
 
@@ -67,6 +68,8 @@ func _physics_process(delta):
 		$Sprite.flip_h = false
 		#keep track of last keystroke
 		lastKey = 2
+	elif Input.is_action_pressed("ui_down") && is_on_wall():
+		motion.x = 0
 	elif is_on_floor():
 		motion.x = 0
 		walljumpboost = 0
