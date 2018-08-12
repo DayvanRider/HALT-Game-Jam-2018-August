@@ -1,0 +1,71 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Gameplay/ExpandingTileSkripts/ExpandingTile.gd" type="Script" id=1]
+[ext_resource path="res://Gameplay/ExpandingTileSkripts/WallSpriteController.gd" type="Script" id=2]
+[ext_resource path="res://assets/Tiles/Tiles.png" type="Texture" id=3]
+[ext_resource path="res://Gameplay/ExpandingTileSkripts/CollisionShape2D.gd" type="Script" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 8, 8 )
+
+[node name="Expanding Tile" type="Node2D" index="0"]
+
+script = ExtResource( 1 )
+expansionAxis = "Up"
+expandAmount = 32
+startTime = 1
+duration = 4
+tileTexture = null
+tileRegion = Rect2( 16, 0, 16, 16 )
+wallTexture = null
+wallRegion = Rect2( 16, 16, 16, 16 )
+
+[node name="WallSpriteController" type="Node2D" parent="." index="0"]
+
+position = Vector2( 8, 8 )
+script = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="TileSprite" type="Sprite" parent="." index="1"]
+
+position = Vector2( 8, 8 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 16, 0, 16, 16 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="StartTimer" type="Timer" parent="." index="2"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[node name="ExpansionTimer" type="Timer" parent="." index="3"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = false
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="4"]
+
+position = Vector2( 8, 8 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="0"]
+
+shape = SubResource( 1 )
+script = ExtResource( 4 )
+_sections_unfolded = [ "Transform" ]
+
+
