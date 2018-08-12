@@ -33,7 +33,7 @@ func is_collected():
 custom_solver_bias = 0.0
 extents = Vector2( 5, 10 )
 
-[node name="Gem" type="Node2D"]
+[node name="Gem" type="Node" index="0"]
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
@@ -53,7 +53,6 @@ script = SubResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
 
-position = Vector2( 0, 0.500001 )
 scale = Vector2( 1, 0.653846 )
 shape = SubResource( 2 )
 

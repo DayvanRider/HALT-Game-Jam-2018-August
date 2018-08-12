@@ -35,7 +35,6 @@ func _ready():
 	initSprites()
 	initExpandDir()
 	initTimers()
-	initAdditionalWalls()
 
 func initSprites():
 	if wallTexture != null:
@@ -66,12 +65,7 @@ func onStartTimer():
 	expansionStarted = true
 	expansionTimer.start()
 
-func initAdditionalWalls():
-	tileExtent = get_node("StaticBody2D/CollisionShape2D").get_shape().get_extents() * 2
-#	additionalWalls.append
-
 func _process(delta):
-	print_tree_pretty()
 	pass
 
 func currentExpansion():
