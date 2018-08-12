@@ -67,7 +67,8 @@ func _physics_process(delta):
 	#also add lurp
 	moveAndUpdate()
 
-	
+	if isSquished():
+		kill()
 	
 
 		
@@ -193,4 +194,8 @@ func deathSound():
 	#print("Play sound: ", random)
 	get_node(path).play(0.000001)
 	
-	
+func isSquished():
+	return ((get_node("LeftSquish").isOverlappingObjects()
+		and get_node("RightSquish").isOverlappingObjects())
+		or (get_node("TopSquish").isOverlappingObjects()
+		and get_node("BottomSquish").isOverlappingObjects()))
