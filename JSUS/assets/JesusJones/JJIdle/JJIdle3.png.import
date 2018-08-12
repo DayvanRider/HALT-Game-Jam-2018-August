@@ -2,12 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/JJRun(3).png-8ef6332b713c8f857572c236c6253db3.stex"
+path="res://.import/JJIdle3.png-e5c03e8c2b22492f4ee4a5bd3ac11644.stex"
 
 [deps]
 
-source_file="res://assets/JesusJones/JJRun/JJRun(3).png"
-dest_files=[ "res://.import/JJRun(3).png-8ef6332b713c8f857572c236c6253db3.stex" ]
+source_file="res://assets/JesusJones/JJIdle/JJIdle3.png"
+dest_files=[ "res://.import/JJIdle3.png-e5c03e8c2b22492f4ee4a5bd3ac11644.stex" ]
 
 [params]
 

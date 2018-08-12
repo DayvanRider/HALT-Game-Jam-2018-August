@@ -42,6 +42,7 @@ var walljumpboost = 0
 
 
 func _ready():
+	$Sprite.play("Idle")
 	pass
 	
 	
@@ -53,10 +54,13 @@ func _physics_process(delta):
 
 	#Jump tracking
 	jumping()
-
+	if !is_on_floor():
+		$Sprite.play("Jump")
 		
 	#walljumptracking
 	wallJumpTracking()
+	if is_on_wall():
+		$Sprite.play("WallSlide")
 	#make walljumps non climbeable
 	climbProtection()
 	
@@ -76,12 +80,14 @@ func basicMovement():
 	if Input.is_action_pressed("ui_right"):
 		motion.x = SPEED
 		$Sprite.flip_h = true
+		$Sprite.play("Run")
 		#keep track of last keystroke
 		if !is_on_wall():
 			lastKey = 1
 	elif Input.is_action_pressed("ui_left"):
 		motion.x = -SPEED
 		$Sprite.flip_h = false
+		$Sprite.play("Run")
 		#keep track of last keystroke
 		if !is_on_wall():
 			lastKey = 2
@@ -90,6 +96,7 @@ func basicMovement():
 	elif is_on_floor():
 		motion.x = 0
 		walljumpboost = 0
+		$Sprite.play("Idle")
 		
 		
 func jumping():
