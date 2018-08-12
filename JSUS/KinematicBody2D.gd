@@ -54,13 +54,11 @@ func _physics_process(delta):
 
 	#Jump tracking
 	jumping()
-	if !is_on_floor():
-		$Sprite.play("Jump")
+		
 		
 	#walljumptracking
 	wallJumpTracking()
-	if is_on_wall():
-		$Sprite.play("WallSlide")
+		
 	#make walljumps non climbeable
 	climbProtection()
 	
@@ -102,12 +100,15 @@ func basicMovement():
 func jumping():
 	if is_on_floor() || grace < GRACEFACTOR:
 		if Input.is_action_just_pressed("ui_up"):
+			$Sprite.play("Jump")
 			motion.y = JUMP
 	
 func wallJumpTracking():
 	if (is_on_wall() && !is_on_floor()) || wallgrace <= WALLGRACEFACTOR:
 		if is_on_wall():
+			$Sprite.play("WallSlide")
 			if motion.y < 0:
+				
 				motion.y = 0
 			wallgrace = 0
 			if motion.y >0 && (Input.is_action_pressed("ui_right") || Input.is_action_pressed("ui_left")):
