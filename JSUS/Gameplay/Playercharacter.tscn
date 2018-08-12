@@ -62,7 +62,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="KinematicBody2D" type="KinematicBody2D"]
+[node name="KinematicBody2D" type="KinematicBody2D" index="0"]
 
 scale = Vector2( 0.25, 0.25 )
 input_pickable = false
@@ -80,6 +80,7 @@ GRACEFACTOR = 5
 WALLGRACEFACTOR = 10
 MAXWALLJUMPBOOST = 280
 WALLJUMPBOOSTITERATOR = 7
+SLIDEFACTOR = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
@@ -110,7 +111,7 @@ _sections_unfolded = [ "Playback Options" ]
 scale = Vector2( 4, 4 )
 frames = SubResource( 2 )
 animation = "Idle"
-frame = 6
+frame = 4
 playing = true
 _sections_unfolded = [ "Offset", "Transform" ]
 

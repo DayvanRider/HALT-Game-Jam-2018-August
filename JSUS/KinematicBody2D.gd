@@ -100,7 +100,7 @@ func basicMovement():
 func jumping():
 	if is_on_floor() || grace < GRACEFACTOR:
 		if Input.is_action_just_pressed("ui_up"):
-			
+			jumpSound()
 			motion.y = JUMP
 	
 func wallJumpTracking():
@@ -118,6 +118,7 @@ func wallJumpTracking():
 
 		#make walljump by pressing up
 		if Input.is_action_just_pressed("ui_up"):
+			jumpSound()
 			#determine wall by last keystroke
 			if (lastKey == 1 && wallgrace == 0) || (lastKey == 2 && wallgrace != 0):
 				motion.y = WALLJUMPPAR*JUMP
@@ -163,4 +164,22 @@ func moveAndUpdate():
 		motion.x = lerp(0,motion.x,LURPVAL)
 
 func kill():
+	deathSound()
 	get_tree().reload_current_scene()
+	
+	
+func jumpSound():
+	var random = String(randi()%10+1)
+	var path = "JumpSounds/JumpSound" + random
+	get_node(path).set_volume_db(-12.0) 
+	#print("Play sound: ", random)
+	get_node(path).play(0.000001)
+	
+func deathSound():
+	var random = String(randi()%10+1)
+	var path = "DeathSounds/DeathSound" + random
+	get_node(path).set_volume_db(-12.0) 
+	#print("Play sound: ", random)
+	get_node(path).play(0.000001)
+	
+	
