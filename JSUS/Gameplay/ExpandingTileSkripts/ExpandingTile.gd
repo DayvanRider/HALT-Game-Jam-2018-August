@@ -18,8 +18,6 @@ export(float) var startTime = 1
 export(float) var duration = 4
 
 # Texture customization
-export(Texture) var tileTexture = null
-export(Rect2) var tileRegion = Rect2(16, 0, 16, 16)
 export(Texture) var wallTexture = null
 export(Rect2) var wallRegion = Rect2(16, 16, 16, 16)
 export(Rect2) var capRegion = Rect2(16, 16, 16, 16)
@@ -40,12 +38,6 @@ func _ready():
 	initAdditionalWalls()
 
 func initSprites():
-	if tileTexture != null:
-		var tileSprite = get_node("TileSprite")
-		tileSprite.set_texture(tileTexture)
-		tileSprite.set_region(true)
-		tileSprite.set_region_rect(tileRegion)
-	
 	if wallTexture != null:
 		var wallSpriteController = get_node("WallSpriteController")
 		wallSpriteController.setTexture(wallTexture)
@@ -79,6 +71,7 @@ func initAdditionalWalls():
 #	additionalWalls.append
 
 func _process(delta):
+	print_tree_pretty()
 	pass
 
 func currentExpansion():
