@@ -77,12 +77,14 @@ func basicMovement():
 		motion.x = SPEED
 		$Sprite.flip_h = true
 		#keep track of last keystroke
-		lastKey = 1
+		if !is_on_wall():
+			lastKey = 1
 	elif Input.is_action_pressed("ui_left"):
 		motion.x = -SPEED
 		$Sprite.flip_h = false
 		#keep track of last keystroke
-		lastKey = 2
+		if !is_on_wall():
+			lastKey = 2
 	elif Input.is_action_pressed("ui_down") && is_on_wall():
 		motion.x = 0
 	elif is_on_floor():
