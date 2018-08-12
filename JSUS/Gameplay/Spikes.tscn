@@ -19,6 +19,7 @@ RestingTime = 1
 ActiveTime = 2
 Static = false
 Speed = 1
+StartActive = false
 Direction = "up"
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
