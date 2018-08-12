@@ -36,6 +36,7 @@ var noJumps = 0
 var grace = 0
 var wallgrace = 0
 var walljumpboost = 0
+var falling = false
 
 
 
@@ -89,12 +90,12 @@ func basicMovement():
 		#keep track of last keystroke
 		if !is_on_wall():
 			lastKey = 2
-	elif Input.is_action_pressed("ui_down") && is_on_wall():
-		motion.x = 0
+
 	elif is_on_floor():
 		motion.x = 0
 		walljumpboost = 0
 		$Sprite.play("Idle")
+		
 		
 		
 func jumping():
@@ -104,14 +105,22 @@ func jumping():
 			motion.y = JUMP
 	
 func wallJumpTracking():
+	if Input.is_action_pressed("ui_down"):
+		falling = true
 	if (is_on_wall() && !is_on_floor()) || wallgrace <= WALLGRACEFACTOR:
+	
 		if is_on_wall():
-			$Sprite.play("WallSlide")
+			
 			if motion.y < 0:
 				
 				motion.y += SLIDEFACTOR
 			wallgrace = 0
-			if motion.y >0 && (Input.is_action_pressed("ui_right") || Input.is_action_pressed("ui_left")):
+			
+
+			if falling == true:
+				pass
+			elif motion.y >0 && (Input.is_action_pressed("ui_right") || Input.is_action_pressed("ui_left")):
+				$Sprite.play("WallSlide")
 				motion.y =  motion.y*0.5
 		else:
 			wallgrace += 1
@@ -150,6 +159,7 @@ func moveAndUpdate():
 	#only update motion if character is on the ground 
 	var motiontmp = move_and_slide(motion,UP)
 	if is_on_floor():
+		falling = false
 		motion = motiontmp
 		#reset jumpgrace if on floor
 		wallgrace = WALLGRACEFACTOR+1
