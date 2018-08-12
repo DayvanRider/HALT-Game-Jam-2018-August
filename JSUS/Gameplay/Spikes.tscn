@@ -9,7 +9,7 @@
 custom_solver_bias = 0.0
 extents = Vector2( 10.1827, 10 )
 
-[node name="Spikes" type="Node2D"]
+[node name="Spikes" type="Node2D" index="0"]
 
 position = Vector2( 8, 8 )
 scale = Vector2( 0.25, 0.25 )
@@ -19,6 +19,7 @@ RestingTime = 1
 ActiveTime = 2
 Static = false
 Speed = 1
+StartActive = false
 Direction = "up"
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
