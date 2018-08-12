@@ -20,6 +20,9 @@ export (int) var WALLGRACEFACTOR = 10
 #for protection against repeat walljump
 export (float) var JUMPTIME = 0.4
 
+
+
+
 #motion vector
 var motion = Vector2(0,0)
 #variabke for last keystroke
@@ -37,8 +40,10 @@ var right = true
 
 
 
+
 func _ready():
-	pass
+	initTimer()
+	
 	
 func _physics_process(delta):
 	#Add gravity
@@ -99,32 +104,25 @@ func _physics_process(delta):
 		
 func get_name():
 	return "Player"			#Check for the Gem if Object is Player
-	
-	
-	
-	
 		
 		
 func JumptimerLeft():
-	timernode = get_node("Timer")
-	timernode.set_wait_time(JUMPTIME)
-	timernode.set_one_shot(true)
-	timernode.connect("timeout", self, "setJumpFlagLeft")
 	left = false
 	timernode.start()
 
 func JumptimerRight():
-	timernode = get_node("Timer")
-	timernode.set_wait_time(JUMPTIME)
-	timernode.set_one_shot(true)
-	timernode.connect("timeout", self, "setJumpFlagRight")
 	right = false
 	timernode.start()
 	
 
-func setJumpFlagLeft():
+func initTimer():
+	#initialise timer:
+	timernode = get_node("Timer")
+	timernode.set_wait_time(JUMPTIME)
+	timernode.set_one_shot(true)
+	timernode.connect("timeout", self, "setJumpFlag")
+	
+
+func setJumpFlag():
 	left = true
-	
-func setJumpFlagRight():
 	right = true
-	
