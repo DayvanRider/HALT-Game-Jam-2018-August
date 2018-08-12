@@ -100,7 +100,7 @@ func basicMovement():
 func jumping():
 	if is_on_floor() || grace < GRACEFACTOR:
 		if Input.is_action_just_pressed("ui_up"):
-			$Sprite.play("Jump")
+			
 			motion.y = JUMP
 	
 func wallJumpTracking():
@@ -151,9 +151,12 @@ func moveAndUpdate():
 	var motiontmp = move_and_slide(motion,UP)
 	if is_on_floor():
 		motion = motiontmp
+		#reset jumpgrace if on floor
 		grace = 0
 	else:
+		$Sprite.play("Jump")
 		motion.y = motiontmp.y
+		#otherwise increment it
 		grace += 1
 	if !is_on_wall():
 		motion.x = lerp(0,motion.x,LURPVAL)
