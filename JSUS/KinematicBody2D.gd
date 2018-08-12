@@ -99,7 +99,7 @@ func wallJumpTracking():
 	if (is_on_wall() && !is_on_floor()) || wallgrace <= WALLGRACEFACTOR:
 		if is_on_wall():
 			wallgrace = 0
-			if motion.y >0:
+			if motion.y >0 && (Input.is_action_pressed("ui_right") || Input.is_action_pressed("ui_left")):
 				motion.y = motion.y * 0.5
 		else:
 			wallgrace += 1
