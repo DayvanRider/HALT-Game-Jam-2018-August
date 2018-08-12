@@ -17,19 +17,25 @@ collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
+SPEED = 150
 JUMP = -250
 GRAVITY = 100
+WALLJUMPPAR = 1.2
+LURPVAL = 0.7
+GRACEFACTOR = 5
+WALLGRACEFACTOR = 10
+JUMPTIME = 0.4
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
-position = Vector2( 1.90735e-006, 1.90735e-006 )
+position = Vector2( 1.90735e-06, 1.90735e-06 )
 scale = Vector2( 4, 4 )
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Offset" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="1"]
 
-position = Vector2( 3.33139, -7.62939e-006 )
+position = Vector2( 3.33139, -7.62939e-06 )
 scale = Vector2( 0.728571, 1 )
 shape = SubResource( 1 )
 

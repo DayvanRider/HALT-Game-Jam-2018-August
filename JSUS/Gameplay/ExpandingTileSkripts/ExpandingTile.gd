@@ -17,6 +17,12 @@ export(float) var startTime = 1
 # Time the tile takes to reache its max size after starting, in seconds
 export(float) var duration = 4
 
+# Texture customization
+export(Texture) var tileTexture = null
+export(Rect2) var tileRegion = Rect2(16, 0, 16, 16)
+export(Texture) var wallTexture = null
+export(Rect2) var wallRegion = Rect2(16, 16, 16, 16)
+
 var startTimer = null
 var expansionTimer = null
 
@@ -27,9 +33,23 @@ var additionalTiles = []
 
 
 func _ready():
+	initSprites()
 	initExpandDir()
 	initTimers()
 	initAdditionalWalls()
+
+func initSprites():
+	if tileTexture != null:
+		var tileSprite = get_node("TileSprite")
+		tileSprite.set_texture(tileTexture)
+		tileSprite.set_region(true)
+		tileSprite.set_region_rect(tileRegion)
+	
+	if wallTexture != null:
+		var wallSpriteController = get_node("WallSpriteController")
+		wallSpriteController.texture = tileTexture
+		wallSpriteController.textureRegion = tileRegion
+	
 
 func initExpandDir():
 	expandDir = axisMap[expansionAxis]
@@ -66,3 +86,6 @@ func currentExpansion():
 	if timeLeft == 0:
 		return 1
 	return (duration - timeLeft) / duration
+	
+func currentExpansionDistance():
+	return currentExpansion() * expandAmount
