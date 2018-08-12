@@ -22,6 +22,7 @@ export(Texture) var tileTexture = null
 export(Rect2) var tileRegion = Rect2(16, 0, 16, 16)
 export(Texture) var wallTexture = null
 export(Rect2) var wallRegion = Rect2(16, 16, 16, 16)
+export(Rect2) var capRegion = Rect2(16, 16, 16, 16)
 
 var startTimer = null
 var expansionTimer = null
@@ -49,6 +50,7 @@ func initSprites():
 		var wallSpriteController = get_node("WallSpriteController")
 		wallSpriteController.setTexture(wallTexture)
 		wallSpriteController.setTextureRegion(wallRegion)
+		wallSpriteController.setCapTextureRegion(capRegion)
 	
 
 func initExpandDir():

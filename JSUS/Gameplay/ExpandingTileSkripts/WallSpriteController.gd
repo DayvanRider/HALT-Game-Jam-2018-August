@@ -3,6 +3,7 @@ extends Node2D
 const width = 16
 var texture = ImageTexture.new() setget setTexture
 var textureRegion = Rect2(width, width, width, width) setget setTextureRegion
+var capTextureRegion = Rect2(width, width, width, width) setget setCapTextureRegion
 var sprites = []
 
 var expandingTile = null
@@ -18,7 +19,7 @@ func _ready():
 	for i in range(spriteNumber):
 		var newSprite = createSprite()
 		sprites.push_back(newSprite)
-	print(sprites)
+	sprites.front().set_region_rect(capTextureRegion)
 
 func setTexture(newTexture):
 	for sprite in sprites:
@@ -29,6 +30,10 @@ func setTextureRegion(newRegion):
 	for sprite in sprites:
 			sprite.set_region_rect(newRegion)
 	textureRegion = newRegion
+
+func setCapTextureRegion(newRegion):
+	sprites.front().set_region_rect(newRegion)
+	capTextureRegion = newRegion
 
 func createSprite():
 	var newSprite = Sprite.new()
@@ -41,7 +46,6 @@ func createSprite():
 func _process(delta):
 	for idx in range(sprites.size()):
 		moveSprite(sprites[idx], idx)
-	print(textureRegion)
 
 func moveSprite(sprite, index):
 	# only move if expansion distance is large enough
