@@ -149,3 +149,6 @@ func moveAndUpdate():
 		grace += 1
 	if !is_on_wall():
 		motion.x = lerp(0,motion.x,LURPVAL)
+
+func kill():
+	get_tree().reload_current_scene()
