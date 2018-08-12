@@ -59,10 +59,12 @@ func _physics_process(delta):
 	#left and right movement
 	if Input.is_action_pressed("ui_right") && right == true:
 		motion.x = SPEED
+		$Sprite.flip_h = true
 		#keep track of last keystroke
 		lastKey = 1
 	elif Input.is_action_pressed("ui_left") && left == true:
 		motion.x = -SPEED
+		$Sprite.flip_h = false
 		#keep track of last keystroke
 		lastKey = 2
 	elif is_on_floor():
