@@ -41,6 +41,7 @@ __meta__ = {
 
 position = Vector2( -144, -16 )
 GRAVITY = 15
+SLIDEFACTOR = 10
 
 [node name="Gem" parent="." index="2" instance=ExtResource( 4 )]
 
