@@ -21,7 +21,7 @@ export (int) var WALLGRACEFACTOR = 10
 export (int) var MAXWALLJUMPBOOST = 280
 #will be subtracted from the walljumpboost each frame
 export (int) var WALLJUMPBOOSTITERATOR = 7
-
+export (int) var SLIDEFACTOR = 10
 
 
 
@@ -54,13 +54,11 @@ func _physics_process(delta):
 
 	#Jump tracking
 	jumping()
-	if !is_on_floor():
-		$Sprite.play("Jump")
+		
 		
 	#walljumptracking
 	wallJumpTracking()
-	if is_on_wall():
-		$Sprite.play("WallSlide")
+		
 	#make walljumps non climbeable
 	climbProtection()
 	
@@ -102,13 +100,16 @@ func basicMovement():
 func jumping():
 	if is_on_floor() || grace < GRACEFACTOR:
 		if Input.is_action_just_pressed("ui_up"):
+			
 			motion.y = JUMP
 	
 func wallJumpTracking():
 	if (is_on_wall() && !is_on_floor()) || wallgrace <= WALLGRACEFACTOR:
 		if is_on_wall():
+			$Sprite.play("WallSlide")
 			if motion.y < 0:
-				motion.y = 0
+				
+				motion.y += SLIDEFACTOR
 			wallgrace = 0
 			if motion.y >0 && (Input.is_action_pressed("ui_right") || Input.is_action_pressed("ui_left")):
 				motion.y =  motion.y*0.5
@@ -150,9 +151,13 @@ func moveAndUpdate():
 	var motiontmp = move_and_slide(motion,UP)
 	if is_on_floor():
 		motion = motiontmp
+		#reset jumpgrace if on floor
 		grace = 0
 	else:
+		if !is_on_wall():
+			$Sprite.play("Jump")
 		motion.y = motiontmp.y
+		#otherwise increment it
 		grace += 1
 	if !is_on_wall():
 		motion.x = lerp(0,motion.x,LURPVAL)
