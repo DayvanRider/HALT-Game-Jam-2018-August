@@ -21,7 +21,7 @@ export (int) var WALLGRACEFACTOR = 10
 export (int) var MAXWALLJUMPBOOST = 280
 #will be subtracted from the walljumpboost each frame
 export (int) var WALLJUMPBOOSTITERATOR = 7
-
+export (int) var SLIDEFACTOR = 10
 
 
 
@@ -100,7 +100,7 @@ func basicMovement():
 func jumping():
 	if is_on_floor() || grace < GRACEFACTOR:
 		if Input.is_action_just_pressed("ui_up"):
-			$Sprite.play("Jump")
+			
 			motion.y = JUMP
 	
 func wallJumpTracking():
@@ -109,7 +109,7 @@ func wallJumpTracking():
 			$Sprite.play("WallSlide")
 			if motion.y < 0:
 				
-				motion.y = 0
+				motion.y += SLIDEFACTOR
 			wallgrace = 0
 			if motion.y >0 && (Input.is_action_pressed("ui_right") || Input.is_action_pressed("ui_left")):
 				motion.y =  motion.y*0.5
@@ -153,6 +153,8 @@ func moveAndUpdate():
 		motion = motiontmp
 		grace = 0
 	else:
+		if !is_on_wall():
+			$Sprite.play("Jump")
 		motion.y = motiontmp.y
 		grace += 1
 	if !is_on_wall():
