@@ -100,9 +100,11 @@ func jumping():
 func wallJumpTracking():
 	if (is_on_wall() && !is_on_floor()) || wallgrace <= WALLGRACEFACTOR:
 		if is_on_wall():
+			if motion.y < 0:
+				motion.y = 0
 			wallgrace = 0
 			if motion.y >0 && (Input.is_action_pressed("ui_right") || Input.is_action_pressed("ui_left")):
-				motion.y = motion.y * 0.5
+				motion.y =  motion.y*0.5
 		else:
 			wallgrace += 1
 
@@ -147,3 +149,6 @@ func moveAndUpdate():
 		grace += 1
 	if !is_on_wall():
 		motion.x = lerp(0,motion.x,LURPVAL)
+
+func kill():
+	get_tree().reload_current_scene()
