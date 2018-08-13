@@ -8,7 +8,7 @@ const UP = Vector2(0,-1)
 #JUMP strength
 export (int) var  JUMP = -250
 #Gravity
-export(int) var GRAVITY = 100
+export(int) var GRAVITY = 15
 #Walljumpstrength
 export (float) var WALLJUMPPAR = 1.2
 #Lurpvalue
@@ -43,6 +43,7 @@ var falling = false
 
 
 func _ready():
+	get_node("Particles2D").set_emitting(false) 
 	$Sprite.play("Idle")
 	pass
 	
@@ -177,7 +178,9 @@ func moveAndUpdate():
 
 func kill():
 	deathSound()
-	get_tree().reload_current_scene()
+	get_node("Particles2D").set_emitting(true) 
+	get_node("Particles2D").restart()
+	#get_tree().reload_current_scene()
 	
 	
 func jumpSound():
