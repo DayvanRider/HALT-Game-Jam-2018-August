@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Gameplay/ExpandingTileSkripts/ExpandingTile.gd" type="Script" id=1]
 [ext_resource path="res://Gameplay/ExpandingTileSkripts/WallSpriteController.gd" type="Script" id=2]
 [ext_resource path="res://Gameplay/ExpandingTileSkripts/CollisionShape2D.gd" type="Script" id=3]
 [ext_resource path="res://Gameplay/ExpandingTileSkripts/Area2D.gd" type="Script" id=4]
+[ext_resource path="res://assets/Audio/Ambient/Tump.wav" type="AudioStream" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -81,5 +82,14 @@ script = ExtResource( 4 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
 
 shape = SubResource( 2 )
+
+[node name="Thump" type="AudioStreamPlayer" parent="." index="6"]
+
+stream = ExtResource( 5 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
 
 

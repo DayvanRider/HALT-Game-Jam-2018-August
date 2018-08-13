@@ -5,8 +5,12 @@ export(String) var NextLevelName = "Level2"
 var gemsCollected
 var gemsTotal
 var scoreText
+
+
 func _ready():
 	set_draw_behind_parent(true) 
+	get_node("Sprite").stop()
+	get_node("Sprite").frame = 0
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
 	pass
@@ -42,6 +46,7 @@ func _process(delta):
 	
 	
 	if allGemsCollected:
+		get_node("Sprite").play()
 		pass
 		#print("Hooray You finished the Level!")
 		#ADD next Level Command here!

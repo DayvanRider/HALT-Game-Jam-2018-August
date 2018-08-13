@@ -1,25 +1,42 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Gameplay/LevelExitGate.gd" type="Script" id=1]
-[ext_resource path="res://assets/Tiles/tileGate.png" type="Texture" id=2]
+[ext_resource path="res://assets/Tiles/Gate/tileGate(6).png" type="Texture" id=2]
+[ext_resource path="res://assets/Tiles/Gate/tileGate(5).png" type="Texture" id=3]
+[ext_resource path="res://assets/Tiles/Gate/tileGate(4).png" type="Texture" id=4]
+[ext_resource path="res://assets/Tiles/Gate/tileGate(3).png" type="Texture" id=5]
+[ext_resource path="res://assets/Tiles/Gate/tileGate(2).png" type="Texture" id=6]
+[ext_resource path="res://assets/Tiles/Gate/tileGate(1).png" type="Texture" id=7]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="SpriteFrames" id=1]
+
+animations = [ {
+"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"loop": false,
+"name": "default",
+"speed": 6.0
+} ]
+_sections_unfolded = [ "Resource" ]
+
+[sub_resource type="RectangleShape2D" id=2]
 
 custom_solver_bias = 0.0
 extents = Vector2( 6.79179, 7.95556 )
 
 [node name="LevelExitGate" type="Node2D"]
 
-position = Vector2( 16, 16 )
+position = Vector2( -8, -8 )
+scale = Vector2( 0.25, 0.25 )
 script = ExtResource( 1 )
 NextLevelName = "Level2"
 
-[node name="Sprite" type="Sprite" parent="." index="0"]
+[node name="Sprite" type="AnimatedSprite" parent="." index="0"]
 
-texture = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
+position = Vector2( -32, -32 )
+scale = Vector2( 4, 4 )
+frames = SubResource( 1 )
+animation = "default"
+_sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="Score" type="Label" parent="." index="1"]
 
@@ -27,10 +44,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = -16.0
-margin_top = -16.0
-margin_right = 25.0
-margin_bottom = -2.0
+margin_left = -52.0
+margin_top = -78.0
+margin_right = -11.0
+margin_bottom = -64.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -48,7 +65,7 @@ __meta__ = {
 
 [node name="Area2D" type="Area2D" parent="." index="2"]
 
-scale = Vector2( 0.25, 0.25 )
+position = Vector2( -32, -32 )
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -56,6 +73,7 @@ linear_damp = 0.1
 angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
+_sections_unfolded = [ "Transform" ]
 __meta__ = {
 "_edit_group_": true
 }
@@ -64,7 +82,7 @@ __meta__ = {
 
 position = Vector2( 0, 5.92161 )
 scale = Vector2( 2.96154, 3.27664 )
-shape = SubResource( 1 )
+shape = SubResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
