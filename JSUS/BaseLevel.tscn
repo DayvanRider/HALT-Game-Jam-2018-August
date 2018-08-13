@@ -4,13 +4,15 @@
 [ext_resource path="res://assets/Tiles/Tiles.tres" type="TileSet" id=2]
 [ext_resource path="res://assets/Andere/background.png" type="Texture" id=3]
 
-[node name="Level" type="Node" index="0"]
+[node name="Level" type="Node"]
 
 script = ExtResource( 1 )
 nextLevel = null
 
 [node name="TileMap" type="TileMap" parent="." index="0"]
 
+z_index = 7
+z_as_relative = false
 mode = 0
 tile_set = ExtResource( 2 )
 cell_size = Vector2( 16, 16 )
@@ -28,14 +30,13 @@ collision_mask = 1
 occluder_light_mask = 1
 format = 1
 tile_data = PoolIntArray(  )
-_sections_unfolded = [ "Cell" ]
+_sections_unfolded = [ "Cell", "Z Index" ]
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="Sprite" type="Sprite" parent="." index="1"]
 
-z_index = -5
 z_as_relative = false
 texture = ExtResource( 3 )
 centered = false

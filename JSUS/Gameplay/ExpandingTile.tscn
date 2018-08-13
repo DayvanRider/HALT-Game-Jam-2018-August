@@ -61,7 +61,8 @@ _sections_unfolded = [ "Angular Velocity", "Color", "Damping", "Emission Shape",
 [node name="Expanding Tile" type="Sprite"]
 
 position = Vector2( -0.0630741, 0.0630741 )
-z_index = 1
+z_index = 6
+z_as_relative = false
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform", "Z Index" ]
 expansionAxis = "Up"
