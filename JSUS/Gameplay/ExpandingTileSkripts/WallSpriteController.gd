@@ -17,7 +17,7 @@ func _ready():
 	image.load("res://assets/Tiles/Tiles.png")
 	texture.create_from_image(image, 0)
 	# create necessary amount of sprites
-	var spriteNumber = ceil(expandingTile.expandAmount / width)
+	var spriteNumber = ceil(expandingTile.expandAmount / float(width))
 	for i in range(spriteNumber):
 		var newSprite = createSprite()
 		sprites.push_back(newSprite)
