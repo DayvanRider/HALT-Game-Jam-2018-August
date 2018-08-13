@@ -41,7 +41,6 @@ __meta__ = {
 [node name="KinematicBody2D" parent="." index="1" instance=ExtResource( 3 )]
 
 position = Vector2( -144, -16 )
-GRAVITY = 15
 
 [node name="Expanding Tiles" type="Node" parent="." index="2"]
 
@@ -206,7 +205,7 @@ capSprite = Vector2( 5, 4 )
 
 position = Vector2( -152, -88 )
 
-[node name="Gem" parent="LevelExitGate" index="3" instance=ExtResource( 7 )]
+[node name="Gem3" parent="LevelExitGate" index="3" instance=ExtResource( 7 )]
 
 position = Vector2( 192, 256 )
 scale = Vector2( 4, 4 )
