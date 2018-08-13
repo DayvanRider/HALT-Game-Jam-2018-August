@@ -1,11 +1,13 @@
 extends Node
 
+export (bool) var playGateSound = true
 var gemsCollected
 var gemsTotal
 var scoreText
-
+var isOpened = false
 
 func _ready():
+	get_node("AudioStreamPlayer").stop()
 	set_draw_behind_parent(true) 
 	get_node("Sprite").stop()
 	get_node("Sprite").frame = 0
@@ -45,6 +47,9 @@ func _process(delta):
 	
 	if allGemsCollected:
 		get_node("Sprite").play()
+		if (playGateSound and !isOpened):
+			isOpened = true
+			get_node("AudioStreamPlayer").play()
 		pass
 		#print("Hooray You finished the Level!")
 		#ADD next Level Command here!
