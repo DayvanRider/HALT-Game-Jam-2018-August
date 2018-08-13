@@ -11,7 +11,7 @@
 
 [node name="Level" parent="." index="0" instance=ExtResource( 1 )]
 
-nextLevel = "res://Levels/Tutorial/tutorial2.tscn"
+nextLevel = "res://Levels/Tutorial/tutorial3.tscn"
 
 [node name="LevelExitGate" parent="Level" index="0" instance=ExtResource( 2 )]
 
