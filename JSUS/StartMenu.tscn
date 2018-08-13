@@ -9,7 +9,7 @@
 [ext_resource path="res://assets/Andere/start.png" type="Texture" id=7]
 [ext_resource path="res://StartMenuScripts/Press To Start.gd" type="Script" id=8]
 
-[node name="Start Menu" type="Node"]
+[node name="Start Menu" type="Node" index="0"]
 
 script = ExtResource( 1 )
 

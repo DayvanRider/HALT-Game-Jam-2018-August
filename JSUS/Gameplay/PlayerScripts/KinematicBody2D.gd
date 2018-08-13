@@ -21,7 +21,7 @@ export (int) var WALLGRACEFACTOR = 10
 export (int) var MAXWALLJUMPBOOST = 280
 #will be subtracted from the walljumpboost each frame
 export (int) var WALLJUMPBOOSTITERATOR = 7
-export (int) var SLIDEFACTOR = 0
+const SLIDEFACTOR = 0
 
 
 

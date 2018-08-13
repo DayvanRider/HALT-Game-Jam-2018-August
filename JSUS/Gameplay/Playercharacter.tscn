@@ -110,9 +110,11 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Angle", "Angular Velocity", "Animation", "Color", "Damping", "Emission Shape", "Gravity", "Initial Velocity", "Linear Accel", "Orbit Velocity", "Scale", "Spread", "Trail" ]
 
-[node name="KinematicBody2D" type="KinematicBody2D" index="0"]
+[node name="KinematicBody2D" type="KinematicBody2D"]
 
+position = Vector2( 0, -0.122087 )
 scale = Vector2( 0.25, 0.25 )
+z_index = 3
 z_as_relative = false
 input_pickable = false
 collision_layer = 1
@@ -129,7 +131,7 @@ GRACEFACTOR = 5
 WALLGRACEFACTOR = 10
 MAXWALLJUMPBOOST = 280
 WALLJUMPBOOSTITERATOR = 7
-SLIDEFACTOR = 10
+SLIDEFACTOR = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
@@ -160,9 +162,8 @@ _sections_unfolded = [ "Playback Options" ]
 scale = Vector2( 4, 4 )
 frames = SubResource( 2 )
 animation = "Idle"
-frame = 6
 playing = true
-_sections_unfolded = [ "Offset", "Transform" ]
+_sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 
 [node name="DeathSounds" type="Node" parent="." index="4"]
 
@@ -434,7 +435,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="Particles2D" type="Particles2D" parent="." index="10"]
 
 visible = false
-z_index = 4
+z_index = 10
 z_as_relative = false
 emitting = false
 amount = 58
