@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Gameplay/LevelExitGate.gd" type="Script" id=1]
 [ext_resource path="res://assets/Tiles/Gate/tileGate(6).png" type="Texture" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://assets/Tiles/Gate/tileGate(3).png" type="Texture" id=5]
 [ext_resource path="res://assets/Tiles/Gate/tileGate(2).png" type="Texture" id=6]
 [ext_resource path="res://assets/Tiles/Gate/tileGate(1).png" type="Texture" id=7]
+[ext_resource path="res://assets/Audio/Ambient/GateOpen.wav" type="AudioStream" id=8]
 
 [sub_resource type="SpriteFrames" id=1]
 
@@ -30,6 +31,7 @@ z_index = 1
 z_as_relative = false
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform", "Z Index" ]
+playGateSound = true
 
 [node name="Sprite" type="AnimatedSprite" parent="." index="0"]
 
@@ -87,5 +89,14 @@ shape = SubResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="3"]
+
+stream = ExtResource( 8 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
 
 
