@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://StartMenu.gd" type="Script" id=1]
+[ext_resource path="res://KinematicBody2D.gd" type="Script" id=2]
+[ext_resource path="res://assets/Andere/title.png" type="Texture" id=3]
 
 [node name="Control" type="Control" index="0"]
 
@@ -68,5 +70,18 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "custom_fonts" ]
+
+[node name="KinematicBody2D" type="KinematicBody2D" parent="." index="1"]
+
+position = Vector2( 160, 48 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="KinematicBody2D" index="0"]
+
+texture = ExtResource( 3 )
 
 
