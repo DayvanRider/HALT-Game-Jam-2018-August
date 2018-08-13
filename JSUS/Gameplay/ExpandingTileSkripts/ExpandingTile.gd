@@ -47,6 +47,7 @@ func initSprites():
 func initExpandDir():
 	expandDir = axisMap[expansionAxis]
 	get_node("StaticBody2D/CollisionShape2D").expandDir = expandDir
+	get_node("Particles2D").set_expandDir(expandDir)
 
 func initTimers():
 	startTimer = get_node("StartTimer")
@@ -78,3 +79,6 @@ func currentExpansion():
 	
 func currentExpansionDistance():
 	return currentExpansion() * expandAmount
+	
+func finishedExpanding():
+	return currentExpansionDistance() == expandAmount
