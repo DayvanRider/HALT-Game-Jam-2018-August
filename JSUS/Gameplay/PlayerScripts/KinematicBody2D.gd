@@ -119,6 +119,7 @@ func wallJumpTracking():
 		if is_on_wall():
 			
 			if motion.y < 0:
+				$Sprite.play("Jump")
 				
 				motion.y += SLIDEFACTOR
 			wallgrace = 0
