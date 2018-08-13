@@ -1,8 +1,10 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://StartMenu.gd" type="Script" id=1]
-[ext_resource path="res://KinematicBody2D.gd" type="Script" id=2]
+[ext_resource path="res://StartMenuScripts/StartMenu.gd" type="Script" id=1]
+[ext_resource path="res://StartMenuScripts/KinematicBody2D.gd" type="Script" id=2]
 [ext_resource path="res://assets/Andere/title.png" type="Texture" id=3]
+
+
 
 [node name="Control" type="Control" index="0"]
 

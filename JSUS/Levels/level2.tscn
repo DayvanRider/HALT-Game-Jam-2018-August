@@ -1,0 +1,74 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://level.gd" type="Script" id=1]
+[ext_resource path="res://assets/Tiles/Tiles.tres" type="TileSet" id=2]
+[ext_resource path="res://Gameplay/Playercharacter.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Gameplay/LevelExitGate.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Gameplay/Gem.tscn" type="PackedScene" id=5]
+
+[node name="World" type="Node2D"]
+
+position = Vector2( 216, 232 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="TileMap" type="TileMap" parent="." index="0"]
+
+position = Vector2( -208, 32 )
+mode = 0
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 16, 16 )
+cell_quadrant_size = 16
+cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+cell_half_offset = 2
+cell_tile_origin = 1
+cell_y_sort = false
+cell_clip_uv = false
+collision_use_kinematic = false
+collision_friction = 1.0
+collision_bounce = 0.0
+collision_layer = 1
+collision_mask = 1
+occluder_light_mask = 1
+format = 1
+tile_data = PoolIntArray( -1048577, 4, 0, -1114112, 4, 0, -1114111, 4, 0, -1114110, 4, 0, -1114109, 4, 0, -1114108, 4, 0, -1114107, 4, 0, -1114106, 4, 0, -1114105, 4, 0, -1114104, 4, 0, -1114103, 4, 0, -1114102, 4, 0, -1114101, 4, 0, -1114100, 4, 0, -1114099, 4, 0, -1114098, 4, 0, -1114097, 4, 0, -1114096, 4, 0, -1114095, 4, 0, -1114094, 4, 0, -1114093, 4, 0, -983041, 1, 0, -1048560, 4, 0, -1048559, 9, 0, -1048558, 4, 0, -1048557, 4, 0, -917505, 1, 0, -983022, 4, 0, -983021, 4, 0, -851969, 1, 0, -917487, 4, 0, -917485, 4, 0, -786433, 4, 0, -851949, 4, 0, -720897, 4, 0, -786414, 9, 0, -786413, 4, 0, -720893, 32, 0, -720892, 18, 0, -720889, 28, 0, -720888, 1, 0, -720887, 2, 0, -720878, 4, 0, -720877, 4, 0, -655353, 6, 0, -655352, 7, 0, -655351, 29, 0, -655342, 4, 0, -655341, 4, 0, -589815, 19, 0, -589806, 4, 0, -589805, 9, 0, -524279, 19, 0, -524270, 4, 0, -524269, 11, 0, -393217, 4, 0, -458752, 4, 0, -458751, 10, 0, -458750, 4, 0, -458749, 44, 0, -458748, 18, 0, -458747, 18, 0, -458746, 13, 0, -458736, 4, 0, -458734, 4, 0, -458733, 4, 0, -327681, 4, 0, -393216, 4, 0, -393215, 21, 0, -393214, 7, 0, -393213, 8, 0, -393210, 15, 0, -393207, 16, 0, -393201, 3, 0, -393200, 4, 0, -393199, 4, 0, -393198, 9, 0, -393197, 4, 0, -262145, 4, 0, -327680, 4, 0, -327679, 5, 0, -327665, 3, 0, -327664, 9, 0, -327663, 4, 0, -327662, 4, 0, -327661, 4, 0, -196609, 4, 0, -262144, 9, 0, -262143, 5, 0, -262129, 3, 0, -262128, 4, 0, -262127, 4, 0, -262126, 4, 0, -262125, 4, 0, -131073, 4, 0, -196608, 4, 0, -196607, 24, 0, -196606, 1, 0, -196605, 1, 0, -196604, 1, 0, -196603, 1, 0, -196602, 1, 0, -196599, 1, 0, -196598, 2, 0, -196595, 0, 0, -196594, 1, 0, -196593, 23, 0, -196592, 4, 0, -196591, 11, 0, -196590, 9, 0, -196589, 4, 0, -65537, 4, 0, -131072, 4, 0, -131071, 11, 0, -131070, 4, 0, -131069, 4, 0, -131068, 4, 0, -131067, 9, 0, -131066, 4, 0, -131065, 4, 0, -131064, 4, 0, -131063, 4, 0, -131062, 24, 0, -131061, 1, 0, -131060, 1, 0, -131059, 23, 0, -131058, 4, 0, -131057, 4, 0, -131056, 4, 0, -131055, 4, 0, -131054, 4, 0, -131053, 4, 0 )
+_sections_unfolded = [ "Cell" ]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="KinematicBody2D" parent="." index="1" instance=ExtResource( 3 )]
+
+position = Vector2( -128, -16 )
+GRAVITY = 15
+
+[node name="Expanding Tiles" type="Node" parent="." index="2"]
+
+[node name="LevelExitGate" parent="." index="3" instance=ExtResource( 4 )]
+
+position = Vector2( -192, -80 )
+NextLevelName = "Level2"
+
+[node name="Gem" parent="LevelExitGate" index="3" instance=ExtResource( 5 )]
+
+position = Vector2( 248, -72 )
+
+[node name="Gem2" parent="LevelExitGate" index="4" instance=ExtResource( 5 )]
+
+position = Vector2( 112, 80 )
+
+[node name="Gem3" parent="LevelExitGate" index="5" instance=ExtResource( 5 )]
+
+position = Vector2( 184, 72 )
+
+[node name="Gem4" parent="LevelExitGate" index="6" instance=ExtResource( 5 )]
+
+position = Vector2( 200, -24 )
+
+[node name="Gem5" parent="LevelExitGate" index="7" instance=ExtResource( 5 )]
+
+position = Vector2( 216, 8 )
+
+

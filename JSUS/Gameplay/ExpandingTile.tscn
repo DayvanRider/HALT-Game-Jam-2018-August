@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Gameplay/ExpandingTileSkripts/ExpandingTile.gd" type="Script" id=1]
 [ext_resource path="res://Gameplay/ExpandingTileSkripts/WallSpriteController.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://Gameplay/ExpandingTileSkripts/Area2D.gd" type="Script" id=4]
 [ext_resource path="res://assets/Andere/puff.png" type="Texture" id=5]
 [ext_resource path="res://Gameplay/Particles2D.gd" type="Script" id=6]
+[ext_resource path="res://assets/Audio/Ambient/Tump.wav" type="AudioStream" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -68,8 +69,8 @@ expandAmount = 32
 startTime = 1
 duration = 4
 wallTexture = null
-wallRegion = Rect2( 16, 16, 16, 16 )
-capRegion = Rect2( 16, 16, 16, 16 )
+wallSprite = Vector2( 1, 1 )
+capSprite = Vector2( 1, 1 )
 
 [node name="Node" type="Node" parent="." index="0"]
 
@@ -113,7 +114,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Area2D" type="Area2D" parent="." index="5"]
 
-editor/display_folded = true
+visible = false
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -122,6 +123,7 @@ angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 4 )
+_sections_unfolded = [ "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
 
@@ -151,6 +153,14 @@ normal_map = null
 h_frames = 1
 v_frames = 1
 script = ExtResource( 6 )
-_sections_unfolded = [ "Process Material", "Textures" ]
+
+[node name="Thump" type="AudioStreamPlayer" parent="." index="7"]
+
+stream = ExtResource( 7 )
+volume_db = 0.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
 
 
