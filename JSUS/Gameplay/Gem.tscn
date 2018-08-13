@@ -17,6 +17,7 @@ extents = Vector2( 8, 8 )
 [node name="Gem" type="Sprite"]
 
 z_index = 2
+z_as_relative = false
 texture = ExtResource( 1 )
 _sections_unfolded = [ "Z Index" ]
 

@@ -44,6 +44,8 @@ func createSprite():
 	newSprite.set_region_rect(textureRegion)
 	# move away from screen
 	newSprite.set_position(Vector2(-100,-100)) 
+	newSprite.set_z_index(5)
+	newSprite.set_z_as_relative(false)
 	add_child(newSprite)
 	return newSprite
 
