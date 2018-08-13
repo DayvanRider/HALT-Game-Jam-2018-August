@@ -8,7 +8,7 @@ const UP = Vector2(0,-1)
 #JUMP strength
 export (int) var  JUMP = -250
 #Gravity
-export(int) var GRAVITY = 100
+export(int) var GRAVITY = 15
 #Walljumpstrength
 export (float) var WALLJUMPPAR = 1.2
 #Lurpvalue
@@ -38,14 +38,19 @@ var wallgrace = 0
 var walljumpboost = 0
 var falling = false
 
-
+var IsAlreadyKilled = false
 
 
 
 func _ready():
+	get_node("Particles2D").set_emitting(false) 
 	$Sprite.play("Idle")
+	var afterDeathTimer = get_node("After Death Timer")
+	afterDeathTimer.connect("timeout", self, "onAfterDeathTimeout")
 	pass
-	
+
+func onAfterDeathTimeout():
+	get_tree().reload_current_scene()
 	
 func _physics_process(delta):
 	#Add gravity
@@ -176,8 +181,13 @@ func moveAndUpdate():
 		motion.x = lerp(0,motion.x,LURPVAL)
 
 func kill():
-	deathSound()
-	get_tree().reload_current_scene()
+	if !IsAlreadyKilled:
+		IsAlreadyKilled = true
+		deathSound()
+		get_node("Particles2D").set_emitting(true) 
+		get_node("Particles2D").restart()
+		get_node("After Death Timer").start()
+	#get_tree().reload_current_scene()
 	
 	
 func jumpSound():

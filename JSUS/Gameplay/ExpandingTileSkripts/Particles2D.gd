@@ -22,6 +22,6 @@ func set_expandDir(newDir):
 	expandDir = newDir
 
 func emit():
-	if !hasEmitted:
+	if !hasEmitted and expTile.particlesEnabled:
 		set_emitting(true)
 		hasEmitted = true
