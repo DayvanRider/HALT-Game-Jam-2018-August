@@ -1,11 +1,12 @@
 extends Node
 
-export(int) var GemsNeeded
+export(String) var NextLevelName = "Level2"
+
 var gemsCollected
 var gemsTotal
 var scoreText
 func _ready():
-	
+	set_draw_behind_parent(true) 
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
 	pass
@@ -33,7 +34,8 @@ func _process(delta):
 		if b.get_name() == "Player":
 			if allGemsCollected:
 				print("Finish Level")
-				b.kill()
+				get_tree().change_scene("res://Levels/" + NextLevelName + ".tscn")
+				#b.kill()
 	
 	scoreText = String(gemsCollected) + " / " + String(gemsTotal)
 	get_node("Score").set_text(scoreText)

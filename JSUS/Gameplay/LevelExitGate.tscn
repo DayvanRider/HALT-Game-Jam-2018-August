@@ -12,7 +12,7 @@ extents = Vector2( 6.79179, 7.95556 )
 
 position = Vector2( 16, 16 )
 script = ExtResource( 1 )
-GemsNeeded = null
+NextLevelName = "Level2"
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 

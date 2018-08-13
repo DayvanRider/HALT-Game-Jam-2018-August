@@ -30,6 +30,8 @@ var expansionStarted = false
 var tileExtent = null
 var additionalTiles = []
 
+var isFullyExtended = false			#Flag, to check if Tile is already extended
+
 
 func _ready():
 	initSprites()
@@ -66,7 +68,10 @@ func onStartTimer():
 	expansionTimer.start()
 
 func _process(delta):
-	pass
+	if (currentExpansion() == 1) && (isFullyExtended == false):
+		isFullyExtended = true
+		get_node("Thump").set_volume_db(-12.0)
+		get_node("Thump").play(0.000001)
 
 func currentExpansion():
 	if !expansionStarted:
