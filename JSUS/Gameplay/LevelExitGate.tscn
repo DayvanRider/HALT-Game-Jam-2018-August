@@ -28,7 +28,6 @@ extents = Vector2( 6.79179, 7.95556 )
 position = Vector2( -8, -8 )
 scale = Vector2( 0.25, 0.25 )
 script = ExtResource( 1 )
-NextLevelName = "Level2"
 
 [node name="Sprite" type="AnimatedSprite" parent="." index="0"]
 
