@@ -8,7 +8,7 @@ const UP = Vector2(0,-1)
 #JUMP strength
 export (int) var  JUMP = -250
 #Gravity
-export(int) var GRAVITY = 100
+export(int) var GRAVITY = 15
 #Walljumpstrength
 export (float) var WALLJUMPPAR = 1.2
 #Lurpvalue
