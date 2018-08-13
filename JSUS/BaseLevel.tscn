@@ -1,14 +1,18 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://assets/Tiles/Tiles.tres" type="TileSet" id=1]
-[ext_resource path="res://assets/Andere/background.png" type="Texture" id=2]
+[ext_resource path="res://BaseLevel.gd" type="Script" id=1]
+[ext_resource path="res://assets/Tiles/Tiles.tres" type="TileSet" id=2]
+[ext_resource path="res://assets/Andere/background.png" type="Texture" id=3]
 
 [node name="Level" type="Node" index="0"]
+
+script = ExtResource( 1 )
+nextLevel = null
 
 [node name="TileMap" type="TileMap" parent="." index="0"]
 
 mode = 0
-tile_set = ExtResource( 1 )
+tile_set = ExtResource( 2 )
 cell_size = Vector2( 16, 16 )
 cell_quadrant_size = 16
 cell_custom_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
@@ -33,7 +37,7 @@ __meta__ = {
 
 z_index = -5
 z_as_relative = false
-texture = ExtResource( 2 )
+texture = ExtResource( 3 )
 centered = false
 _sections_unfolded = [ "Offset", "Transform", "Z Index" ]
 __meta__ = {
