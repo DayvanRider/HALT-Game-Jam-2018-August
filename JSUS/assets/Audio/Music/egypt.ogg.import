@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/egypt.ogg-cfc1ef65b686977754dd800d152c0f8a.oggstr"
+
+[deps]
+
+source_file="res://assets/Audio/Music/egypt.ogg"
+dest_files=[ "res://.import/egypt.ogg-cfc1ef65b686977754dd800d152c0f8a.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
