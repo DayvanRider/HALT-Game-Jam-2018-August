@@ -21,6 +21,7 @@ var MotionSteps = 0				#how much it has moved from origin
 var NextFramePosition = Vector2(0,0)
 
 
+
 var OriginalPosition
 var RestPosition = Vector2(0,0)
 
