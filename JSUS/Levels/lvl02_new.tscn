@@ -1,0 +1,604 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://BaseLevel.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Gameplay/Playercharacter.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Gameplay/ExpandingTile.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Tiles/Tiles.png" type="Texture" id=4]
+[ext_resource path="res://Gameplay/LevelExitGate.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Gameplay/Gem.tscn" type="PackedScene" id=6]
+
+[node name="Node" type="Node" index="0"]
+
+[node name="Level" parent="." index="0" instance=ExtResource( 1 )]
+
+[node name="TileMap" parent="Level" index="0"]
+
+tile_data = PoolIntArray( -1, 4, 0, -65523, 43, 0, -65520, 7, 0, -65519, 7, 0, -65518, 7, 0, -65517, 4, 0, 65535, 5, 0, 13, 19, 0, 131071, 5, 0, 65549, 19, 0, 196607, 5, 0, 196612, 0, 0, 196620, 15, 0, 327679, 5, 0, 262148, 19, 0, 327684, 26, 0, 327696, 0, 0, 327697, 1, 0, 327698, 1, 0, 327699, 4, 0, 393232, 3, 0, 393233, 4, 0, 393234, 4, 0, 393235, 4, 0, 458768, 3, 0, 458769, 4, 0, 458770, 4, 0, 458771, 4, 0, 524304, 3, 0, 524305, 4, 0, 524306, 4, 0, 524307, 4, 0, 589837, 0, 0, 589838, 1, 0, 589839, 1, 0, 589840, 4, 0, 589841, 4, 0, 589842, 4, 0, 589843, 4, 0, 720895, 5, 0, 655373, 3, 0, 655374, 4, 0, 655375, 4, 0, 655376, 4, 0, 655377, 4, 0, 655378, 4, 0, 655379, 4, 0, 786431, 4, 0, 720896, 1, 0, 720897, 1, 0, 720898, 1, 0, 720899, 1, 0, 720900, 5, 0, 720909, 3, 0, 720910, 4, 0, 720911, 4, 0, 720912, 4, 0, 720913, 4, 0, 720914, 4, 0, 720915, 4, 0, 851967, 4, 0, 786432, 4, 0, 786433, 4, 0, 786434, 4, 0, 786435, 4, 0, 786436, 5, 0, 786445, 3, 0, 786446, 4, 0, 786447, 4, 0, 786448, 4, 0, 786449, 4, 0, 786450, 4, 0, 786451, 4, 0, 917503, 4, 0, 851968, 4, 0, 851969, 4, 0, 851970, 4, 0, 851971, 4, 0, 851972, 5, 0, 851982, 4, 0, 851983, 4, 0, 851984, 4, 0, 851985, 4, 0, 851986, 4, 0, 851987, 4, 0, 983039, 4, 0, 917504, 4, 0, 917505, 4, 0, 917506, 4, 0, 917507, 4, 0, 917508, 4, 0, 917509, 1, 0, 917510, 1, 0, 917511, 1, 0, 917512, 1, 0, 917513, 1, 0, 917514, 1, 0, 917515, 1, 0, 917516, 1, 0, 917517, 4, 0, 917518, 4, 0, 917519, 4, 0, 917520, 4, 0, 917521, 4, 0, 917522, 4, 0, 917523, 4, 0 )
+
+[node name="KinematicBody2D" parent="." index="1" instance=ExtResource( 2 )]
+
+position = Vector2( 176, 224 )
+SLIDEFACTOR = 0
+
+[node name="Node" type="Node" parent="." index="2"]
+
+[node name="Expanding Tile" parent="Node" index="0" instance=ExtResource( 3 )]
+
+position = Vector2( 160, 64 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 64, 32, 16, 16 )
+expansionAxis = "Down"
+expandAmount = 96
+startTime = 0.0
+duration = 0.3
+wallTexture = ExtResource( 4 )
+wallSprite = Vector2( 5, 2 )
+capSprite = Vector2( 5, 3 )
+
+[node name="Expanding Tile8" parent="Node" index="1" instance=ExtResource( 3 )]
+
+position = Vector2( 144, 64 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 64, 32, 16, 16 )
+expansionAxis = "Down"
+expandAmount = 96
+startTime = 6.0
+duration = 0.5
+wallTexture = ExtResource( 4 )
+wallSprite = Vector2( 5, 2 )
+capSprite = Vector2( 5, 3 )
+
+[node name="Expanding Tile12" parent="Node" index="2" instance=ExtResource( 3 )]
+
+position = Vector2( 176, 64 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 64, 32, 16, 16 )
+expansionAxis = "Down"
+expandAmount = 96
+startTime = 6.0
+duration = 0.5
+wallTexture = ExtResource( 4 )
+wallSprite = Vector2( 5, 2 )
+capSprite = Vector2( 5, 3 )
+
+[node name="Expanding Tile9" parent="Node" index="3" instance=ExtResource( 3 )]
+
+position = Vector2( 128, 64 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 64, 32, 16, 16 )
+expansionAxis = "Down"
+expandAmount = 96
+startTime = 7.0
+duration = 0.5
+wallTexture = ExtResource( 4 )
+wallSprite = Vector2( 5, 2 )
+capSprite = Vector2( 5, 3 )
+
+[node name="Expanding Tile13" parent="Node" index="4" instance=ExtResource( 3 )]
+
+position = Vector2( 192, 64 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 64, 32, 16, 16 )
+expansionAxis = "Down"
+expandAmount = 96
+startTime = 7.0
+duration = 0.5
+wallTexture = ExtResource( 4 )
+wallSprite = Vector2( 5, 2 )
+capSprite = Vector2( 5, 3 )
+
+[node name="Expanding Tile10" parent="Node" index="5" instance=ExtResource( 3 )]
+
+position = Vector2( 112, 64 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 64, 32, 16, 16 )
+expansionAxis = "Down"
+expandAmount = 96
+startTime = 8.0
+duration = 0.5
+wallTexture = ExtResource( 4 )
+wallSprite = Vector2( 5, 2 )
+capSprite = Vector2( 5, 3 )
+
+[node name="Expanding Tile14" parent="Node" index="6" instance=ExtResource( 3 )]
+
+position = Vector2( 208, 64 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 80, 64, 16, 16 )
+expansionAxis = "Down"
+expandAmount = 96
+startTime = 8.0
+duration = 0.5
+wallTexture = ExtResource( 4 )
+wallSprite = Vector2( 5, 2 )
+capSprite = Vector2( 5, 3 )
+
+[node name="Expanding Tile11" parent="Node" index="7" instance=ExtResource( 3 )]
+
+position = Vector2( 96, 64 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 64, 32, 16, 16 )
+expansionAxis = "Down"
+expandAmount = 96
+startTime = 9.0
+duration = 0.5
+wallTexture = ExtResource( 4 )
+wallSprite = Vector2( 5, 2 )
+capSprite = Vector2( 5, 3 )
+
+[node name="Expanding Tile4" parent="Node" index="8" instance=ExtResource( 3 )]
+
+position = Vector2( 224, 192 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 0, 16, 16, 16 )
+expansionAxis = "Left"
+expandAmount = 128
+startTime = 3.5
+duration = 5.0
+wallTexture = ExtResource( 4 )
+wallSprite = Vector2( 4, 2 )
+capSprite = Vector2( 4, 4 )
+
+[node name="Expanding Tile5" parent="Node" index="9" instance=ExtResource( 3 )]
+
+position = Vector2( 224, 208 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 0, 16, 16, 16 )
+expansionAxis = "Left"
+expandAmount = 128
+startTime = 2.0
+duration = 5.0
+wallTexture = ExtResource( 4 )
+wallSprite = Vector2( 4, 2 )
+capSprite = Vector2( 4, 4 )
+
+[node name="Expanding Tile6" parent="Node" index="10" instance=ExtResource( 3 )]
+
+position = Vector2( 224, 224 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 0, 16, 16, 16 )
+expansionAxis = "Left"
+expandAmount = 128
+startTime = 2.0
+wallTexture = ExtResource( 4 )
+wallSprite = Vector2( 4, 2 )
+capSprite = Vector2( 4, 4 )
+
+[node name="Expanding Tile3" parent="Node" index="11" instance=ExtResource( 3 )]
+
+position = Vector2( 224, 176 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 0, 16, 16, 16 )
+expansionAxis = "Left"
+expandAmount = 128
+startTime = 4.0
+duration = 7.0
+wallTexture = ExtResource( 4 )
+wallSprite = Vector2( 4, 2 )
+capSprite = Vector2( 4, 4 )
+
+[node name="Expanding Tile37" parent="Node" index="12" instance=ExtResource( 3 )]
+
+position = Vector2( 320, 16 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 32, 64, 16, 16 )
+expansionAxis = "Left"
+expandAmount = 48
+startTime = 3.0
+duration = 1.5
+wallTexture = ExtResource( 4 )
+wallSprite = Vector2( 4, 2 )
+capSprite = Vector2( 4, 4 )
+
+[node name="Expanding Tile38" parent="Node" index="13" instance=ExtResource( 3 )]
+
+position = Vector2( 320, 32 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 32, 64, 16, 16 )
+expansionAxis = "Left"
+expandAmount = 48
+startTime = 3.5
+duration = 1.5
+wallTexture = ExtResource( 4 )
+wallSprite = Vector2( 4, 2 )
+capSprite = Vector2( 4, 4 )
+
+[node name="Expanding Tile39" parent="Node" index="14" instance=ExtResource( 3 )]
+
+position = Vector2( 320, 48 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 32, 64, 16, 16 )
+expansionAxis = "Left"
+expandAmount = 48
+startTime = 4.0
+duration = 1.5
+wallTexture = ExtResource( 4 )
+wallSprite = Vector2( 4, 2 )
+capSprite = Vector2( 4, 4 )
+
+[node name="Expanding Tile40" parent="Node" index="15" instance=ExtResource( 3 )]
+
+position = Vector2( 320, 64 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 32, 64, 16, 16 )
+expansionAxis = "Left"
+expandAmount = 48
+startTime = 4.5
+duration = 1.5
+wallTexture = ExtResource( 4 )
+wallSprite = Vector2( 4, 2 )
+capSprite = Vector2( 4, 4 )
+
+[node name="Expanding Tile41" parent="Node" index="16" instance=ExtResource( 3 )]
+
+position = Vector2( 320, 80 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 32, 64, 16, 16 )
+expansionAxis = "Left"
+expandAmount = 48
+startTime = 5.0
+duration = 1.5
+wallTexture = ExtResource( 4 )
+wallSprite = Vector2( 4, 2 )
+capSprite = Vector2( 4, 4 )
+
+[node name="Expanding Tile15" parent="Node" index="17" instance=ExtResource( 3 )]
+
+position = Vector2( 80, 80 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 80, 32, 16, 16 )
+expansionAxis = "Left"
+expandAmount = 64
+startTime = 6.0
+duration = 2.0
+wallTexture = ExtResource( 4 )
+wallSprite = Vector2( 4, 2 )
+capSprite = Vector2( 4, 4 )
+
+[node name="Expanding Tile16" parent="Node" index="18" instance=ExtResource( 3 )]
+
+position = Vector2( 0, 64 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 32, 16, 16, 16 )
+expansionAxis = "Right"
+expandAmount = 64
+startTime = 6.0
+duration = 2.0
+wallTexture = ExtResource( 4 )
+wallSprite = Vector2( 4, 2 )
+capSprite = Vector2( 5, 4 )
+
+[node name="Expanding Tile17" parent="Node" index="19" instance=ExtResource( 3 )]
+
+position = Vector2( 0, 96 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 32, 16, 16, 16 )
+expansionAxis = "Right"
+expandAmount = 64
+startTime = 6.0
+duration = 2.0
+wallTexture = ExtResource( 4 )
+wallSprite = Vector2( 4, 2 )
+capSprite = Vector2( 5, 4 )
+
+[node name="Expanding Tile18" parent="Node" index="20" instance=ExtResource( 3 )]
+
+position = Vector2( 0, 112 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 32, 16, 16, 16 )
+expansionAxis = "Right"
+expandAmount = 80
+startTime = 6.0
+duration = 2.0
+wallTexture = ExtResource( 4 )
+wallSprite = Vector2( 1, 0 )
+capSprite = Vector2( 5, 0 )
+
+[node name="Expanding Tile19" parent="Node" index="21" instance=ExtResource( 3 )]
+
+position = Vector2( 0, 128 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 32, 16, 16, 16 )
+expansionAxis = "Right"
+expandAmount = 80
+startTime = 6.0
+duration = 2.0
+wallTexture = ExtResource( 4 )
+capSprite = Vector2( 2, 1 )
+
+[node name="Expanding Tile20" parent="Node" index="22" instance=ExtResource( 3 )]
+
+position = Vector2( 0, 144 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 32, 16, 16, 16 )
+expansionAxis = "Right"
+expandAmount = 80
+startTime = 6.0
+duration = 2.0
+wallTexture = ExtResource( 4 )
+capSprite = Vector2( 2, 1 )
+
+[node name="Expanding Tile21" parent="Node" index="23" instance=ExtResource( 3 )]
+
+position = Vector2( 0, 160 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 32, 16, 16, 16 )
+expansionAxis = "Right"
+expandAmount = 80
+startTime = 6.0
+duration = 2.0
+wallTexture = ExtResource( 4 )
+wallSprite = Vector2( 1, 2 )
+capSprite = Vector2( 5, 1 )
+
+[node name="Expanding Tile7" parent="Node" index="24" instance=ExtResource( 3 )]
+
+position = Vector2( 80, 176 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 64, 48, 16, 16 )
+expansionAxis = "Left"
+expandAmount = 64
+startTime = 4.0
+wallTexture = ExtResource( 4 )
+wallSprite = Vector2( 4, 2 )
+capSprite = Vector2( 4, 4 )
+
+[node name="Expanding Tile2" parent="Node" index="25" instance=ExtResource( 3 )]
+
+position = Vector2( 224, 48 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 80, 48, 16, 16 )
+expansionAxis = "Down"
+expandAmount = 96
+duration = 5.0
+wallTexture = ExtResource( 4 )
+wallSprite = Vector2( 5, 2 )
+capSprite = Vector2( 5, 3 )
+
+[node name="Expanding Tile22" parent="Node" index="26" instance=ExtResource( 3 )]
+
+position = Vector2( 256, 0 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 16, 32, 16, 16 )
+expansionAxis = "Down"
+expandAmount = 144
+startTime = 4.0
+duration = 5.0
+wallTexture = ExtResource( 4 )
+wallSprite = Vector2( 5, 2 )
+capSprite = Vector2( 5, 3 )
+
+[node name="Expanding Tile23" parent="Node" index="27" instance=ExtResource( 3 )]
+
+position = Vector2( 240, 0 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 16, 32, 16, 16 )
+expansionAxis = "Down"
+expandAmount = 144
+startTime = 3.0
+duration = 5.0
+wallTexture = ExtResource( 4 )
+wallSprite = Vector2( 5, 2 )
+capSprite = Vector2( 5, 3 )
+
+[node name="Expanding Tile24" parent="Node" index="28" instance=ExtResource( 3 )]
+
+position = Vector2( 192, 0 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 16, 32, 16, 16 )
+expansionAxis = "Down"
+expandAmount = 48
+startTime = 15.5
+duration = 0.5
+wallTexture = ExtResource( 4 )
+wallSprite = Vector2( 5, 2 )
+capSprite = Vector2( 5, 3 )
+
+[node name="Expanding Tile36" parent="Node" index="29" instance=ExtResource( 3 )]
+
+position = Vector2( 208, 0 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 16, 32, 16, 16 )
+expansionAxis = "Down"
+expandAmount = 48
+startTime = 17.0
+duration = 0.5
+wallTexture = ExtResource( 4 )
+wallSprite = Vector2( 5, 2 )
+capSprite = Vector2( 5, 3 )
+
+[node name="Expanding Tile25" parent="Node" index="30" instance=ExtResource( 3 )]
+
+position = Vector2( 176, 0 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 16, 32, 16, 16 )
+expansionAxis = "Down"
+expandAmount = 48
+startTime = 15.0
+duration = 0.5
+wallTexture = ExtResource( 4 )
+wallSprite = Vector2( 5, 2 )
+capSprite = Vector2( 5, 3 )
+
+[node name="Expanding Tile26" parent="Node" index="31" instance=ExtResource( 3 )]
+
+position = Vector2( 160, 0 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 16, 32, 16, 16 )
+expansionAxis = "Down"
+expandAmount = 48
+startTime = 14.5
+duration = 0.5
+wallTexture = ExtResource( 4 )
+wallSprite = Vector2( 5, 2 )
+capSprite = Vector2( 5, 3 )
+
+[node name="Expanding Tile27" parent="Node" index="32" instance=ExtResource( 3 )]
+
+position = Vector2( 144, 0 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 16, 32, 16, 16 )
+expansionAxis = "Down"
+expandAmount = 48
+startTime = 14.0
+duration = 0.5
+wallTexture = ExtResource( 4 )
+wallSprite = Vector2( 5, 2 )
+capSprite = Vector2( 5, 3 )
+
+[node name="Expanding Tile28" parent="Node" index="33" instance=ExtResource( 3 )]
+
+position = Vector2( 128, 0 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 16, 32, 16, 16 )
+expansionAxis = "Down"
+expandAmount = 48
+startTime = 13.5
+duration = 0.5
+wallTexture = ExtResource( 4 )
+wallSprite = Vector2( 5, 2 )
+capSprite = Vector2( 5, 3 )
+
+[node name="Expanding Tile29" parent="Node" index="34" instance=ExtResource( 3 )]
+
+position = Vector2( 112, 0 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 16, 32, 16, 16 )
+expansionAxis = "Down"
+expandAmount = 48
+startTime = 13.0
+duration = 0.5
+wallTexture = ExtResource( 4 )
+wallSprite = Vector2( 5, 2 )
+capSprite = Vector2( 5, 3 )
+
+[node name="Expanding Tile30" parent="Node" index="35" instance=ExtResource( 3 )]
+
+position = Vector2( 96, 0 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 16, 32, 16, 16 )
+expansionAxis = "Down"
+expandAmount = 48
+startTime = 12.5
+duration = 0.5
+wallTexture = ExtResource( 4 )
+wallSprite = Vector2( 5, 2 )
+capSprite = Vector2( 5, 3 )
+
+[node name="Expanding Tile31" parent="Node" index="36" instance=ExtResource( 3 )]
+
+position = Vector2( 80, 0 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 16, 32, 16, 16 )
+expansionAxis = "Down"
+expandAmount = 48
+startTime = 12.0
+duration = 0.5
+wallTexture = ExtResource( 4 )
+wallSprite = Vector2( 5, 2 )
+capSprite = Vector2( 5, 3 )
+
+[node name="Expanding Tile32" parent="Node" index="37" instance=ExtResource( 3 )]
+
+position = Vector2( 64, 0 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 16, 32, 16, 16 )
+expansionAxis = "Down"
+expandAmount = 48
+startTime = 11.5
+duration = 0.5
+wallTexture = ExtResource( 4 )
+wallSprite = Vector2( 5, 2 )
+capSprite = Vector2( 5, 3 )
+
+[node name="Expanding Tile33" parent="Node" index="38" instance=ExtResource( 3 )]
+
+position = Vector2( 48, 0 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 16, 32, 16, 16 )
+expansionAxis = "Down"
+expandAmount = 48
+startTime = 11.0
+duration = 0.5
+wallTexture = ExtResource( 4 )
+wallSprite = Vector2( 5, 2 )
+capSprite = Vector2( 5, 3 )
+
+[node name="Expanding Tile34" parent="Node" index="39" instance=ExtResource( 3 )]
+
+position = Vector2( 32, 0 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 16, 32, 16, 16 )
+expansionAxis = "Down"
+expandAmount = 48
+startTime = 10.5
+duration = 0.5
+wallTexture = ExtResource( 4 )
+wallSprite = Vector2( 5, 2 )
+capSprite = Vector2( 5, 3 )
+
+[node name="Expanding Tile35" parent="Node" index="40" instance=ExtResource( 3 )]
+
+position = Vector2( 16, 0 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 16, 32, 16, 16 )
+expansionAxis = "Down"
+expandAmount = 48
+startTime = 10.0
+duration = 0.5
+wallTexture = ExtResource( 4 )
+wallSprite = Vector2( 5, 2 )
+capSprite = Vector2( 5, 3 )
+
+[node name="LevelExitGate" parent="." index="3" instance=ExtResource( 5 )]
+
+position = Vector2( 208, 48 )
+
+[node name="Gem" parent="LevelExitGate" index="3" instance=ExtResource( 6 )]
+
+position = Vector2( 348, 100 )
+scale = Vector2( 4.5, 4.5 )
+
+
+[editable path="Level"]
