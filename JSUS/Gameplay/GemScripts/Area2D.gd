@@ -4,6 +4,7 @@ var Collected
 
 
 func _ready():
+	set_visible(false)
 	Collected = false;
 
 #check for collision with Node called "Player"

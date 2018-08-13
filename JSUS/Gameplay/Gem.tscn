@@ -14,12 +14,13 @@
 custom_solver_bias = 0.0
 extents = Vector2( 8, 8 )
 
-[node name="Gem" type="Sprite"]
+[node name="Gem" type="Sprite" index="0"]
 
 texture = ExtResource( 1 )
 
 [node name="Area2D" type="Area2D" parent="." index="0"]
 
+visible = false
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
