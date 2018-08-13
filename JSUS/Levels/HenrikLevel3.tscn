@@ -12,7 +12,7 @@
 [node name="Level" type="Node" index="0"]
 
 script = ExtResource( 1 )
-nextLevel = null
+nextLevel = "res://Levels/TillLvl2.tscn"
 
 [node name="TileMap" type="TileMap" parent="." index="0"]
 

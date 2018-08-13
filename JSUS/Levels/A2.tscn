@@ -8,9 +8,11 @@
 [ext_resource path="res://Gameplay/ExpandingTile.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Tiles/Tiles.png" type="Texture" id=7]
 
-[node name="Node" type="Node" index="0"]
+[node name="Node" type="Node"]
 
 [node name="Level" parent="." index="0" instance=ExtResource( 1 )]
+
+nextLevel = "res://Levels/HenrikLevel3.tscn"
 
 [node name="Spikes" parent="Level" index="0" instance=ExtResource( 2 )]
 
@@ -90,16 +92,16 @@ position = Vector2( 32, 160 )
 
 [node name="LevelExitGate" parent="Level" index="13" instance=ExtResource( 4 )]
 
-position = Vector2( 272, 64 )
+position = Vector2( 272, 112 )
 
 [node name="Gem" parent="Level/LevelExitGate" index="4" instance=ExtResource( 5 )]
 
-position = Vector2( -576, 128 )
+position = Vector2( -576, -64 )
 scale = Vector2( 4, 4 )
 
 [node name="Gem2" parent="Level/LevelExitGate" index="5" instance=ExtResource( 5 )]
 
-position = Vector2( -256, 64 )
+position = Vector2( -256, -128 )
 scale = Vector2( 4, 4 )
 
 [node name="TileMap" parent="Level" index="14"]
@@ -125,7 +127,6 @@ position = Vector2( 16, 128 )
 scale = Vector2( 0.936926, 1.06307 )
 texture = ExtResource( 7 )
 region_enabled = true
-_sections_unfolded = [ "Z Index" ]
 expansionAxis = "Right"
 expandAmount = 256
 startTime = 1.5

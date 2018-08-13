@@ -12,7 +12,7 @@
 
 [node name="Level" parent="." index="0" instance=ExtResource( 1 )]
 
-nextLevel = "res://Levels/TillLvl2.tscn"
+nextLevel = "res://Levels/A2.tscn"
 
 [node name="Expanding Tile" parent="Level" index="0" instance=ExtResource( 2 )]
 
