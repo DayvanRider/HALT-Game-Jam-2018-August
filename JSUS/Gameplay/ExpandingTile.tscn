@@ -58,7 +58,7 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Angular Velocity", "Color", "Damping", "Emission Shape", "Flags", "Gravity", "Initial Velocity", "Linear Accel", "Resource", "Scale" ]
 
-[node name="Expanding Tile" type="Sprite"]
+[node name="Expanding Tile" type="Sprite" index="0"]
 
 position = Vector2( -0.0630741, 0.0630741 )
 z_index = 6
@@ -134,7 +134,7 @@ shape = SubResource( 2 )
 [node name="Particles2D" type="Particles2D" parent="." index="6"]
 
 visible = false
-z_index = 2
+z_index = 15
 z_as_relative = false
 emitting = false
 amount = 8
@@ -155,6 +155,7 @@ normal_map = null
 h_frames = 1
 v_frames = 1
 script = ExtResource( 6 )
+_sections_unfolded = [ "Z Index" ]
 
 [node name="Thump" type="AudioStreamPlayer" parent="." index="7"]
 
