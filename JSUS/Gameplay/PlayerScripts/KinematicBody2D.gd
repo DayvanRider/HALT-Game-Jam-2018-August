@@ -43,6 +43,7 @@ var falling = false
 
 
 func _ready():
+	get_node("Particles2D").set_emitting(false) 
 	$Sprite.play("Idle")
 	pass
 	
@@ -177,7 +178,9 @@ func moveAndUpdate():
 
 func kill():
 	deathSound()
-	get_tree().reload_current_scene()
+	get_node("Particles2D").set_emitting(true) 
+	get_node("Particles2D").restart()
+	#get_tree().reload_current_scene()
 	
 	
 func jumpSound():
