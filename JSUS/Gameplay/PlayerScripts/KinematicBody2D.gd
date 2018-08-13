@@ -38,15 +38,19 @@ var wallgrace = 0
 var walljumpboost = 0
 var falling = false
 
-
+var IsAlreadyKilled = false
 
 
 
 func _ready():
 	get_node("Particles2D").set_emitting(false) 
 	$Sprite.play("Idle")
+	var afterDeathTimer = get_node("After Death Timer")
+	afterDeathTimer.connect("timeout", self, "onAfterDeathTimeout")
 	pass
-	
+
+func onAfterDeathTimeout():
+	get_tree().reload_current_scene()
 	
 func _physics_process(delta):
 	#Add gravity
@@ -177,9 +181,12 @@ func moveAndUpdate():
 		motion.x = lerp(0,motion.x,LURPVAL)
 
 func kill():
-	deathSound()
-	get_node("Particles2D").set_emitting(true) 
-	get_node("Particles2D").restart()
+	if !IsAlreadyKilled:
+		IsAlreadyKilled = true
+		deathSound()
+		get_node("Particles2D").set_emitting(true) 
+		get_node("Particles2D").restart()
+		get_node("After Death Timer").start()
 	#get_tree().reload_current_scene()
 	
 	
