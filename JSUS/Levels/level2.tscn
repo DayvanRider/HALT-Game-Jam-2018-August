@@ -42,14 +42,12 @@ __meta__ = {
 [node name="KinematicBody2D" parent="." index="1" instance=ExtResource( 3 )]
 
 position = Vector2( -128, -16 )
-GRAVITY = 15
 
 [node name="Expanding Tiles" type="Node" parent="." index="2"]
 
 [node name="LevelExitGate" parent="." index="3" instance=ExtResource( 4 )]
 
 position = Vector2( -192, -80 )
-NextLevelName = "Level2"
 
 [node name="Gem" parent="LevelExitGate" index="3" instance=ExtResource( 5 )]
 
