@@ -59,24 +59,24 @@ position = Vector2( 32, 64 )
 position = Vector2( 512, 192 )
 scale = Vector2( 4, 4 )
 
-[node name="Gem2" parent="LevelExitGate" index="5" instance=ExtResource( 5 )]
+[node name="Gem6" parent="LevelExitGate" index="5" instance=ExtResource( 5 )]
+
+position = Vector2( 256, 640 )
+scale = Vector2( 4, 4 )
+
+[node name="Gem2" parent="LevelExitGate" index="6" instance=ExtResource( 5 )]
 
 position = Vector2( 832, -128 )
 scale = Vector2( 4, 4 )
 
-[node name="Gem3" parent="LevelExitGate" index="6" instance=ExtResource( 5 )]
+[node name="Gem3" parent="LevelExitGate" index="7" instance=ExtResource( 5 )]
 
 position = Vector2( 320, -128 )
 scale = Vector2( 4, 4 )
 
-[node name="Gem4" parent="LevelExitGate" index="7" instance=ExtResource( 5 )]
+[node name="Gem4" parent="LevelExitGate" index="8" instance=ExtResource( 5 )]
 
 position = Vector2( 192, -64 )
-scale = Vector2( 4, 4 )
-
-[node name="Gem5" parent="LevelExitGate" index="8" instance=ExtResource( 5 )]
-
-position = Vector2( 64, 0 )
 scale = Vector2( 4, 4 )
 
 [node name="Expanding TIles" type="Node" parent="." index="3"]

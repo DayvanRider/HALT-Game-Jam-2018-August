@@ -8,7 +8,7 @@
 [ext_resource path="res://Gameplay/ExpandingTile.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/Tiles/Tiles.png" type="Texture" id=7]
 
-[node name="Node" type="Node" index="0"]
+[node name="Node" type="Node"]
 
 [node name="Level" parent="." index="0" instance=ExtResource( 1 )]
 
@@ -77,36 +77,39 @@ playAudio = false
 
 position = Vector2( 36.1168, 27.3248 )
 
-[node name="LevelExitGate" parent="Level" index="3" instance=ExtResource( 4 )]
+[node name="LevelExitGate2" parent="Level" index="3" instance=ExtResource( 4 )]
 
+editor/display_folded = true
 position = Vector2( 160, 208 )
 
-[node name="Gem" parent="Level/LevelExitGate" index="0" instance=ExtResource( 5 )]
+[node name="Gem" parent="Level/LevelExitGate2" index="0" instance=ExtResource( 5 )]
 
 position = Vector2( -128, -512 )
 scale = Vector2( 4, 4 )
 
-[node name="Gem2" parent="Level/LevelExitGate" index="4" instance=ExtResource( 5 )]
+[node name="Gem2" parent="Level/LevelExitGate2" index="4" instance=ExtResource( 5 )]
 
 position = Vector2( 544, -736 )
 scale = Vector2( 4, 4 )
 
-[node name="Gem3" parent="Level/LevelExitGate" index="5" instance=ExtResource( 5 )]
+[node name="Gem3" parent="Level/LevelExitGate2" index="5" instance=ExtResource( 5 )]
 
 position = Vector2( -576, 32 )
 scale = Vector2( 4, 4 )
 
-[node name="Gem4" parent="Level/LevelExitGate" index="6" instance=ExtResource( 5 )]
+[node name="Gem4" parent="Level/LevelExitGate2" index="6" instance=ExtResource( 5 )]
 
 position = Vector2( 512, 32 )
 scale = Vector2( 4, 4 )
 
-[node name="Gem5" parent="Level/LevelExitGate" index="7" instance=ExtResource( 5 )]
+[node name="Gem5" parent="Level/LevelExitGate2" index="7" instance=ExtResource( 5 )]
 
 position = Vector2( -384, -544 )
 scale = Vector2( 4, 4 )
 
 [node name="Expanding Tiles" type="Node" parent="Level" index="4"]
+
+editor/display_folded = true
 
 [node name="Expanding Tile" parent="Level/Expanding Tiles" index="0" instance=ExtResource( 6 )]
 
@@ -492,6 +495,7 @@ expansionAxis = "Down"
 startTime = 26.0
 duration = 1.0
 wallTexture = ExtResource( 7 )
+capSprite = Vector2( 1, 2 )
 
 [node name="Expanding Tile31" parent="Level/Expanding Tiles" index="27" instance=ExtResource( 6 )]
 
@@ -546,6 +550,7 @@ expansionAxis = "Down"
 startTime = 26.0
 duration = 1.0
 wallTexture = ExtResource( 7 )
+capSprite = Vector2( 1, 2 )
 
 [node name="Expanding Tile27" parent="Level/Expanding Tiles" index="31" instance=ExtResource( 6 )]
 
