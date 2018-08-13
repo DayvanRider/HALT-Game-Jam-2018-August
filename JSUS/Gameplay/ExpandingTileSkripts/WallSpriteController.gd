@@ -17,7 +17,7 @@ func _ready():
 	image.load("res://assets/Tiles/Tiles.png")
 	texture.create_from_image(image, 0)
 	# create necessary amount of sprites
-	var spriteNumber = ceil(expandingTile.expandAmount / width)
+	var spriteNumber = ceil(expandingTile.expandAmount / float(width))
 	for i in range(spriteNumber):
 		var newSprite = createSprite()
 		sprites.push_back(newSprite)
@@ -44,6 +44,8 @@ func createSprite():
 	newSprite.set_region_rect(textureRegion)
 	# move away from screen
 	newSprite.set_position(Vector2(-100,-100)) 
+	newSprite.set_z_index(5)
+	newSprite.set_z_as_relative(false)
 	add_child(newSprite)
 	return newSprite
 

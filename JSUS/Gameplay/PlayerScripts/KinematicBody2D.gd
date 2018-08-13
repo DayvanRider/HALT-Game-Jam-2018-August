@@ -21,7 +21,7 @@ export (int) var WALLGRACEFACTOR = 10
 export (int) var MAXWALLJUMPBOOST = 280
 #will be subtracted from the walljumpboost each frame
 export (int) var WALLJUMPBOOSTITERATOR = 7
-export (int) var SLIDEFACTOR = 10
+const SLIDEFACTOR = 0
 
 
 
@@ -53,27 +53,28 @@ func onAfterDeathTimeout():
 	get_tree().reload_current_scene()
 	
 func _physics_process(delta):
-	#Add gravity
-	motion.y += GRAVITY
-	#left and right and down movement tracking
-	basicMovement()
-
-	#Jump tracking
-	jumping()
-		
-		
-	#walljumptracking
-	wallJumpTracking()
-		
-	#make walljumps non climbeable
-	climbProtection()
+	if !IsAlreadyKilled:
+		#Add gravity
+		motion.y += GRAVITY
+		#left and right and down movement tracking
+		basicMovement()
 	
-	#call move and slide and update motion and grace values
-	#also add lurp
-	moveAndUpdate()
-
-	if isSquished():
-		kill()
+		#Jump tracking
+		jumping()
+			
+			
+		#walljumptracking
+		wallJumpTracking()
+			
+		#make walljumps non climbeable
+		climbProtection()
+		
+		#call move and slide and update motion and grace values
+		#also add lurp
+		moveAndUpdate()
+	
+		if isSquished():
+			kill()
 	
 
 		
@@ -118,6 +119,7 @@ func wallJumpTracking():
 		if is_on_wall():
 			
 			if motion.y < 0:
+				$Sprite.play("Jump")
 				
 				motion.y += SLIDEFACTOR
 			wallgrace = 0

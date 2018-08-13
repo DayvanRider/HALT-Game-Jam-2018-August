@@ -9,10 +9,12 @@
 custom_solver_bias = 0.0
 extents = Vector2( 10.1827, 10 )
 
-[node name="Spikes" type="Node2D"]
+[node name="Spikes" type="Node2D" index="0"]
 
 position = Vector2( 8, 8 )
 scale = Vector2( 0.25, 0.25 )
+z_index = 4
+z_as_relative = false
 script = ExtResource( 1 )
 _sections_unfolded = [ "Pause", "Transform", "Z Index" ]
 RestingTime = 1
