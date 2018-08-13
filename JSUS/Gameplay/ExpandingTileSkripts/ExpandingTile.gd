@@ -11,7 +11,7 @@ var axisMap = {
 export(String, "Up", "Down", "Left", "Right") var expansionAxis = "Up"
 var expandDir = null
 # Max size the tile reaches
-export(int, 0, 640, 16) var expandAmount = 32
+export(int, 0, 640, 8) var expandAmount = 32
 # Time after level start where the tile begins expanding, in seconds
 export(float) var startTime = 1
 # Time the tile takes to reache its max size after starting, in seconds
