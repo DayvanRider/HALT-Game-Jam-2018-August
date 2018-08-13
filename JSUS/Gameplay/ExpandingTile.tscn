@@ -1,9 +1,12 @@
+[gd_scene load_steps=10 format=2]
 [gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Gameplay/ExpandingTileSkripts/ExpandingTile.gd" type="Script" id=1]
 [ext_resource path="res://Gameplay/ExpandingTileSkripts/WallSpriteController.gd" type="Script" id=2]
 [ext_resource path="res://Gameplay/ExpandingTileSkripts/CollisionShape2D.gd" type="Script" id=3]
 [ext_resource path="res://Gameplay/ExpandingTileSkripts/Area2D.gd" type="Script" id=4]
+[ext_resource path="res://assets/Andere/puff.png" type="Texture" id=5]
+[ext_resource path="res://Gameplay/Particles2D.gd" type="Script" id=6]
 [ext_resource path="res://assets/Audio/Ambient/Tump.wav" type="AudioStream" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -16,8 +19,49 @@ extents = Vector2( 8, 8 )
 custom_solver_bias = 0.0
 extents = Vector2( 8, 8 )
 
+[sub_resource type="ParticlesMaterial" id=3]
+
+render_priority = 0
+trail_divisor = 1
+emission_shape = 2
+emission_box_extents = Vector3( 1, 8, 1 )
+flag_align_y = false
+flag_rotate_y = false
+flag_disable_z = true
+spread = 90.0
+flatness = 0.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 50.0
+initial_velocity_random = 1.0
+angular_velocity = 84.0
+angular_velocity_random = 0.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = -10.0
+linear_accel_random = 0.0
+radial_accel = 0.0
+radial_accel_random = 0.0
+tangential_accel = 0.0
+tangential_accel_random = 0.0
+damping = 60.0
+damping_random = 0.0
+angle = 0.0
+angle_random = 0.0
+scale = 1.5
+scale_random = 1.0
+color = Color( 1, 1, 1, 1 )
+hue_variation = 0.0
+hue_variation_random = 0.0
+anim_speed = 0.0
+anim_speed_random = 0.0
+anim_offset = 0.0
+anim_offset_random = 0.0
+anim_loop = false
+_sections_unfolded = [ "Angular Velocity", "Color", "Damping", "Emission Shape", "Flags", "Gravity", "Initial Velocity", "Linear Accel", "Resource", "Scale" ]
+
 [node name="Expanding Tile" type="Sprite"]
 
+position = Vector2( -0.0630741, 0.0630741 )
 z_index = 1
 script = ExtResource( 1 )
 _sections_unfolded = [ "Transform", "Z Index" ]
@@ -26,8 +70,8 @@ expandAmount = 32
 startTime = 1
 duration = 4
 wallTexture = null
-wallRegion = Rect2( 16, 16, 16, 16 )
-capRegion = Rect2( 16, 16, 16, 16 )
+wallSprite = Vector2( 1, 1 )
+capSprite = Vector2( 1, 1 )
 
 [node name="Node" type="Node" parent="." index="0"]
 
@@ -52,6 +96,7 @@ autostart = false
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." index="4"]
 
+editor/display_folded = true
 visible = false
 input_pickable = false
 collision_layer = 1
@@ -70,6 +115,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Area2D" type="Area2D" parent="." index="5"]
 
+visible = false
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
 gravity = 98.0
@@ -78,13 +124,38 @@ angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
 script = ExtResource( 4 )
+_sections_unfolded = [ "Visibility" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0"]
 
 shape = SubResource( 2 )
 
+[node name="Particles2D" type="Particles2D" parent="." index="6"]
 [node name="Thump" type="AudioStreamPlayer" parent="." index="6"]
 
+visible = false
+z_index = 2
+z_as_relative = false
+emitting = false
+amount = 8
+lifetime = 0.3
+one_shot = true
+preprocess = 0.0
+speed_scale = 1.0
+explosiveness = 0.9
+randomness = 1.0
+fixed_fps = 0
+fract_delta = true
+visibility_rect = Rect2( -100, -100, 200, 200 )
+local_coords = true
+draw_order = 0
+process_material = SubResource( 3 )
+texture = ExtResource( 5 )
+normal_map = null
+h_frames = 1
+v_frames = 1
+script = ExtResource( 6 )
+_sections_unfolded = [ "Process Material", "Textures" ]
 stream = ExtResource( 5 )
 volume_db = 0.0
 pitch_scale = 1.0
