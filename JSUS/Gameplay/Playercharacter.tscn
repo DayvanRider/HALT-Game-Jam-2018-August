@@ -158,7 +158,7 @@ _sections_unfolded = [ "Playback Options" ]
 scale = Vector2( 4, 4 )
 frames = SubResource( 2 )
 animation = "Idle"
-frame = 6
+frame = 7
 playing = true
 _sections_unfolded = [ "Offset", "Transform" ]
 
@@ -433,7 +433,7 @@ _sections_unfolded = [ "Transform" ]
 
 z_index = 5
 z_as_relative = false
-emitting = true
+emitting = false
 amount = 58
 lifetime = 1.15
 one_shot = false

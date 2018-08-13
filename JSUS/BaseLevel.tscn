@@ -4,7 +4,7 @@
 [ext_resource path="res://assets/Tiles/Tiles.tres" type="TileSet" id=2]
 [ext_resource path="res://assets/Andere/background.png" type="Texture" id=3]
 
-[node name="Level" type="Node"]
+[node name="Level" type="Node" index="0"]
 
 script = ExtResource( 1 )
 nextLevel = null
