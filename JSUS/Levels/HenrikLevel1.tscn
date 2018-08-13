@@ -12,16 +12,60 @@
 
 [node name="Level" parent="." index="0" instance=ExtResource( 1 )]
 
+nextLevel = "res://Levels/HenrikLevel1.tscn"
+
 [node name="TileMap" parent="Level" index="0"]
 
-tile_data = PoolIntArray( -1, 1, 0, -65536, 1, 0, -65535, 1, 0, -65534, 1, 0, -65533, 1, 0, -65532, 1, 0, -65531, 1, 0, -65530, 1, 0, -65529, 1, 0, -65528, 1, 0, -65527, 1, 0, -65526, 1, 0, -65525, 1, 0, -65524, 1, 0, -65523, 1, 0, -65522, 1, 0, -65521, 1, 0, -65520, 1, 0, -65519, 1, 0, -65518, 1, 0, -65517, 1, 0, 65535, 19, 0, 19, 19, 0, 131071, 19, 0, 65555, 19, 0, 196607, 19, 0, 131072, 1, 0, 131073, 1, 0, 131074, 1, 0, 131075, 1, 0, 131076, 2, 0, 131079, 32, 0, 131080, 13, 0, 131091, 19, 0, 262143, 19, 0, 196612, 5, 0, 196616, 19, 0, 196627, 19, 0, 327679, 19, 0, 262148, 5, 0, 262152, 19, 0, 262163, 19, 0, 393215, 19, 0, 327687, 18, 0, 327688, 16, 0, 327699, 19, 0, 458751, 19, 0, 393235, 19, 0, 524287, 19, 0, 458771, 19, 0, 589823, 19, 0, 524307, 19, 0, 655359, 19, 0, 589843, 19, 0, 720895, 19, 0, 655379, 19, 0, 786431, 19, 0, 720915, 19, 0, 851967, 19, 0, 786451, 19, 0, 917503, 19, 0, 851987, 19, 0, 983039, 18, 0, 917504, 18, 0, 917505, 18, 0, 917506, 18, 0, 917507, 18, 0, 917508, 18, 0, 917509, 18, 0, 917510, 18, 0, 917511, 18, 0, 917512, 18, 0, 917513, 18, 0, 917514, 18, 0, 917515, 18, 0, 917516, 18, 0, 917517, 18, 0, 917518, 18, 0, 917519, 18, 0, 917520, 18, 0, 917521, 18, 0, 917522, 18, 0, 917523, 18, 0 )
+tile_data = PoolIntArray( -1, 60, 0, -65536, 61, 0, -65535, 61, 0, -65534, 61, 0, -65533, 61, 0, -65532, 61, 0, -65531, 61, 0, -65530, 61, 0, -65529, 61, 0, -65528, 61, 0, -65527, 61, 0, -65526, 61, 0, -65525, 61, 0, -65524, 61, 0, -65523, 61, 0, -65522, 61, 0, -65521, 61, 0, -65520, 61, 0, -65519, 61, 0, -65518, 61, 0, -65517, 67, 0, 65535, 57, 0, 13, 19, 0, 19, 59, 0, 131071, 57, 0, 65549, 19, 0, 65555, 59, 0, 196607, 57, 0, 131072, 18, 0, 131073, 18, 0, 131074, 18, 0, 131075, 18, 0, 131076, 11, 0, 131079, 32, 0, 131080, 2, 0, 131085, 19, 0, 131091, 59, 0, 262143, 57, 0, 196612, 19, 0, 196616, 19, 0, 196621, 19, 0, 196627, 59, 0, 327679, 57, 0, 262148, 19, 0, 262152, 19, 0, 262157, 19, 0, 262163, 59, 0, 393215, 57, 0, 327684, 6, 0, 327687, 18, 0, 327688, 8, 0, 327693, 26, 0, 327699, 59, 0, 458751, 57, 0, 393235, 59, 0, 524287, 57, 0, 458771, 59, 0, 589823, 57, 0, 524307, 59, 0, 655359, 57, 0, 589843, 59, 0, 720895, 57, 0, 655362, 47, 0, 655375, 0, 0, 655376, 1, 0, 655377, 1, 0, 655378, 1, 0, 655379, 59, 0, 786431, 57, 0, 720896, 18, 0, 720897, 33, 0, 720899, 32, 0, 720900, 33, 0, 720909, 32, 0, 720910, 7, 0, 720911, 37, 0, 720912, 7, 0, 720913, 7, 0, 720914, 7, 0, 720915, 59, 0, 851967, 57, 0, 786451, 59, 0, 917503, 57, 0, 851977, 25, 0, 851987, 59, 0, 983039, 64, 0, 917504, 65, 0, 917505, 65, 0, 917506, 65, 0, 917507, 65, 0, 917508, 65, 0, 917509, 65, 0, 917510, 65, 0, 917511, 65, 0, 917512, 65, 0, 917513, 65, 0, 917514, 65, 0, 917515, 65, 0, 917516, 65, 0, 917517, 65, 0, 917518, 65, 0, 917519, 65, 0, 917520, 65, 0, 917521, 65, 0, 917522, 65, 0, 917523, 66, 0 )
 
 [node name="Spikes" parent="Level/TileMap" index="0" instance=ExtResource( 2 )]
 
 position = Vector2( 128, 64 )
-RestingTime = 2.0
+RestingTime = 3.0
 ActiveTime = 1.0
 Direction = "left"
+
+[node name="Spikes2" parent="Level/TileMap" index="1" instance=ExtResource( 2 )]
+
+position = Vector2( 32, 224 )
+RestingTime = 4.0
+ActiveTime = 1.0
+Speed = 2.0
+
+[node name="Spikes3" parent="Level/TileMap" index="2" instance=ExtResource( 2 )]
+
+position = Vector2( 48, 224 )
+RestingTime = 4.0
+ActiveTime = 1.0
+Speed = 2.0
+
+[node name="Spikes4" parent="Level/TileMap" index="3" instance=ExtResource( 2 )]
+
+position = Vector2( 64, 224 )
+RestingTime = 4.0
+ActiveTime = 1.0
+Speed = 2.0
+
+[node name="Spikes5" parent="Level/TileMap" index="4" instance=ExtResource( 2 )]
+
+position = Vector2( 80, 224 )
+RestingTime = 4.0
+ActiveTime = 1.0
+Speed = 2.0
+
+[node name="Spikes6" parent="Level/TileMap" index="5" instance=ExtResource( 2 )]
+
+position = Vector2( 96, 224 )
+RestingTime = 4.0
+ActiveTime = 1.0
+Speed = 2.0
+
+[node name="Spikes7" parent="Level/TileMap" index="6" instance=ExtResource( 2 )]
+
+position = Vector2( 112, 224 )
+RestingTime = 4.0
+ActiveTime = 1.0
+Speed = 2.0
 
 [node name="KinematicBody2D" parent="Level" index="2" instance=ExtResource( 3 )]
 
@@ -29,121 +73,573 @@ position = Vector2( 36.1168, 27.3248 )
 
 [node name="LevelExitGate" parent="Level" index="3" instance=ExtResource( 4 )]
 
-position = Vector2( 312, 232 )
+editor/display_folded = true
+position = Vector2( 168, 216 )
 
-[node name="Gem" parent="Level/LevelExitGate" index="3" instance=ExtResource( 5 )]
+[node name="Gem2" parent="Level/LevelExitGate" index="3" instance=ExtResource( 5 )]
 
-position = Vector2( -736, -608 )
+position = Vector2( 544, -800 )
+scale = Vector2( 4, 4 )
+
+[node name="Gem" parent="Level/LevelExitGate" index="4" instance=ExtResource( 5 )]
+
+position = Vector2( -160, -544 )
+scale = Vector2( 4, 4 )
+
+[node name="Gem3" parent="Level/LevelExitGate" index="5" instance=ExtResource( 5 )]
+
+position = Vector2( -608, 32 )
+scale = Vector2( 4, 4 )
+
+[node name="Gem4" parent="Level/LevelExitGate" index="6" instance=ExtResource( 5 )]
+
+position = Vector2( 512, 0 )
+scale = Vector2( 4, 4 )
+
+[node name="Gem5" parent="Level/LevelExitGate" index="7" instance=ExtResource( 5 )]
+
+position = Vector2( -416, -544 )
 scale = Vector2( 4, 4 )
 
 [node name="Expanding Tiles" type="Node" parent="Level" index="4"]
+
+editor/display_folded = true
 
 [node name="Expanding Tile" parent="Level/Expanding Tiles" index="0" instance=ExtResource( 6 )]
 
 position = Vector2( 96, 96 )
 texture = ExtResource( 7 )
 region_enabled = true
-region_rect = Rect2( 16, 32, 16, 16 )
+region_rect = Rect2( 64, 32, 16, 16 )
 _sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Z Index" ]
 expandAmount = 48
-startTime = 2.0
+startTime = 4.0
 duration = 3.0
-particlesEnabled = true
 wallTexture = ExtResource( 7 )
 capSprite = Vector2( 0, 0 )
 
-[node name="Expanding Tile2" parent="Level/Expanding Tiles" index="1" instance=ExtResource( 6 )]
+[node name="Expanding Tile18" parent="Level/Expanding Tiles" index="1" instance=ExtResource( 6 )]
+
+position = Vector2( 16, 192 )
+texture = ExtResource( 7 )
+region_enabled = true
+region_rect = Rect2( 64, 32, 16, 16 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Z Index" ]
+expandAmount = 96
+startTime = 10.0
+duration = 3.0
+wallTexture = ExtResource( 7 )
+capSprite = Vector2( 2, 0 )
+
+[node name="Expanding Tile28" parent="Level/Expanding Tiles" index="2" instance=ExtResource( 6 )]
+
+position = Vector2( 176, 240 )
+texture = ExtResource( 7 )
+region_enabled = true
+region_rect = Rect2( 48, 144, 16, 16 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Z Index" ]
+expandAmount = 144
+startTime = 20.0
+duration = 9.0
+wallTexture = ExtResource( 7 )
+wallSprite = Vector2( 0, 1 )
+capSprite = Vector2( 0, 0 )
+
+[node name="Expanding Tile29" parent="Level/Expanding Tiles" index="3" instance=ExtResource( 6 )]
+
+position = Vector2( 192, 240 )
+texture = ExtResource( 7 )
+region_enabled = true
+region_rect = Rect2( 48, 144, 16, 16 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Z Index" ]
+expandAmount = 144
+startTime = 20.0
+duration = 8.0
+wallTexture = ExtResource( 7 )
+capSprite = Vector2( 1, 0 )
+
+[node name="Expanding Tile30" parent="Level/Expanding Tiles" index="4" instance=ExtResource( 6 )]
+
+position = Vector2( 208, 240 )
+texture = ExtResource( 7 )
+region_enabled = true
+region_rect = Rect2( 48, 144, 16, 16 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Z Index" ]
+expandAmount = 144
+startTime = 20.0
+duration = 7.0
+wallTexture = ExtResource( 7 )
+wallSprite = Vector2( 2, 1 )
+capSprite = Vector2( 2, 0 )
+
+[node name="Expanding Tile20" parent="Level/Expanding Tiles" index="5" instance=ExtResource( 6 )]
+
+position = Vector2( 32, 192 )
+texture = ExtResource( 7 )
+region_enabled = true
+region_rect = Rect2( 288, 80, 0, 0 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Z Index" ]
+expandAmount = 64
+startTime = 10.0
+duration = 3.0
+wallTexture = ExtResource( 7 )
+wallSprite = Vector2( 2, 1 )
+capSprite = Vector2( 2, 0 )
+
+[node name="Expanding Tile19" parent="Level/Expanding Tiles" index="6" instance=ExtResource( 6 )]
+
+position = Vector2( 48, 176 )
+texture = ExtResource( 7 )
+region_enabled = true
+region_rect = Rect2( 80, 96, 16, 16 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Z Index" ]
+expandAmount = 16
+startTime = 10.0
+duration = 2.0
+wallTexture = ExtResource( 7 )
+capSprite = Vector2( 5, 6 )
+
+[node name="Expanding Tile2" parent="Level/Expanding Tiles" index="7" instance=ExtResource( 6 )]
 
 position = Vector2( 112, 96 )
 texture = ExtResource( 7 )
 region_enabled = true
-region_rect = Rect2( 16, 32, 16, 16 )
+region_rect = Rect2( 64, 32, 16, 16 )
 _sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Z Index" ]
 expandAmount = 48
-startTime = 2.0
+startTime = 4.0
 duration = 3.0
-particlesEnabled = true
 wallTexture = ExtResource( 7 )
 wallSprite = Vector2( 3, 1 )
 capSprite = Vector2( 2, 0 )
 
-[node name="Expanding Tile3" parent="Level/Expanding Tiles" index="2" instance=ExtResource( 6 )]
+[node name="Expanding Tile3" parent="Level/Expanding Tiles" index="8" instance=ExtResource( 6 )]
 
 position = Vector2( 0, 32 )
 texture = ExtResource( 7 )
 region_enabled = true
-region_rect = Rect2( 80, 32, 16, 16 )
+region_rect = Rect2( 32, 128, 16, 16 )
 _sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Z Index" ]
 expansionAxis = "Right"
 expandAmount = 208
 startTime = 2.0
 duration = 12.0
-particlesEnabled = true
 wallTexture = ExtResource( 7 )
 wallSprite = Vector2( 1, 2 )
 capSprite = Vector2( 2, 2 )
 
-[node name="Expanding Tile4" parent="Level/Expanding Tiles" index="3" instance=ExtResource( 6 )]
+[node name="Expanding Tile15" parent="Level/Expanding Tiles" index="9" instance=ExtResource( 6 )]
 
-position = Vector2( 0, 16 )
+position = Vector2( 224, 80 )
 texture = ExtResource( 7 )
 region_enabled = true
 region_rect = Rect2( 80, 32, 16, 16 )
 _sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Z Index" ]
 expansionAxis = "Right"
+expandAmount = 80
+startTime = 3.0
+duration = 15.0
+wallTexture = ExtResource( 7 )
+wallSprite = Vector2( 4, 2 )
+capSprite = Vector2( 5, 4 )
+
+[node name="Expanding Tile14" parent="Level/Expanding Tiles" index="10" instance=ExtResource( 6 )]
+
+position = Vector2( 320, 224 )
+texture = ExtResource( 7 )
+region_enabled = true
+region_rect = Rect2( 64, 128, 16, 16 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Z Index" ]
+expansionAxis = "Left"
+expandAmount = 96
+startTime = 15.0
+duration = 12.0
+wallTexture = ExtResource( 7 )
+wallSprite = Vector2( 1, 2 )
+capSprite = Vector2( 0, 2 )
+
+[node name="Expanding Tile4" parent="Level/Expanding Tiles" index="11" instance=ExtResource( 6 )]
+
+position = Vector2( 0, 16 )
+texture = ExtResource( 7 )
+region_enabled = true
+region_rect = Rect2( 80, 128, 16, 16 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Z Index" ]
+expansionAxis = "Right"
 expandAmount = 208
 startTime = 2.0
 duration = 12.0
-particlesEnabled = true
 wallTexture = ExtResource( 7 )
 wallSprite = Vector2( 1, 0 )
 capSprite = Vector2( 2, 0 )
 
-[node name="Expanding Tile5" parent="Level/Expanding Tiles" index="4" instance=ExtResource( 6 )]
+[node name="Expanding Tile13" parent="Level/Expanding Tiles" index="12" instance=ExtResource( 6 )]
 
-position = Vector2( 320, 80 )
+position = Vector2( 320, 208 )
 texture = ExtResource( 7 )
 region_enabled = true
-region_rect = Rect2( 80, 32, 16, 16 )
+region_rect = Rect2( 64, 128, 16, 16 )
 _sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Z Index" ]
 expansionAxis = "Left"
 expandAmount = 96
-startTime = 5.0
+startTime = 15.0
 duration = 12.0
-particlesEnabled = true
 wallTexture = ExtResource( 7 )
 wallSprite = Vector2( 1, 0 )
-capSprite = Vector2( 4, 0 )
+capSprite = Vector2( 0, 0 )
 
-[node name="Expanding Tile6" parent="Level/Expanding Tiles" index="5" instance=ExtResource( 6 )]
+[node name="Expanding Tile5" parent="Level/Expanding Tiles" index="13" instance=ExtResource( 6 )]
 
-position = Vector2( 320, 96 )
+position = Vector2( 320, 112 )
+texture = ExtResource( 7 )
+region_enabled = true
+region_rect = Rect2( 64, 128, 16, 16 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Z Index" ]
+expansionAxis = "Left"
+startTime = 5.0
+duration = 5.0
+wallTexture = ExtResource( 7 )
+wallSprite = Vector2( 4, 2 )
+capSprite = Vector2( 4, 4 )
+
+[node name="Expanding Tile34" parent="Level/Expanding Tiles" index="14" instance=ExtResource( 6 )]
+
+position = Vector2( 320, 128 )
+texture = ExtResource( 7 )
+region_enabled = true
+region_rect = Rect2( 64, 128, 16, 16 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Z Index" ]
+expansionAxis = "Left"
+expandAmount = 96
+startTime = 15.0
+duration = 5.0
+wallTexture = ExtResource( 7 )
+wallSprite = Vector2( 4, 2 )
+capSprite = Vector2( 4, 4 )
+
+[node name="Expanding Tile37" parent="Level/Expanding Tiles" index="15" instance=ExtResource( 6 )]
+
+position = Vector2( 320, 160 )
+texture = ExtResource( 7 )
+region_enabled = true
+region_rect = Rect2( 64, 128, 16, 16 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Z Index" ]
+expansionAxis = "Left"
+expandAmount = 64
+startTime = 15.0
+duration = 5.0
+wallTexture = ExtResource( 7 )
+wallSprite = Vector2( 4, 2 )
+capSprite = Vector2( 4, 4 )
+
+[node name="Expanding Tile6" parent="Level/Expanding Tiles" index="16" instance=ExtResource( 6 )]
+
+position = Vector2( 320, 144 )
+texture = ExtResource( 7 )
+region_enabled = true
+region_rect = Rect2( 64, 128, 0, 16 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Z Index" ]
+expansionAxis = "Left"
+expandAmount = 48
+startTime = 3.0
+duration = 5.0
+wallTexture = ExtResource( 7 )
+wallSprite = Vector2( 4, 2 )
+capSprite = Vector2( 4, 4 )
+
+[node name="Expanding Tile21" parent="Level/Expanding Tiles" index="17" instance=ExtResource( 6 )]
+
+position = Vector2( 224, 80 )
 texture = ExtResource( 7 )
 region_enabled = true
 region_rect = Rect2( 80, 32, 16, 16 )
 _sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Z Index" ]
 expansionAxis = "Left"
-expandAmount = 96
-startTime = 5.0
-duration = 12.0
-particlesEnabled = true
+expandAmount = 64
+startTime = 8.0
+duration = 3.0
 wallTexture = ExtResource( 7 )
-wallSprite = Vector2( 1, 2 )
-capSprite = Vector2( 4, 1 )
+wallSprite = Vector2( 4, 2 )
+capSprite = Vector2( 4, 4 )
 
-[node name="Expanding Tile7" parent="Level/Expanding Tiles" index="6" instance=ExtResource( 6 )]
+[node name="Expanding Tile22" parent="Level/Expanding Tiles" index="18" instance=ExtResource( 6 )]
 
-position = Vector2( 192, 224 )
+position = Vector2( 224, 48 )
+texture = ExtResource( 7 )
+region_enabled = true
+region_rect = Rect2( 80, 32, 16, 16 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Z Index" ]
+expansionAxis = "Left"
+expandAmount = 64
+startTime = 8.0
+duration = 3.0
+wallTexture = ExtResource( 7 )
+wallSprite = Vector2( 4, 2 )
+capSprite = Vector2( 4, 4 )
+
+[node name="Expanding Tile23" parent="Level/Expanding Tiles" index="19" instance=ExtResource( 6 )]
+
+position = Vector2( 144, 64 )
+texture = ExtResource( 7 )
+region_enabled = true
+region_rect = Rect2( 80, 32, 16, 16 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Z Index" ]
+expansionAxis = "Right"
+expandAmount = 64
+startTime = 8.0
+duration = 3.0
+wallTexture = ExtResource( 7 )
+wallSprite = Vector2( 4, 2 )
+capSprite = Vector2( 5, 4 )
+
+[node name="Expanding Tile16" parent="Level/Expanding Tiles" index="20" instance=ExtResource( 6 )]
+
+position = Vector2( 80, 96 )
+texture = ExtResource( 7 )
+region_enabled = true
+region_rect = Rect2( 64, 16, 16, 16 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Z Index" ]
+expansionAxis = "Left"
+startTime = 10.0
+duration = 5.0
+wallTexture = ExtResource( 7 )
+wallSprite = Vector2( 4, 2 )
+capSprite = Vector2( 4, 4 )
+
+[node name="Expanding Tile7" parent="Level/Expanding Tiles" index="21" instance=ExtResource( 6 )]
+
+position = Vector2( 240, 192 )
+texture = ExtResource( 7 )
+region_enabled = true
+region_rect = Rect2( 64, 32, 16, 16 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Z Index" ]
+startTime = 0.0
+duration = 12.0
+wallTexture = ExtResource( 7 )
+wallSprite = Vector2( 6, 7 )
+capSprite = Vector2( 5, 7 )
+
+[node name="Expanding Tile17" parent="Level/Expanding Tiles" index="22" instance=ExtResource( 6 )]
+
+position = Vector2( 128, 224 )
 texture = ExtResource( 7 )
 region_enabled = true
 region_rect = Rect2( 48, 112, 16, 16 )
 _sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Z Index" ]
-startTime = 0.0
-duration = 12.0
-particlesEnabled = true
+expandAmount = 16
+startTime = 25.0
+duration = 2.0
 wallTexture = ExtResource( 7 )
 wallSprite = Vector2( 6, 7 )
-capSprite = Vector2( 5, 7 )
+capSprite = Vector2( 3, 8 )
+
+[node name="Expanding Tile8" parent="Level/Expanding Tiles" index="23" instance=ExtResource( 6 )]
+
+position = Vector2( 240, 0 )
+texture = ExtResource( 7 )
+region_enabled = true
+region_rect = Rect2( 96, 128, 16, 16 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Z Index" ]
+expansionAxis = "Down"
+expandAmount = 96
+startTime = 16.0
+duration = 3.0
+wallTexture = ExtResource( 7 )
+wallSprite = Vector2( 0, 1 )
+capSprite = Vector2( 0, 2 )
+
+[node name="Expanding Tile24" parent="Level/Expanding Tiles" index="24" instance=ExtResource( 6 )]
+
+position = Vector2( 16, 48 )
+texture = ExtResource( 7 )
+region_enabled = true
+region_rect = Rect2( 64, 32, 16, 16 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Z Index" ]
+expansionAxis = "Down"
+startTime = 26.0
+duration = 1.0
+wallTexture = ExtResource( 7 )
+wallSprite = Vector2( 0, 1 )
+capSprite = Vector2( 0, 2 )
+
+[node name="Expanding Tile35" parent="Level/Expanding Tiles" index="25" instance=ExtResource( 6 )]
+
+position = Vector2( 80, 96 )
+texture = ExtResource( 7 )
+region_enabled = true
+region_rect = Rect2( 0, 32, 16, 16 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Z Index" ]
+expansionAxis = "Down"
+expandAmount = 80
+startTime = 26.0
+duration = 1.0
+wallTexture = ExtResource( 7 )
+wallSprite = Vector2( 0, 1 )
+capSprite = Vector2( 0, 2 )
+
+[node name="Expanding Tile25" parent="Level/Expanding Tiles" index="26" instance=ExtResource( 6 )]
+
+position = Vector2( 32, 48 )
+texture = ExtResource( 7 )
+region_enabled = true
+region_rect = Rect2( 64, 32, 16, 16 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Z Index" ]
+expansionAxis = "Down"
+startTime = 26.0
+duration = 1.0
+wallTexture = ExtResource( 7 )
+
+[node name="Expanding Tile31" parent="Level/Expanding Tiles" index="27" instance=ExtResource( 6 )]
+
+position = Vector2( 96, 96 )
+texture = ExtResource( 7 )
+region_enabled = true
+region_rect = Rect2( 64, 32, 16, 16 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Z Index" ]
+expansionAxis = "Down"
+expandAmount = 80
+startTime = 26.0
+duration = 1.0
+wallTexture = ExtResource( 7 )
+
+[node name="Expanding Tile32" parent="Level/Expanding Tiles" index="28" instance=ExtResource( 6 )]
+
+position = Vector2( 112, 96 )
+texture = ExtResource( 7 )
+region_enabled = true
+region_rect = Rect2( 64, 32, 16, 16 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Z Index" ]
+expansionAxis = "Down"
+expandAmount = 80
+startTime = 26.0
+duration = 1.0
+wallTexture = ExtResource( 7 )
+
+[node name="Expanding Tile33" parent="Level/Expanding Tiles" index="29" instance=ExtResource( 6 )]
+
+position = Vector2( 128, 96 )
+texture = ExtResource( 7 )
+region_enabled = true
+region_rect = Rect2( 64, 32, 16, 16 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Z Index" ]
+expansionAxis = "Down"
+expandAmount = 80
+startTime = 26.0
+duration = 1.0
+wallTexture = ExtResource( 7 )
+
+[node name="Expanding Tile26" parent="Level/Expanding Tiles" index="30" instance=ExtResource( 6 )]
+
+position = Vector2( 48, 48 )
+texture = ExtResource( 7 )
+region_enabled = true
+region_rect = Rect2( 64, 32, 16, 16 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Z Index" ]
+expansionAxis = "Down"
+startTime = 26.0
+duration = 1.0
+wallTexture = ExtResource( 7 )
+
+[node name="Expanding Tile27" parent="Level/Expanding Tiles" index="31" instance=ExtResource( 6 )]
+
+position = Vector2( 64, 48 )
+texture = ExtResource( 7 )
+region_enabled = true
+region_rect = Rect2( 64, 32, 16, 16 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Z Index" ]
+expansionAxis = "Down"
+startTime = 26.0
+duration = 1.0
+wallTexture = ExtResource( 7 )
+wallSprite = Vector2( 2, 1 )
+capSprite = Vector2( 2, 2 )
+
+[node name="Expanding Tile36" parent="Level/Expanding Tiles" index="32" instance=ExtResource( 6 )]
+
+position = Vector2( 144, 96 )
+texture = ExtResource( 7 )
+region_enabled = true
+region_rect = Rect2( 32, 32, 16, 16 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Z Index" ]
+expansionAxis = "Down"
+expandAmount = 80
+startTime = 26.0
+duration = 1.0
+wallTexture = ExtResource( 7 )
+wallSprite = Vector2( 2, 1 )
+capSprite = Vector2( 2, 2 )
+
+[node name="Expanding Tile9" parent="Level/Expanding Tiles" index="33" instance=ExtResource( 6 )]
+
+position = Vector2( 256, 0 )
+texture = ExtResource( 7 )
+region_enabled = true
+region_rect = Rect2( 96, 128, 16, 16 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Z Index" ]
+expansionAxis = "Down"
+expandAmount = 96
+startTime = 16.0
+duration = 3.0
+wallTexture = ExtResource( 7 )
+capSprite = Vector2( 1, 2 )
+
+[node name="Expanding Tile38" parent="Level/Expanding Tiles" index="34" instance=ExtResource( 6 )]
+
+position = Vector2( 224, 96 )
+texture = ExtResource( 7 )
+region_enabled = true
+region_rect = Rect2( 80, 48, 16, 16 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Z Index" ]
+expansionAxis = "Down"
+expandAmount = 96
+startTime = 25.0
+duration = 3.0
+wallTexture = ExtResource( 7 )
+wallSprite = Vector2( 5, 2 )
+capSprite = Vector2( 5, 3 )
+
+[node name="Expanding Tile10" parent="Level/Expanding Tiles" index="35" instance=ExtResource( 6 )]
+
+position = Vector2( 272, 0 )
+texture = ExtResource( 7 )
+region_enabled = true
+region_rect = Rect2( 96, 128, 16, 16 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Z Index" ]
+expansionAxis = "Down"
+expandAmount = 96
+startTime = 16.0
+duration = 3.0
+wallTexture = ExtResource( 7 )
+capSprite = Vector2( 1, 2 )
+
+[node name="Expanding Tile11" parent="Level/Expanding Tiles" index="36" instance=ExtResource( 6 )]
+
+position = Vector2( 288, 0 )
+texture = ExtResource( 7 )
+region_enabled = true
+region_rect = Rect2( 96, 128, 16, 16 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Z Index" ]
+expansionAxis = "Down"
+expandAmount = 96
+startTime = 16.0
+duration = 3.0
+wallTexture = ExtResource( 7 )
+capSprite = Vector2( 1, 2 )
+
+[node name="Expanding Tile12" parent="Level/Expanding Tiles" index="37" instance=ExtResource( 6 )]
+
+position = Vector2( 304, 0 )
+texture = ExtResource( 7 )
+region_enabled = true
+region_rect = Rect2( 96, 128, 16, 16 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform", "Z Index" ]
+expansionAxis = "Down"
+expandAmount = 96
+startTime = 16.0
+duration = 3.0
+wallTexture = ExtResource( 7 )
+wallSprite = Vector2( 2, 1 )
+capSprite = Vector2( 2, 2 )
 
 
 [editable path="Level"]

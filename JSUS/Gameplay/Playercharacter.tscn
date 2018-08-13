@@ -112,6 +112,7 @@ _sections_unfolded = [ "Angle", "Angular Velocity", "Animation", "Color", "Dampi
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
 
+position = Vector2( 0, -0.122087 )
 scale = Vector2( 0.25, 0.25 )
 z_index = 3
 z_as_relative = false
