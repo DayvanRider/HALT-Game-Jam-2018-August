@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://BaseLevel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Gameplay/ExpandingTile.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Tiles/Tiles.png" type="Texture" id=3]
 [ext_resource path="res://Gameplay/Playercharacter.tscn" type="PackedScene" id=4]
 [ext_resource path="res://Gameplay/Spikes.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Gameplay/LevelExitGate.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Gameplay/Gem.tscn" type="PackedScene" id=7]
 
 [node name="Node" type="Node" index="0"]
 
@@ -24,28 +26,225 @@ wallTexture = ExtResource( 3 )
 wallSprite = Vector2( 5, 6 )
 capSprite = Vector2( 4, 6 )
 
-[node name="KinematicBody2D" parent="Level" index="1" instance=ExtResource( 4 )]
+[node name="Expanding Tile2" parent="Level" index="1" instance=ExtResource( 2 )]
+
+position = Vector2( 224, 128 )
+texture = ExtResource( 3 )
+region_enabled = true
+_sections_unfolded = [ "Region", "Transform", "Z Index" ]
+expansionAxis = "Left"
+expandAmount = 128
+duration = 2.0
+wallTexture = ExtResource( 3 )
+capSprite = Vector2( 0, 1 )
+
+[node name="Expanding Tile3" parent="Level" index="2" instance=ExtResource( 2 )]
+
+position = Vector2( 224, 112 )
+texture = ExtResource( 3 )
+region_enabled = true
+_sections_unfolded = [ "Region", "Transform", "Z Index" ]
+expansionAxis = "Left"
+expandAmount = 128
+duration = 2.0
+wallTexture = ExtResource( 3 )
+wallSprite = Vector2( 1, 0 )
+capSprite = Vector2( 0, 0 )
+
+[node name="Expanding Tile4" parent="Level" index="3" instance=ExtResource( 2 )]
+
+position = Vector2( 224, 144 )
+texture = ExtResource( 3 )
+region_enabled = true
+_sections_unfolded = [ "Region", "Transform", "Z Index" ]
+expansionAxis = "Left"
+expandAmount = 128
+duration = 2.0
+wallTexture = ExtResource( 3 )
+wallSprite = Vector2( 1, 2 )
+capSprite = Vector2( 0, 2 )
+
+[node name="Expanding Tile5" parent="Level" index="4" instance=ExtResource( 2 )]
+
+position = Vector2( 112, 64 )
+texture = ExtResource( 3 )
+region_enabled = true
+_sections_unfolded = [ "Region", "Transform", "Z Index" ]
+startTime = 4.5
+duration = 2.0
+wallTexture = ExtResource( 3 )
+wallSprite = Vector2( 5, 2 )
+capSprite = Vector2( 4, 3 )
+
+[node name="Expanding Tile10" parent="Level" index="5" instance=ExtResource( 2 )]
+
+position = Vector2( 128, 16 )
+texture = ExtResource( 3 )
+region_enabled = true
+_sections_unfolded = [ "Region", "Transform", "Z Index" ]
+expansionAxis = "Down"
+startTime = 4.65
+duration = 2.0
+wallTexture = ExtResource( 3 )
+wallSprite = Vector2( 5, 2 )
+capSprite = Vector2( 5, 3 )
+
+[node name="Expanding Tile6" parent="Level" index="6" instance=ExtResource( 2 )]
+
+position = Vector2( 144, 64 )
+texture = ExtResource( 3 )
+region_enabled = true
+_sections_unfolded = [ "Region", "Transform", "Z Index" ]
+startTime = 4.8
+duration = 2.0
+wallTexture = ExtResource( 3 )
+wallSprite = Vector2( 5, 2 )
+capSprite = Vector2( 4, 3 )
+
+[node name="Expanding Tile11" parent="Level" index="7" instance=ExtResource( 2 )]
+
+position = Vector2( 160, 16 )
+texture = ExtResource( 3 )
+region_enabled = true
+_sections_unfolded = [ "Region", "Transform", "Z Index" ]
+expansionAxis = "Down"
+startTime = 4.95
+duration = 2.0
+wallTexture = ExtResource( 3 )
+wallSprite = Vector2( 5, 2 )
+capSprite = Vector2( 5, 3 )
+
+[node name="Expanding Tile7" parent="Level" index="8" instance=ExtResource( 2 )]
+
+position = Vector2( 176, 64 )
+texture = ExtResource( 3 )
+region_enabled = true
+_sections_unfolded = [ "Region", "Transform", "Z Index" ]
+startTime = 5.1
+duration = 2.0
+wallTexture = ExtResource( 3 )
+wallSprite = Vector2( 5, 2 )
+capSprite = Vector2( 4, 3 )
+
+[node name="Expanding Tile12" parent="Level" index="9" instance=ExtResource( 2 )]
+
+position = Vector2( 192, 16 )
+texture = ExtResource( 3 )
+region_enabled = true
+_sections_unfolded = [ "Region", "Transform", "Z Index" ]
+expansionAxis = "Down"
+startTime = 5.25
+duration = 2.0
+wallTexture = ExtResource( 3 )
+wallSprite = Vector2( 5, 2 )
+capSprite = Vector2( 5, 3 )
+
+[node name="Expanding Tile8" parent="Level" index="10" instance=ExtResource( 2 )]
+
+position = Vector2( 208, 64 )
+texture = ExtResource( 3 )
+region_enabled = true
+_sections_unfolded = [ "Region", "Transform", "Z Index" ]
+startTime = 5.4
+duration = 2.0
+wallTexture = ExtResource( 3 )
+wallSprite = Vector2( 5, 2 )
+capSprite = Vector2( 4, 3 )
+
+[node name="Expanding Tile15" parent="Level" index="11" instance=ExtResource( 2 )]
+
+position = Vector2( 224, 16 )
+texture = ExtResource( 3 )
+region_enabled = true
+_sections_unfolded = [ "Region", "Transform", "Z Index" ]
+expansionAxis = "Down"
+startTime = 5.55
+duration = 2.0
+wallTexture = ExtResource( 3 )
+wallSprite = Vector2( 5, 2 )
+capSprite = Vector2( 5, 3 )
+
+[node name="Expanding Tile9" parent="Level" index="12" instance=ExtResource( 2 )]
+
+position = Vector2( 240, 64 )
+texture = ExtResource( 3 )
+region_enabled = true
+_sections_unfolded = [ "Region", "Transform", "Z Index" ]
+startTime = 5.7
+duration = 2.0
+wallTexture = ExtResource( 3 )
+wallSprite = Vector2( 5, 2 )
+capSprite = Vector2( 4, 3 )
+
+[node name="Expanding Tile16" parent="Level" index="13" instance=ExtResource( 2 )]
+
+position = Vector2( 256, 16 )
+texture = ExtResource( 3 )
+region_enabled = true
+_sections_unfolded = [ "Region", "Transform", "Z Index" ]
+expansionAxis = "Down"
+startTime = 5.75
+duration = 2.0
+wallTexture = ExtResource( 3 )
+wallSprite = Vector2( 5, 2 )
+capSprite = Vector2( 5, 3 )
+
+[node name="Expanding Tile13" parent="Level" index="14" instance=ExtResource( 2 )]
+
+position = Vector2( 272, 16 )
+texture = ExtResource( 3 )
+region_enabled = true
+_sections_unfolded = [ "Region", "Transform", "Z Index" ]
+expansionAxis = "Down"
+expandAmount = 176
+startTime = 6.0
+duration = 6.0
+wallTexture = ExtResource( 3 )
+wallSprite = Vector2( 5, 2 )
+capSprite = Vector2( 5, 3 )
+
+[node name="Expanding Tile14" parent="Level" index="15" instance=ExtResource( 2 )]
+
+position = Vector2( 288, 16 )
+texture = ExtResource( 3 )
+region_enabled = true
+_sections_unfolded = [ "Region", "Transform", "Z Index" ]
+expansionAxis = "Down"
+expandAmount = 176
+startTime = 6.0
+duration = 6.0
+wallTexture = ExtResource( 3 )
+wallSprite = Vector2( 5, 2 )
+capSprite = Vector2( 5, 3 )
+
+[node name="KinematicBody2D" parent="Level" index="16" instance=ExtResource( 4 )]
 
 position = Vector2( 64, 208 )
 
-[node name="Spikes3" parent="Level" index="2" instance=ExtResource( 5 )]
-
-position = Vector2( 272, 208 )
-
-[node name="Spikes2" parent="Level" index="3" instance=ExtResource( 5 )]
-
-position = Vector2( 288, 208 )
-
-[node name="Spikes" parent="Level" index="4" instance=ExtResource( 5 )]
+[node name="Spikes" parent="Level" index="17" instance=ExtResource( 5 )]
 
 position = Vector2( 160, 208 )
 Static = true
 StartActive = true
 Direction = "left"
 
-[node name="TileMap" parent="Level" index="5"]
+[node name="TileMap" parent="Level" index="18"]
 
-tile_data = PoolIntArray( -65538, 69, 0, -65537, 69, 0, -131072, 69, 0, -131071, 69, 0, -131070, 69, 0, -131069, 69, 0, -131068, 69, 0, -131067, 69, 0, -131066, 69, 0, -131065, 69, 0, -131064, 69, 0, -131063, 69, 0, -131062, 69, 0, -131061, 69, 0, -131060, 69, 0, -131059, 69, 0, -131058, 69, 0, -131057, 69, 0, -131056, 69, 0, -131055, 69, 0, -131054, 69, 0, -131053, 69, 0, -131052, 69, 0, -2, 69, 0, -1, 60, 0, -65536, 61, 0, -65535, 61, 0, -65534, 61, 0, -65533, 61, 0, -65532, 61, 0, -65531, 61, 0, -65530, 61, 0, -65529, 61, 0, -65528, 61, 0, -65527, 61, 0, -65526, 61, 0, -65525, 61, 0, -65524, 61, 0, -65523, 61, 0, -65522, 61, 0, -65521, 61, 0, -65520, 61, 0, -65519, 61, 0, -65518, 61, 0, -65517, 67, 0, -65516, 69, 0, 65534, 69, 0, 65535, 57, 0, 0, 21, 0, 1, 7, 0, 2, 7, 0, 3, 7, 0, 4, 7, 0, 5, 7, 0, 6, 7, 0, 7, 7, 0, 8, 7, 0, 9, 7, 0, 10, 7, 0, 11, 7, 0, 12, 7, 0, 13, 7, 0, 14, 7, 0, 15, 7, 0, 16, 7, 0, 17, 7, 0, 18, 22, 0, 19, 59, 0, 20, 69, 0, 131070, 69, 0, 131071, 57, 0, 65536, 5, 0, 65554, 3, 0, 65555, 59, 0, 65556, 69, 0, 196606, 69, 0, 196607, 57, 0, 131072, 44, 0, 131073, 1, 0, 131074, 1, 0, 131075, 1, 0, 131076, 1, 0, 131077, 1, 0, 131078, 1, 0, 131079, 1, 0, 131080, 1, 0, 131081, 1, 0, 131082, 1, 0, 131083, 1, 0, 131084, 1, 0, 131085, 1, 0, 131086, 1, 0, 131087, 11, 0, 131090, 3, 0, 131091, 59, 0, 131092, 69, 0, 262142, 69, 0, 262143, 57, 0, 196608, 5, 0, 196623, 19, 0, 196626, 3, 0, 196627, 59, 0, 196628, 69, 0, 327678, 69, 0, 327679, 57, 0, 262144, 5, 0, 262159, 19, 0, 262162, 3, 0, 262163, 59, 0, 262164, 69, 0, 393214, 68, 0, 393215, 57, 0, 327680, 5, 0, 327695, 19, 0, 327698, 3, 0, 327699, 59, 0, 327700, 69, 0, 458750, 68, 0, 458751, 57, 0, 393216, 5, 0, 393231, 19, 0, 393234, 3, 0, 393235, 59, 0, 393236, 69, 0, 524286, 68, 0, 524287, 57, 0, 458752, 5, 0, 458767, 19, 0, 458770, 3, 0, 458771, 59, 0, 458772, 69, 0, 589822, 68, 0, 589823, 57, 0, 524288, 5, 0, 524303, 19, 0, 524306, 3, 0, 524307, 59, 0, 524308, 69, 0, 655358, 68, 0, 655359, 57, 0, 589824, 5, 0, 589834, 44, 0, 589835, 18, 0, 589836, 18, 0, 589837, 18, 0, 589838, 18, 0, 589839, 15, 0, 589842, 3, 0, 589843, 59, 0, 589844, 69, 0, 720894, 68, 0, 720895, 57, 0, 655360, 24, 0, 655362, -536870854, 0, 655370, 536870970, 0, 655378, 3, 0, 655379, 59, 0, 655380, 69, 0, 786430, 68, 0, 786431, 57, 0, 720896, 21, 0, 720897, 7, 0, 720898, 7, 0, 720899, 7, 0, 720900, 7, 0, 720901, 7, 0, 720902, 7, 0, 720903, 8, 0, 720905, 6, 0, 720906, 8, 0, 720914, 3, 0, 720915, 59, 0, 720916, 69, 0, 851966, 68, 0, 851967, 57, 0, 786432, 5, 0, 786450, 3, 0, 786451, 59, 0, 786452, 69, 0, 917502, 68, 0, 917503, 57, 0, 851968, 24, 0, 851969, 1, 0, 851970, 1, 0, 851971, 1, 0, 851972, 1, 0, 851973, 1, 0, 851974, 1, 0, 851975, 1, 0, 851976, 1, 0, 851977, 1, 0, 851978, 1, 0, 851979, 1, 0, 851980, 1, 0, 851981, 1, 0, 851982, 1, 0, 851983, 1, 0, 851984, 1, 0, 851985, 1, 0, 851986, 23, 0, 851987, 59, 0, 851988, 69, 0, 983038, 68, 0, 983039, 64, 0, 917504, 65, 0, 917505, 65, 0, 917506, 65, 0, 917507, 65, 0, 917508, 65, 0, 917509, 65, 0, 917510, 65, 0, 917511, 65, 0, 917512, 65, 0, 917513, 65, 0, 917514, 65, 0, 917515, 65, 0, 917516, 65, 0, 917517, 65, 0, 917518, 65, 0, 917519, 65, 0, 917520, 65, 0, 917521, 65, 0, 917522, 65, 0, 917523, 66, 0, 917524, 69, 0, 1048574, 68, 0, 1048575, 68, 0, 983040, 68, 0, 983041, 69, 0, 983042, 69, 0, 983043, 69, 0, 983044, 69, 0, 983045, 69, 0, 983046, 69, 0, 983047, 69, 0, 983048, 69, 0, 983049, 69, 0, 983050, 69, 0, 983051, 69, 0, 983052, 69, 0, 983053, 69, 0, 983054, 69, 0, 983055, 69, 0, 983056, 69, 0, 983057, 69, 0, 983058, 69, 0, 983059, 69, 0, 983060, 69, 0 )
+tile_data = PoolIntArray( -65538, 69, 0, -65537, 69, 0, -131072, 69, 0, -131071, 69, 0, -131070, 69, 0, -131069, 69, 0, -131068, 69, 0, -131067, 69, 0, -131066, 69, 0, -131065, 69, 0, -131064, 69, 0, -131063, 69, 0, -131062, 69, 0, -131061, 69, 0, -131060, 69, 0, -131059, 69, 0, -131058, 69, 0, -131057, 69, 0, -131056, 69, 0, -131055, 69, 0, -131054, 69, 0, -131053, 69, 0, -131052, 69, 0, -2, 69, 0, -1, 60, 0, -65536, 61, 0, -65535, 61, 0, -65534, 61, 0, -65533, 61, 0, -65532, 61, 0, -65531, 61, 0, -65530, 61, 0, -65529, 61, 0, -65528, 61, 0, -65527, 61, 0, -65526, 61, 0, -65525, 61, 0, -65524, 61, 0, -65523, 61, 0, -65522, 61, 0, -65521, 61, 0, -65520, 61, 0, -65519, 61, 0, -65518, 61, 0, -65517, 67, 0, -65516, 69, 0, 65534, 69, 0, 65535, 57, 0, 0, 21, 0, 1, 7, 0, 2, 7, 0, 3, 7, 0, 4, 7, 0, 5, 7, 0, 6, 7, 0, 7, 7, 0, 8, 7, 0, 9, 7, 0, 10, 7, 0, 11, 7, 0, 12, 7, 0, 13, 7, 0, 14, 7, 0, 15, 7, 0, 16, 7, 0, 17, 7, 0, 18, 22, 0, 19, 59, 0, 20, 69, 0, 131070, 69, 0, 131071, 57, 0, 65536, 5, 0, 65537, 58, 0, 65554, 3, 0, 65555, 59, 0, 65556, 69, 0, 196606, 69, 0, 196607, 57, 0, 131072, 5, 0, 131073, 52, 0, 131090, 3, 0, 131091, 59, 0, 131092, 69, 0, 262142, 69, 0, 262143, 57, 0, 196608, 5, 0, 196609, 52, 0, 196614, 0, 0, 196615, 1, 0, 196616, 1, 0, 196617, 1, 0, 196618, 1, 0, 196619, 1, 0, 196620, 1, 0, 196621, 1, 0, 196622, 1, 0, 196623, 2, 0, 196626, 3, 0, 196627, 59, 0, 196628, 69, 0, 327678, 69, 0, 327679, 57, 0, 262144, 5, 0, 262145, 51, 0, 262148, 0, 0, 262149, 1, 0, 262150, 23, 0, 262151, 4, 0, 262152, 13, 0, 262153, 4, 0, 262154, 4, 0, 262155, 9, 0, 262156, 4, 0, 262157, 4, 0, 262158, 13, 0, 262159, 41, 0, 262162, 3, 0, 262163, 59, 0, 262164, 69, 0, 393214, 68, 0, 393215, 57, 0, 327680, 5, 0, 327681, 50, 0, 327684, 14, 0, 327685, 7, 0, 327686, 7, 0, 327687, 7, 0, 327688, 7, 0, 327689, 7, 0, 327690, 7, 0, 327691, 7, 0, 327692, 7, 0, 327693, 22, 0, 327694, 4, 0, 327695, 29, 0, 327698, 3, 0, 327699, 59, 0, 327700, 69, 0, 458750, 68, 0, 458751, 57, 0, 393216, 5, 0, 393217, 53, 0, 393229, 3, 0, 393230, 4, 0, 393231, 5, 0, 393234, 3, 0, 393235, 59, 0, 393236, 69, 0, 524286, 68, 0, 524287, 57, 0, 458752, 5, 0, 458753, 54, 0, 458754, 52, 0, 458765, 3, 0, 458766, 9, 0, 458767, 5, 0, 458770, 3, 0, 458771, 59, 0, 458772, 69, 0, 589822, 68, 0, 589823, 57, 0, 524288, 5, 0, 524289, 50, 0, 524290, 50, 0, 524301, 3, 0, 524302, 50, 0, 524303, 5, 0, 524306, 3, 0, 524307, 59, 0, 524308, 69, 0, 655358, 68, 0, 655359, 57, 0, 589824, 24, 0, 589825, 1, 0, 589826, 1, 0, 589827, 1, 0, 589828, 1, 0, 589829, 2, 0, 589833, 0, 0, 589834, 1, 0, 589835, 1, 0, 589836, 1, 0, 589837, 23, 0, 589838, 21, 0, 589839, 8, 0, 589842, 3, 0, 589843, 59, 0, 589844, 69, 0, 720894, 68, 0, 720895, 57, 0, 655360, 4, 0, 655361, 17, 0, 655362, 9, 0, 655363, 17, 0, 655364, 4, 0, 655365, 24, 0, 655366, 2, 0, 655369, 3, 0, 655370, 9, 0, 655371, 21, 0, 655372, 7, 0, 655373, 7, 0, 655374, 8, 0, 655378, 3, 0, 655379, 59, 0, 655380, 69, 0, 786430, 68, 0, 786431, 57, 0, 720896, 21, 0, 720897, 7, 0, 720898, 7, 0, 720899, 7, 0, 720900, 7, 0, 720901, 7, 0, 720902, 8, 0, 720905, 6, 0, 720906, 22, 0, 720907, 5, 0, 720913, 51, 0, 720914, 3, 0, 720915, 59, 0, 720916, 69, 0, 851966, 68, 0, 851967, 57, 0, 786432, 5, 0, 786442, 3, 0, 786443, 5, 0, 786449, 0, 0, 786450, 23, 0, 786451, 59, 0, 786452, 69, 0, 917502, 68, 0, 917503, 57, 0, 851968, 24, 0, 851969, 1, 0, 851970, 1, 0, 851971, 1, 0, 851972, 1, 0, 851973, 1, 0, 851974, 1, 0, 851975, 1, 0, 851976, 1, 0, 851977, 1, 0, 851978, 23, 0, 851979, 24, 0, 851980, 1, 0, 851981, 1, 0, 851982, 1, 0, 851983, 1, 0, 851984, 1, 0, 851985, 23, 0, 851986, 55, 0, 851987, 66, 0, 851988, 69, 0, 983038, 68, 0, 983039, 64, 0, 917504, 65, 0, 917505, 65, 0, 917506, 65, 0, 917507, 65, 0, 917508, 65, 0, 917509, 65, 0, 917510, 65, 0, 917511, 65, 0, 917512, 65, 0, 917513, 65, 0, 917514, 65, 0, 917515, 65, 0, 917516, 65, 0, 917517, 65, 0, 917518, 65, 0, 917519, 65, 0, 917520, 65, 0, 917521, 65, 0, 917522, 66, 0, 917523, 69, 0, 917524, 69, 0, 1048574, 68, 0, 1048575, 68, 0, 983040, 68, 0, 983041, 69, 0, 983042, 69, 0, 983043, 69, 0, 983044, 69, 0, 983045, 69, 0, 983046, 69, 0, 983047, 69, 0, 983048, 69, 0, 983049, 69, 0, 983050, 69, 0, 983051, 69, 0, 983052, 69, 0, 983053, 69, 0, 983054, 69, 0, 983055, 69, 0, 983056, 69, 0, 983057, 69, 0, 983058, 69, 0, 983059, 69, 0, 983060, 69, 0 )
+
+[node name="LevelExitGate" parent="Level" index="20" instance=ExtResource( 6 )]
+
+position = Vector2( 208, 208 )
+
+[node name="Gem2" parent="Level/LevelExitGate" index="3" instance=ExtResource( 7 )]
+
+position = Vector2( -576, -640 )
+scale = Vector2( 4, 4 )
+
+[node name="Gem" parent="Level/LevelExitGate" index="4" instance=ExtResource( 7 )]
+
+position = Vector2( -320, -320 )
+scale = Vector2( 4, 4 )
 
 
 [editable path="Level"]
