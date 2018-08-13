@@ -57,7 +57,7 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Angular Velocity", "Color", "Damping", "Emission Shape", "Flags", "Gravity", "Initial Velocity", "Linear Accel", "Resource", "Scale" ]
 
-[node name="Expanding Tile" type="Sprite" index="0"]
+[node name="Expanding Tile" type="Sprite"]
 
 position = Vector2( -0.0630741, 0.0630741 )
 z_index = 1
@@ -68,8 +68,8 @@ expandAmount = 32
 startTime = 1
 duration = 4
 wallTexture = null
-wallRegion = Rect2( 16, 16, 16, 16 )
-capRegion = Rect2( 16, 16, 16, 16 )
+wallSprite = Vector2( 1, 1 )
+capSprite = Vector2( 1, 1 )
 
 [node name="Node" type="Node" parent="." index="0"]
 

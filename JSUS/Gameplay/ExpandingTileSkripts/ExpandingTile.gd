@@ -19,8 +19,9 @@ export(float) var duration = 4
 
 # Texture customization
 export(Texture) var wallTexture = null
-export(Rect2) var wallRegion = Rect2(16, 16, 16, 16)
-export(Rect2) var capRegion = Rect2(16, 16, 16, 16)
+const width = 16
+export(Vector2) var wallSprite = Vector2(1, 1)
+export(Vector2) var capSprite = Vector2(1, 1)
 
 var startTimer = null
 var expansionTimer = null
@@ -40,9 +41,12 @@ func initSprites():
 	if wallTexture != null:
 		var wallSpriteController = get_node("WallSpriteController")
 		wallSpriteController.setTexture(wallTexture)
-		wallSpriteController.setTextureRegion(wallRegion)
-		wallSpriteController.setCapTextureRegion(capRegion)
-	
+		wallSpriteController.setTextureRegion(coordToRegion(wallSprite))
+		wallSpriteController.setCapTextureRegion(coordToRegion(capSprite))
+		
+
+func coordToRegion(coord):
+	return Rect2(coord.x * width, coord.y * width, width, width)
 
 func initExpandDir():
 	expandDir = axisMap[expansionAxis]
