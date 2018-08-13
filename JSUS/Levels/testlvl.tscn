@@ -10,7 +10,7 @@
 [ext_resource path="res://Gameplay/Gem.tscn" type="PackedScene" id=8]
 [ext_resource path="res://Tiles/Background.tres" type="TileSet" id=9]
 
-[node name="World" type="Node2D" index="0"]
+[node name="World" type="Node2D"]
 
 position = Vector2( 208, 208 )
 script = ExtResource( 1 )

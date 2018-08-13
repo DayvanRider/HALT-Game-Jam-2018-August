@@ -2,6 +2,7 @@ extends Node2D
 
 #constants
 
+var nextLevel = "res://Levels/lvl_till_easy.tscn"
 
 
 func _ready():
