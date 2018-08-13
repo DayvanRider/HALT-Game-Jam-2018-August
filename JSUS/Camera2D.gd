@@ -26,7 +26,8 @@ func shake():
 		yield(get_tree(),"idle_frame")
 		
 		self.position = currentpos
-	self.position = Vector2(0,0)
+		yield(get_tree(),"idle_frame")
+	self.position = currentpos
 		
 		
 		
