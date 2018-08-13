@@ -8,7 +8,7 @@
 [ext_resource path="res://Gameplay/LevelExitGate.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Gameplay/Gem.tscn" type="PackedScene" id=7]
 
-[node name="World" type="Node2D"]
+[node name="World" type="Node2D" index="0"]
 
 position = Vector2( 208, 208 )
 script = ExtResource( 1 )
@@ -53,7 +53,7 @@ region_rect = Rect2( 0, 16, 16, 16 )
 expansionAxis = "Left"
 expandAmount = 80
 startTime = 1.5
-duration = 1.0
+duration = 7.0
 wallTexture = ExtResource( 5 )
 wallSprite = Vector2( 4, 2 )
 capSprite = Vector2( 4, 4 )
@@ -65,8 +65,8 @@ texture = ExtResource( 5 )
 region_enabled = true
 region_rect = Rect2( 16, 32, 16, 16 )
 expansionAxis = "Down"
-startTime = 3.4
-duration = 0.3
+startTime = 6.5
+duration = 3.0
 wallTexture = ExtResource( 5 )
 wallSprite = Vector2( 5, 2 )
 capSprite = Vector2( 5, 3 )
@@ -77,8 +77,8 @@ position = Vector2( 96, 80 )
 texture = ExtResource( 5 )
 region_enabled = true
 region_rect = Rect2( 64, 32, 16, 16 )
-startTime = 3.3
-duration = 0.3
+startTime = 6.5
+duration = 3.0
 wallTexture = ExtResource( 5 )
 wallSprite = Vector2( 5, 2 )
 capSprite = Vector2( 4, 3 )
@@ -90,8 +90,8 @@ texture = ExtResource( 5 )
 region_enabled = true
 region_rect = Rect2( 16, 32, 16, 16 )
 expansionAxis = "Down"
-startTime = 3.2
-duration = 0.3
+startTime = 6.5
+duration = 3.0
 wallTexture = ExtResource( 5 )
 wallSprite = Vector2( 5, 2 )
 capSprite = Vector2( 5, 3 )
@@ -104,7 +104,7 @@ region_enabled = true
 region_rect = Rect2( 32, 16, 16, 16 )
 expansionAxis = "Right"
 expandAmount = 48
-startTime = 3.7
+startTime = 8.0
 duration = 0.3
 wallTexture = ExtResource( 5 )
 wallSprite = Vector2( 1, 2 )
@@ -118,7 +118,7 @@ region_enabled = true
 region_rect = Rect2( 32, 16, 16, 16 )
 expansionAxis = "Right"
 expandAmount = 48
-startTime = 3.7
+startTime = 8.0
 duration = 0.3
 wallTexture = ExtResource( 5 )
 capSprite = Vector2( 2, 1 )
@@ -131,7 +131,7 @@ region_enabled = true
 region_rect = Rect2( 64, 32, 16, 16 )
 expansionAxis = "Down"
 expandAmount = 16
-startTime = 0.6
+startTime = 1.5
 duration = 2.0
 wallTexture = ExtResource( 5 )
 capSprite = Vector2( 0, 2 )
@@ -144,7 +144,7 @@ region_enabled = true
 region_rect = Rect2( 64, 32, 16, 16 )
 expansionAxis = "Down"
 expandAmount = 16
-startTime = 0.6
+startTime = 1.5
 duration = 2.0
 wallTexture = ExtResource( 5 )
 capSprite = Vector2( 2, 2 )
@@ -156,7 +156,7 @@ texture = ExtResource( 5 )
 region_enabled = true
 region_rect = Rect2( 16, 0, 16, 16 )
 expandAmount = 16
-startTime = 0.6
+startTime = 1.5
 duration = 2.0
 wallTexture = ExtResource( 5 )
 capSprite = Vector2( 0, 0 )
@@ -168,7 +168,7 @@ texture = ExtResource( 5 )
 region_enabled = true
 region_rect = Rect2( 16, 0, 16, 16 )
 expandAmount = 16
-startTime = 0.6
+startTime = 1.5
 duration = 2.0
 wallTexture = ExtResource( 5 )
 capSprite = Vector2( 2, 0 )
@@ -181,7 +181,7 @@ region_enabled = true
 region_rect = Rect2( 64, 32, 16, 16 )
 expansionAxis = "Down"
 expandAmount = 48
-startTime = 0.0
+startTime = 8.0
 duration = 6.0
 wallTexture = ExtResource( 5 )
 wallSprite = Vector2( 5, 2 )
@@ -196,18 +196,18 @@ region_rect = Rect2( 80, 32, 16, 16 )
 _sections_unfolded = [ "Region", "Transform", "Z Index" ]
 expansionAxis = "Right"
 expandAmount = 80
-duration = 1.0
+duration = 7.0
 wallTexture = ExtResource( 5 )
 wallSprite = Vector2( 4, 2 )
 capSprite = Vector2( 5, 4 )
 
 [node name="LevelExitGate" parent="." index="3" instance=ExtResource( 6 )]
 
-position = Vector2( -64, -64 )
+position = Vector2( -152, -88 )
 
 [node name="Gem3" parent="LevelExitGate" index="3" instance=ExtResource( 7 )]
 
-position = Vector2( -256, -64 )
+position = Vector2( 352, 96 )
 scale = Vector2( 4, 4 )
 
 
