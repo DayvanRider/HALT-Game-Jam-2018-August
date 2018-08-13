@@ -53,27 +53,28 @@ func onAfterDeathTimeout():
 	get_tree().reload_current_scene()
 	
 func _physics_process(delta):
-	#Add gravity
-	motion.y += GRAVITY
-	#left and right and down movement tracking
-	basicMovement()
-
-	#Jump tracking
-	jumping()
-		
-		
-	#walljumptracking
-	wallJumpTracking()
-		
-	#make walljumps non climbeable
-	climbProtection()
+	if !IsAlreadyKilled:
+		#Add gravity
+		motion.y += GRAVITY
+		#left and right and down movement tracking
+		basicMovement()
 	
-	#call move and slide and update motion and grace values
-	#also add lurp
-	moveAndUpdate()
-
-	if isSquished():
-		kill()
+		#Jump tracking
+		jumping()
+			
+			
+		#walljumptracking
+		wallJumpTracking()
+			
+		#make walljumps non climbeable
+		climbProtection()
+		
+		#call move and slide and update motion and grace values
+		#also add lurp
+		moveAndUpdate()
+	
+		if isSquished():
+			kill()
 	
 
 		
