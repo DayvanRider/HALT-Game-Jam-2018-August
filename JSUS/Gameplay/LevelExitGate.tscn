@@ -23,7 +23,7 @@ _sections_unfolded = [ "Resource" ]
 custom_solver_bias = 0.0
 extents = Vector2( 6.79179, 7.95556 )
 
-[node name="LevelExitGate" type="Node2D"]
+[node name="LevelExitGate" type="Node2D" index="0"]
 
 scale = Vector2( 0.25, 0.25 )
 z_index = 1

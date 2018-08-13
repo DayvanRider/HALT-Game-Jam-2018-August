@@ -35,7 +35,6 @@ func _process(delta):
 	for b in bodies:
 		if b.get_name() == "Player":
 			if allGemsCollected:
-				print("Finish Level")
 				get_tree().change_scene(get_parent().nextLevel)
 				#b.kill()
 	
