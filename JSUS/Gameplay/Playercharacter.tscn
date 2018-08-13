@@ -5,13 +5,13 @@
 [ext_resource path="res://assets/JesusJones/JJIdle/JJIdle1.png" type="Texture" id=3]
 [ext_resource path="res://assets/JesusJones/JJIdle/JJIdle2.png" type="Texture" id=4]
 [ext_resource path="res://assets/JesusJones/JJIdle/JJIdle3.png" type="Texture" id=5]
-[ext_resource path="res://assets/JesusJones/JJSlide.png" type="Texture" id=6]
-[ext_resource path="res://assets/JesusJones/JJRun/JJRun(1).png" type="Texture" id=7]
-[ext_resource path="res://assets/JesusJones/JJRun/JJRun(2).png" type="Texture" id=8]
-[ext_resource path="res://assets/JesusJones/JJRun/JJRun(3).png" type="Texture" id=9]
-[ext_resource path="res://assets/JesusJones/JJRun/JJRun(4).png" type="Texture" id=10]
-[ext_resource path="res://assets/JesusJones/JJRun/JJRun(5).png" type="Texture" id=11]
-[ext_resource path="res://assets/JesusJones/JJRun/JJRun(6).png" type="Texture" id=12]
+[ext_resource path="res://assets/JesusJones/JJRun/JJRun(1).png" type="Texture" id=6]
+[ext_resource path="res://assets/JesusJones/JJRun/JJRun(2).png" type="Texture" id=7]
+[ext_resource path="res://assets/JesusJones/JJRun/JJRun(3).png" type="Texture" id=8]
+[ext_resource path="res://assets/JesusJones/JJRun/JJRun(4).png" type="Texture" id=9]
+[ext_resource path="res://assets/JesusJones/JJRun/JJRun(5).png" type="Texture" id=10]
+[ext_resource path="res://assets/JesusJones/JJRun/JJRun(6).png" type="Texture" id=11]
+[ext_resource path="res://assets/JesusJones/JJSlide.png" type="Texture" id=12]
 [ext_resource path="res://assets/Audio/Death/1.wav" type="AudioStream" id=13]
 [ext_resource path="res://assets/Audio/Death/2.wav" type="AudioStream" id=14]
 [ext_resource path="res://assets/Audio/Death/3.wav" type="AudioStream" id=15]
@@ -49,20 +49,20 @@ animations = [ {
 "name": "Idle",
 "speed": 2.0
 }, {
-"frames": [ ExtResource( 4 ) ],
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
 "loop": true,
-"name": "Jump",
-"speed": 5.0
+"name": "Run",
+"speed": 17.0
 }, {
-"frames": [ ExtResource( 6 ) ],
+"frames": [ ExtResource( 12 ) ],
 "loop": true,
 "name": "WallSlide",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ) ],
+"frames": [ ExtResource( 4 ) ],
 "loop": true,
-"name": "Run",
-"speed": 17.0
+"name": "Jump",
+"speed": 5.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=3]
@@ -113,12 +113,13 @@ _sections_unfolded = [ "Angle", "Angular Velocity", "Animation", "Color", "Dampi
 [node name="KinematicBody2D" type="KinematicBody2D"]
 
 scale = Vector2( 0.25, 0.25 )
+z_as_relative = false
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Transform", "Z Index" ]
 SPEED = 150
 JUMP = -250
 GRAVITY = 15
@@ -135,7 +136,7 @@ SLIDEFACTOR = 10
 position = Vector2( 0, 0.615561 )
 scale = Vector2( 0.728571, 0.93878 )
 shape = SubResource( 1 )
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Transform", "Z Index" ]
 
 [node name="After Death Timer" type="Timer" parent="." index="1"]
 
@@ -159,7 +160,7 @@ _sections_unfolded = [ "Playback Options" ]
 scale = Vector2( 4, 4 )
 frames = SubResource( 2 )
 animation = "Idle"
-frame = 1
+frame = 5
 playing = true
 _sections_unfolded = [ "Offset", "Transform" ]
 
@@ -433,7 +434,7 @@ _sections_unfolded = [ "Transform" ]
 [node name="Particles2D" type="Particles2D" parent="." index="10"]
 
 visible = false
-z_index = 5
+z_index = 4
 z_as_relative = false
 emitting = false
 amount = 58
