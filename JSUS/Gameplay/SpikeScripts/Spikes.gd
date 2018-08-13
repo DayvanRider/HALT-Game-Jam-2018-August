@@ -21,6 +21,7 @@ var MotionSteps = 0				#how much it has moved from origin
 var NextFramePosition = Vector2(0,0)
 
 
+
 var OriginalPosition
 var RestPosition = Vector2(0,0)
 
@@ -29,6 +30,10 @@ var RestPosition = Vector2(0,0)
 func _ready():
 	set_draw_behind_parent(true) 
 	OriginalPosition = get_global_position()
+	if StartActive == true:
+		MovementPhase = 0
+	else:
+		MovementPhase = 2
 	match Direction:			#set direction of tile movement
 		"up":			#Movement of moving out:
 			Movement.x = 0
@@ -58,10 +63,8 @@ func _ready():
 			RestPosition.y = OriginalPosition.y
 
 	MotionSteps = 0
-	MovementPhase = 0
-	if StartActive == false:
-		MovementPhase = 2
-	pass
+	
+
 
 
 
@@ -69,9 +72,8 @@ func _ready():
 
 func _physics_process(delta):
 	
-	
-	
-	match MovementPhase:
+	if !Static:
+		match MovementPhase:
 			0:			#rest Active
 				#print("Resting active")
 				set_global_position(OriginalPosition)
