@@ -1,17 +1,17 @@
-[gd_scene load_steps=39 format=2]
+[gd_scene load_steps=40 format=2]
 
 [ext_resource path="res://Gameplay/PlayerScripts/KinematicBody2D.gd" type="Script" id=1]
 [ext_resource path="res://assets/JesusJones/JJIdle/JJIdle0.png" type="Texture" id=2]
 [ext_resource path="res://assets/JesusJones/JJIdle/JJIdle1.png" type="Texture" id=3]
 [ext_resource path="res://assets/JesusJones/JJIdle/JJIdle2.png" type="Texture" id=4]
 [ext_resource path="res://assets/JesusJones/JJIdle/JJIdle3.png" type="Texture" id=5]
-[ext_resource path="res://assets/JesusJones/JJRun/JJRun(1).png" type="Texture" id=6]
-[ext_resource path="res://assets/JesusJones/JJRun/JJRun(2).png" type="Texture" id=7]
-[ext_resource path="res://assets/JesusJones/JJRun/JJRun(3).png" type="Texture" id=8]
-[ext_resource path="res://assets/JesusJones/JJRun/JJRun(4).png" type="Texture" id=9]
-[ext_resource path="res://assets/JesusJones/JJRun/JJRun(5).png" type="Texture" id=10]
-[ext_resource path="res://assets/JesusJones/JJRun/JJRun(6).png" type="Texture" id=11]
-[ext_resource path="res://assets/JesusJones/JJSlide.png" type="Texture" id=12]
+[ext_resource path="res://assets/JesusJones/JJSlide.png" type="Texture" id=6]
+[ext_resource path="res://assets/JesusJones/JJRun/JJRun(1).png" type="Texture" id=7]
+[ext_resource path="res://assets/JesusJones/JJRun/JJRun(2).png" type="Texture" id=8]
+[ext_resource path="res://assets/JesusJones/JJRun/JJRun(3).png" type="Texture" id=9]
+[ext_resource path="res://assets/JesusJones/JJRun/JJRun(4).png" type="Texture" id=10]
+[ext_resource path="res://assets/JesusJones/JJRun/JJRun(5).png" type="Texture" id=11]
+[ext_resource path="res://assets/JesusJones/JJRun/JJRun(6).png" type="Texture" id=12]
 [ext_resource path="res://assets/Audio/Death/1.wav" type="AudioStream" id=13]
 [ext_resource path="res://assets/Audio/Death/2.wav" type="AudioStream" id=14]
 [ext_resource path="res://assets/Audio/Death/3.wav" type="AudioStream" id=15]
@@ -34,6 +34,7 @@
 [ext_resource path="res://assets/Audio/Jump/10.wav" type="AudioStream" id=32]
 [ext_resource path="res://Gameplay/PlayerScripts/SquishDetector.gd" type="Script" id=33]
 [ext_resource path="res://assets/Particles/Blood.png" type="Texture" id=34]
+[ext_resource path="res://Gameplay/PlayerScripts/Particles2D.gd" type="Script" id=35]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -48,20 +49,20 @@ animations = [ {
 "name": "Idle",
 "speed": 2.0
 }, {
-"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ) ],
-"loop": true,
-"name": "Run",
-"speed": 17.0
-}, {
 "frames": [ ExtResource( 4 ) ],
 "loop": true,
 "name": "Jump",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 12 ) ],
+"frames": [ ExtResource( 6 ) ],
 "loop": true,
 "name": "WallSlide",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ) ],
+"loop": true,
+"name": "Run",
+"speed": 17.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=3]
@@ -109,7 +110,7 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Angle", "Angular Velocity", "Animation", "Color", "Damping", "Emission Shape", "Gravity", "Initial Velocity", "Linear Accel", "Orbit Velocity", "Scale", "Spread", "Trail" ]
 
-[node name="KinematicBody2D" type="KinematicBody2D" index="0"]
+[node name="KinematicBody2D" type="KinematicBody2D"]
 
 scale = Vector2( 0.25, 0.25 )
 input_pickable = false
@@ -158,7 +159,7 @@ _sections_unfolded = [ "Playback Options" ]
 scale = Vector2( 4, 4 )
 frames = SubResource( 2 )
 animation = "Idle"
-frame = 7
+frame = 1
 playing = true
 _sections_unfolded = [ "Offset", "Transform" ]
 
@@ -431,6 +432,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Particles2D" type="Particles2D" parent="." index="10"]
 
+visible = false
 z_index = 5
 z_as_relative = false
 emitting = false
@@ -451,6 +453,7 @@ texture = ExtResource( 34 )
 normal_map = null
 h_frames = 1
 v_frames = 1
+script = ExtResource( 35 )
 _sections_unfolded = [ "Material", "Process Material", "Textures", "Time", "Transform", "Z Index" ]
 
 [node name="Timer2" type="Timer" parent="." index="11"]
