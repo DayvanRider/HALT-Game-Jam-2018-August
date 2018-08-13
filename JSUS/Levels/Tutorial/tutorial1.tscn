@@ -6,11 +6,11 @@
 [ext_resource path="res://Gameplay/ExpandingTile.tscn" type="PackedScene" id=4]
 [ext_resource path="res://assets/Tiles/Tiles.png" type="Texture" id=5]
 
-[node name="Base" type="Node"]
+[node name="Base" type="Node" index="0"]
 
 [node name="Level" parent="." index="0" instance=ExtResource( 1 )]
 
-nextLevel = "res://Levels/Tutorial/tutorial1.tscn"
+nextLevel = "res://Levels/Tutorial/tutorial2.tscn"
 
 [node name="KinematicBody2D" parent="Level" index="0" instance=ExtResource( 2 )]
 
@@ -23,6 +23,7 @@ tile_data = PoolIntArray( -1, 68, 0, -65536, 68, 0, -65535, 68, 0, -65534, 68, 0
 [node name="LevelExitGate" parent="Level" index="3" instance=ExtResource( 3 )]
 
 position = Vector2( 240, 128 )
+playGateSound = false
 
 [node name="ExpandingTiles" type="Node" parent="Level" index="4"]
 
