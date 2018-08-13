@@ -1,7 +1,5 @@
 extends Node
 
-export(String) var NextLevelName = "Level2"
-
 var gemsCollected
 var gemsTotal
 var scoreText
@@ -38,7 +36,7 @@ func _process(delta):
 		if b.get_name() == "Player":
 			if allGemsCollected:
 				print("Finish Level")
-				get_tree().change_scene("res://Levels/" + NextLevelName + ".tscn")
+				get_tree().change_scene(get_parent().nextLevel)
 				#b.kill()
 	
 	scoreText = String(gemsCollected) + " / " + String(gemsTotal)
