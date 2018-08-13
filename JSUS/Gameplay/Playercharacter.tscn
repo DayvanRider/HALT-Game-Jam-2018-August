@@ -68,7 +68,7 @@ animations = [ {
 custom_solver_bias = 0.0
 extents = Vector2( 10, 10 )
 
-[node name="KinematicBody2D" type="KinematicBody2D" index="0"]
+[node name="KinematicBody2D" type="KinematicBody2D"]
 
 scale = Vector2( 0.25, 0.25 )
 input_pickable = false
@@ -90,7 +90,7 @@ SLIDEFACTOR = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
 
-position = Vector2( 0, -8e-06 )
+position = Vector2( 0, -8e-006 )
 scale = Vector2( 0.728571, 1 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
@@ -117,7 +117,7 @@ _sections_unfolded = [ "Playback Options" ]
 scale = Vector2( 4, 4 )
 frames = SubResource( 2 )
 animation = "Idle"
-frame = 6
+frame = 4
 playing = true
 _sections_unfolded = [ "Offset", "Transform" ]
 
