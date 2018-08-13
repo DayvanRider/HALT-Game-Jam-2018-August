@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://BaseLevel.gd" type="Script" id=1]
+[ext_resource path="res://BaseLevelScripts/BaseLevel.gd" type="Script" id=1]
 [ext_resource path="res://assets/Tiles/Tiles.tres" type="TileSet" id=2]
 [ext_resource path="res://assets/Andere/background.png" type="Texture" id=3]
 
