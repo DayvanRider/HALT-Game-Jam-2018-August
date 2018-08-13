@@ -1,5 +1,4 @@
-[gd_scene load_steps=10 format=2]
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Gameplay/ExpandingTileSkripts/ExpandingTile.gd" type="Script" id=1]
 [ext_resource path="res://Gameplay/ExpandingTileSkripts/WallSpriteController.gd" type="Script" id=2]
@@ -7,7 +6,7 @@
 [ext_resource path="res://Gameplay/ExpandingTileSkripts/Area2D.gd" type="Script" id=4]
 [ext_resource path="res://assets/Andere/puff.png" type="Texture" id=5]
 [ext_resource path="res://Gameplay/Particles2D.gd" type="Script" id=6]
-[ext_resource path="res://assets/Audio/Ambient/Tump.wav" type="AudioStream" id=5]
+[ext_resource path="res://assets/Audio/Ambient/Tump.wav" type="AudioStream" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -59,7 +58,7 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Angular Velocity", "Color", "Damping", "Emission Shape", "Flags", "Gravity", "Initial Velocity", "Linear Accel", "Resource", "Scale" ]
 
-[node name="Expanding Tile" type="Sprite"]
+[node name="Expanding Tile" type="Sprite" index="0"]
 
 position = Vector2( -0.0630741, 0.0630741 )
 z_index = 1
@@ -131,7 +130,6 @@ _sections_unfolded = [ "Visibility" ]
 shape = SubResource( 2 )
 
 [node name="Particles2D" type="Particles2D" parent="." index="6"]
-[node name="Thump" type="AudioStreamPlayer" parent="." index="6"]
 
 visible = false
 z_index = 2
@@ -155,8 +153,10 @@ normal_map = null
 h_frames = 1
 v_frames = 1
 script = ExtResource( 6 )
-_sections_unfolded = [ "Process Material", "Textures" ]
-stream = ExtResource( 5 )
+
+[node name="Thump" type="AudioStreamPlayer" parent="." index="7"]
+
+stream = ExtResource( 7 )
 volume_db = 0.0
 pitch_scale = 1.0
 autoplay = false

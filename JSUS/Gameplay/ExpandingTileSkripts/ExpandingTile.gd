@@ -75,7 +75,7 @@ func onStartTimer():
 func _process(delta):
 	if (currentExpansion() == 1) && (isFullyExtended == false):
 		isFullyExtended = true
-		get_node("Thump").set_volume_db(-12.0)
+		get_node("Thump").set_volume_db(-6.0)
 		get_node("Thump").play(0.000001)
 
 func currentExpansion():
