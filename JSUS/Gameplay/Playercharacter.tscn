@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://Gameplay/PlayerScripts/KinematicBody2D.gd" type="Script" id=1]
 [ext_resource path="res://assets/JesusJones/JJIdle/JJIdle0.png" type="Texture" id=2]
@@ -32,6 +32,7 @@
 [ext_resource path="res://assets/Audio/Jump/8.wav" type="AudioStream" id=30]
 [ext_resource path="res://assets/Audio/Jump/9.wav" type="AudioStream" id=31]
 [ext_resource path="res://assets/Audio/Jump/10.wav" type="AudioStream" id=32]
+[ext_resource path="res://Gameplay/PlayerScripts/SquishDetector.gd" type="Script" id=33]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -62,7 +63,12 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="KinematicBody2D" type="KinematicBody2D"]
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 10, 10 )
+
+[node name="KinematicBody2D" type="KinematicBody2D" index="0"]
 
 scale = Vector2( 0.25, 0.25 )
 input_pickable = false
@@ -111,7 +117,7 @@ _sections_unfolded = [ "Playback Options" ]
 scale = Vector2( 4, 4 )
 frames = SubResource( 2 )
 animation = "Idle"
-frame = 5
+frame = 6
 playing = true
 _sections_unfolded = [ "Offset", "Transform" ]
 
@@ -303,5 +309,83 @@ pitch_scale = 1.0
 autoplay = false
 mix_target = 0
 bus = "Master"
+
+[node name="LeftSquish" type="Area2D" parent="." index="6"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 33 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftSquish" index="0"]
+
+position = Vector2( -18.2266, 0 )
+scale = Vector2( 0.2, 2.7078 )
+shape = SubResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="RightSquish" type="Area2D" parent="." index="7"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 33 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightSquish" index="0"]
+
+position = Vector2( 17.7734, 0 )
+scale = Vector2( 0.2, 2.7078 )
+shape = SubResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="TopSquish" type="Area2D" parent="." index="8"]
+
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 33 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TopSquish" index="0"]
+
+position = Vector2( 1.01813, -31.0268 )
+scale = Vector2( 1.47418, 0.194469 )
+shape = SubResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="BottomSquish" type="Area2D" parent="." index="9"]
+
+position = Vector2( -0.151398, 20.568 )
+scale = Vector2( 1, 0.357251 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 33 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BottomSquish" index="0"]
+
+position = Vector2( 0, 26.1544 )
+scale = Vector2( 1.59528, 0.499088 )
+shape = SubResource( 3 )
+_sections_unfolded = [ "Transform" ]
 
 
