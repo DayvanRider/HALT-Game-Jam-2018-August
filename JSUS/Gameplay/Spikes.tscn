@@ -1,15 +1,16 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Gameplay/SpikeScripts/Spikes.gd" type="Script" id=1]
 [ext_resource path="res://assets/Tiles/Spikes.png" type="Texture" id=2]
 [ext_resource path="res://Gameplay/SpikeScripts/Area2D.gd" type="Script" id=3]
+[ext_resource path="res://assets/Audio/Ambient/Slice.wav" type="AudioStream" id=4]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
 extents = Vector2( 10.1827, 10 )
 
-[node name="Spikes" type="Node2D" index="0"]
+[node name="Spikes" type="Node2D"]
 
 position = Vector2( 8, 8 )
 scale = Vector2( 0.25, 0.25 )
@@ -23,6 +24,7 @@ Static = false
 Speed = 1
 StartActive = false
 Direction = "up"
+playAudio = true
 
 [node name="Sprite" type="Sprite" parent="." index="0"]
 
@@ -47,5 +49,14 @@ _sections_unfolded = [ "Transform" ]
 scale = Vector2( 3.04813, 3.15385 )
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." index="2"]
+
+stream = ExtResource( 4 )
+volume_db = -12.0
+pitch_scale = 1.0
+autoplay = false
+mix_target = 0
+bus = "Master"
 
 
