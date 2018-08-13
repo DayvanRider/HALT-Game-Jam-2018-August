@@ -5,7 +5,7 @@
 [ext_resource path="res://Gameplay/ExpandingTileSkripts/CollisionShape2D.gd" type="Script" id=3]
 [ext_resource path="res://Gameplay/ExpandingTileSkripts/Area2D.gd" type="Script" id=4]
 [ext_resource path="res://assets/Andere/puff.png" type="Texture" id=5]
-[ext_resource path="res://Gameplay/Particles2D.gd" type="Script" id=6]
+[ext_resource path="res://Gameplay/ExpandingTileSkripts/Particles2D.gd" type="Script" id=6]
 [ext_resource path="res://assets/Audio/Ambient/Tump.wav" type="AudioStream" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -58,7 +58,7 @@ anim_offset_random = 0.0
 anim_loop = false
 _sections_unfolded = [ "Angular Velocity", "Color", "Damping", "Emission Shape", "Flags", "Gravity", "Initial Velocity", "Linear Accel", "Resource", "Scale" ]
 
-[node name="Expanding Tile" type="Sprite" index="0"]
+[node name="Expanding Tile" type="Sprite"]
 
 position = Vector2( -0.0630741, 0.0630741 )
 z_index = 1
@@ -68,6 +68,7 @@ expansionAxis = "Up"
 expandAmount = 32
 startTime = 1
 duration = 4
+particlesEnabled = true
 wallTexture = null
 wallSprite = Vector2( 1, 1 )
 capSprite = Vector2( 1, 1 )

@@ -16,6 +16,8 @@ export(int, 0, 640, 16) var expandAmount = 32
 export(float) var startTime = 1
 # Time the tile takes to reache its max size after starting, in seconds
 export(float) var duration = 4
+# If true, particles are emitted when the expansion ends
+export(bool) var particlesEnabled = true
 
 # Texture customization
 export(Texture) var wallTexture = null
