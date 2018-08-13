@@ -7,11 +7,11 @@
 [ext_resource path="res://Gameplay/ExpandingTile.tscn" type="PackedScene" id=5]
 [ext_resource path="res://assets/Tiles/Tiles.png" type="Texture" id=6]
 
-[node name="Node" type="Node" index="0"]
+[node name="Node" type="Node"]
 
 [node name="Level" parent="." index="0" instance=ExtResource( 1 )]
 
-nextLevel = "res://Levels/Tutorial/tutorial3.tscn"
+nextLevel = "res://Levels/Tutorial/tutorial4.tscn"
 
 [node name="LevelExitGate" parent="Level" index="0" instance=ExtResource( 2 )]
 
